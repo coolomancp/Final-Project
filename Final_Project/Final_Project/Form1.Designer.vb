@@ -76,7 +76,6 @@ Partial Class frmCharScreen
         Me.btnConfirmNC = New System.Windows.Forms.Button()
         Me.proBarHealthVal = New System.Windows.Forms.ProgressBar()
         Me.proBarManaVal = New System.Windows.Forms.ProgressBar()
-        Me.lblTesting = New System.Windows.Forms.Label()
         Me.pnlChestF.SuspendLayout()
         CType(Me.picChest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlHeadF.SuspendLayout()
@@ -638,22 +637,12 @@ Partial Class frmCharScreen
         Me.proBarManaVal.TabIndex = 43
         Me.proBarManaVal.Value = 100
         '
-        'lblTesting
-        '
-        Me.lblTesting.AutoSize = True
-        Me.lblTesting.Location = New System.Drawing.Point(307, 349)
-        Me.lblTesting.Name = "lblTesting"
-        Me.lblTesting.Size = New System.Drawing.Size(39, 13)
-        Me.lblTesting.TabIndex = 44
-        Me.lblTesting.Text = "Work?"
-        '
         'frmCharScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.ClientSize = New System.Drawing.Size(435, 441)
-        Me.Controls.Add(Me.lblTesting)
         Me.Controls.Add(Me.proBarManaVal)
         Me.Controls.Add(Me.proBarHealthVal)
         Me.Controls.Add(Me.btnConfirmNC)
@@ -770,5 +759,4 @@ Partial Class frmCharScreen
     Friend WithEvents picHandL As System.Windows.Forms.PictureBox
     Friend WithEvents picBracer As System.Windows.Forms.PictureBox
     Friend WithEvents picLegs As System.Windows.Forms.PictureBox
-    Friend WithEvents lblTesting As Label
 End Class

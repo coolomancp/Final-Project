@@ -1,5 +1,5 @@
 ﻿Public Class frmCharScreen
-
+    Dim playerInfo As playerInfo
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' Sets all of the comboboxes starting text to "(none)"
         cboBracer.Text = "(none)"
@@ -100,8 +100,17 @@
     End Sub
 
     Private Sub btnConfirmNC_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnConfirmNC.Click
-        If txtChngCN.Text IsNot "" Then 'Prevents user from entering nothing as a character name
+        Dim validInp1 As Boolean = txtChngCN.Text Like "[A-Z]*[A-Z]" ' Allows name to be upper case
+        Dim validInp2 As Boolean = txtChngCN.Text Like "[a-z]*[a-z]" ' Allows name to be lower case
+        Dim validInp3 As Boolean = txtChngCN.Text Like "[A-Z]*[a-z]" ' Allows name to start upper case and end lower case
+        Dim validInp4 As Boolean = txtChngCN.Text Like "[a-z]*[A-Z]" ' Allows name to start lower case and end upper case
+        If validInp1 = True Or validInp2 = True Or validInp3 = True Or validInp4 = True And txtChngCN.Text IsNot "" Then 'Prevents user from entering an invalid name
             lblCNVal.Text = txtChngCN.Text
+            playerInfo.name = txtChngCN.Text
+            txtChngCN.Clear()
+        Else
+            txtChngCN.Clear()
+            MessageBox.Show("Please only enter letters (A-Z)")
         End If
     End Sub
 

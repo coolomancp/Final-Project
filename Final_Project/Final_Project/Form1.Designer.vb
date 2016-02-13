@@ -643,6 +643,7 @@ Partial Class frmCharScreen
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.ClientSize = New System.Drawing.Size(435, 441)
+        Me.ControlBox = False
         Me.Controls.Add(Me.proBarManaVal)
         Me.Controls.Add(Me.proBarHealthVal)
         Me.Controls.Add(Me.btnConfirmNC)

@@ -121,6 +121,12 @@
   <data name="Helm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Helm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TestWalking" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TestWalking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TestGif1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TestGif1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Chest" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Chest.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,16 +142,19 @@
   <data name="QM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\QM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TestGif" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TestGif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TitleScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TitleScreen.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Bracer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bracer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SwordR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SwordR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TestWalking" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TestWalking.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TestGif" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TestGif.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shstagewaterfall084slow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shstagewaterfall084slow1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

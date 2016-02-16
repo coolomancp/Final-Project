@@ -204,6 +204,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\warIdleR.png" />
+    <None Include="Resources\warIdleL.png" />
+    <None Include="Resources\WalkTry.gif" />
+    <None Include="Resources\WalkTest.gif" />
+    <None Include="Resources\warWalkR.gif" />
+    <None Include="Resources\warWalkL.gif" />
     <None Include="Resources\shstagewaterfall084slow1.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

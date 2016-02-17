@@ -25,16 +25,17 @@ Partial Class frmMainScr
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMainScr))
         Me.pnlMenu = New System.Windows.Forms.Panel()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.btnCharI = New System.Windows.Forms.Button()
         Me.btnInv = New System.Windows.Forms.Button()
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
         Me.pcbPlayer2 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer4 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer3 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer1 = New System.Windows.Forms.PictureBox()
         Me.picMainScr = New System.Windows.Forms.PictureBox()
-        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
-        Me.btnExit = New System.Windows.Forms.Button()
+        Me.lblTest = New System.Windows.Forms.Label()
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -47,6 +48,7 @@ Partial Class frmMainScr
         'pnlMenu
         '
         Me.pnlMenu.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.pnlMenu.Controls.Add(Me.lblTest)
         Me.pnlMenu.Controls.Add(Me.btnExit)
         Me.pnlMenu.Controls.Add(Me.btnCharI)
         Me.pnlMenu.Controls.Add(Me.btnInv)
@@ -54,6 +56,15 @@ Partial Class frmMainScr
         Me.pnlMenu.Name = "pnlMenu"
         Me.pnlMenu.Size = New System.Drawing.Size(700, 100)
         Me.pnlMenu.TabIndex = 0
+        '
+        'btnExit
+        '
+        Me.btnExit.Location = New System.Drawing.Point(605, 1)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(92, 23)
+        Me.btnExit.TabIndex = 4
+        Me.btnExit.Text = "Exit Game"
+        Me.btnExit.UseVisualStyleBackColor = True
         '
         'btnCharI
         '
@@ -87,12 +98,16 @@ Partial Class frmMainScr
         Me.pnlMain.Size = New System.Drawing.Size(699, 415)
         Me.pnlMain.TabIndex = 3
         '
+        'tmrAnim
+        '
+        Me.tmrAnim.Interval = 200
+        '
         'pcbPlayer2
         '
         Me.pcbPlayer2.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pcbPlayer2.Image = Global.WindowsApplication1.My.Resources.Resources.warWalkL2
-        Me.pcbPlayer2.Location = New System.Drawing.Point(640, 330)
+        Me.pcbPlayer2.Location = New System.Drawing.Point(0, 330)
         Me.pcbPlayer2.Name = "pcbPlayer2"
         Me.pcbPlayer2.Size = New System.Drawing.Size(56, 67)
         Me.pcbPlayer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -105,7 +120,7 @@ Partial Class frmMainScr
         Me.pcbPlayer4.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pcbPlayer4.Image = Global.WindowsApplication1.My.Resources.Resources.warWalkL4
-        Me.pcbPlayer4.Location = New System.Drawing.Point(640, 330)
+        Me.pcbPlayer4.Location = New System.Drawing.Point(0, 330)
         Me.pcbPlayer4.Name = "pcbPlayer4"
         Me.pcbPlayer4.Size = New System.Drawing.Size(56, 67)
         Me.pcbPlayer4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -118,7 +133,7 @@ Partial Class frmMainScr
         Me.pcbPlayer3.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pcbPlayer3.Image = Global.WindowsApplication1.My.Resources.Resources.warWalkL3
-        Me.pcbPlayer3.Location = New System.Drawing.Point(640, 330)
+        Me.pcbPlayer3.Location = New System.Drawing.Point(0, 330)
         Me.pcbPlayer3.Name = "pcbPlayer3"
         Me.pcbPlayer3.Size = New System.Drawing.Size(56, 67)
         Me.pcbPlayer3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -131,7 +146,7 @@ Partial Class frmMainScr
         Me.pcbPlayer1.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pcbPlayer1.Image = Global.WindowsApplication1.My.Resources.Resources.warWalkL1
-        Me.pcbPlayer1.Location = New System.Drawing.Point(640, 330)
+        Me.pcbPlayer1.Location = New System.Drawing.Point(0, 330)
         Me.pcbPlayer1.Name = "pcbPlayer1"
         Me.pcbPlayer1.Size = New System.Drawing.Size(56, 67)
         Me.pcbPlayer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -148,18 +163,14 @@ Partial Class frmMainScr
         Me.picMainScr.TabIndex = 1
         Me.picMainScr.TabStop = False
         '
-        'tmrAnim
+        'lblTest
         '
-        Me.tmrAnim.Interval = 200
-        '
-        'btnExit
-        '
-        Me.btnExit.Location = New System.Drawing.Point(605, 1)
-        Me.btnExit.Name = "btnExit"
-        Me.btnExit.Size = New System.Drawing.Size(92, 23)
-        Me.btnExit.TabIndex = 4
-        Me.btnExit.Text = "Exit Game"
-        Me.btnExit.UseVisualStyleBackColor = True
+        Me.lblTest.AutoSize = True
+        Me.lblTest.Location = New System.Drawing.Point(17, 27)
+        Me.lblTest.Name = "lblTest"
+        Me.lblTest.Size = New System.Drawing.Size(42, 13)
+        Me.lblTest.TabIndex = 5
+        Me.lblTest.Text = "Testing"
         '
         'frmMainScr
         '
@@ -180,6 +191,7 @@ Partial Class frmMainScr
         Me.Text = "Main Screen"
         Me.TransparencyKey = System.Drawing.Color.White
         Me.pnlMenu.ResumeLayout(False)
+        Me.pnlMenu.PerformLayout()
         Me.pnlMain.ResumeLayout(False)
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -200,4 +212,5 @@ Partial Class frmMainScr
     Friend WithEvents pcbPlayer4 As PictureBox
     Friend WithEvents pcbPlayer3 As PictureBox
     Friend WithEvents btnExit As Button
+    Friend WithEvents lblTest As Label
 End Class

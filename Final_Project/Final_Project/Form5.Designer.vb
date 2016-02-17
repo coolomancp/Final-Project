@@ -32,7 +32,7 @@ Partial Class frmExitWarning
         '
         Me.lblWarning.AutoSize = True
         Me.lblWarning.Font = New System.Drawing.Font("Myriad Web Pro", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblWarning.Location = New System.Drawing.Point(83, 30)
+        Me.lblWarning.Location = New System.Drawing.Point(99, 30)
         Me.lblWarning.Name = "lblWarning"
         Me.lblWarning.Size = New System.Drawing.Size(164, 12)
         Me.lblWarning.TabIndex = 0
@@ -42,7 +42,7 @@ Partial Class frmExitWarning
         '
         Me.lblSaveWarn.AutoSize = True
         Me.lblSaveWarn.Font = New System.Drawing.Font("Myriad Web Pro", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSaveWarn.Location = New System.Drawing.Point(56, 42)
+        Me.lblSaveWarn.Location = New System.Drawing.Point(71, 42)
         Me.lblSaveWarn.Name = "lblSaveWarn"
         Me.lblSaveWarn.Size = New System.Drawing.Size(220, 12)
         Me.lblSaveWarn.TabIndex = 1

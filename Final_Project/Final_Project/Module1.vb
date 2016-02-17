@@ -24,4 +24,8 @@
     Public warWalkL2 As Image = My.Resources.warWalkL2 ' Second frame of warrior class walking left
     Public warWalkL3 As Image = My.Resources.warWalkL3 ' Third frame of warrior class walking left
     Public warWalkL4 As Image = My.Resources.warWalkL4 ' Fourth frame of warrior class walking left
+    Public warWalkR1 As Image = My.Resources.warWalkR1 ' First frame of warrior class walking right
+    Public warWalkR2 As Image = My.Resources.warWalkR2 ' Second frame of warrior class walking right
+    Public warWalkR3 As Image = My.Resources.warWalkR3 ' Third frame of warrior class walking right
+    Public warWalkR4 As Image = My.Resources.warWalkR4 ' Fourth frame of warrior class walking right
 End Module

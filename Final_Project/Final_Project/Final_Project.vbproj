@@ -213,6 +213,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\warWalkR4.png" />
+    <None Include="Resources\warWalkR3.png" />
+    <None Include="Resources\warWalkR2.png" />
+    <None Include="Resources\warWalkR1.png" />
     <None Include="Resources\warWalkL4.png" />
     <None Include="Resources\warWalkL3.png" />
     <None Include="Resources\warWalkL2.png" />

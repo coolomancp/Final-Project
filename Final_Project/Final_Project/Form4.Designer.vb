@@ -70,6 +70,10 @@ Partial Class frmLaunchScr
         Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.PictureBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(884, 442)
+        Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(884, 442)
         Me.Name = "frmLaunchScr"
         Me.Text = "Dungeon Crawler 2.0 [Demo]"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

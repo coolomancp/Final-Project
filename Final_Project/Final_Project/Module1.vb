@@ -18,8 +18,10 @@
     Public Structure playerInv ' Stores all of the player's inventory information
         Dim invS1 As String ' Player's first inventory slot
     End Structure
-    Public warWalkR As Image = My.Resources.warWalkR
-    Public warWalkL As Image = My.Resources.warWalkL
-    Public warIdleR As Image = My.Resources.warIdleR
-    Public warIdleL As Image = My.Resources.warIdleL
+    Public warIdleR As Image = My.Resources.warIdleR ' Character idle facing the right
+    Public warIdleL As Image = My.Resources.warIdleL ' Character idle facing the left
+    Public warWalkL1 As Image = My.Resources.warWalkL1 ' First frame of warrior class walking left
+    Public warWalkL2 As Image = My.Resources.warWalkL2 ' Second frame of warrior class walking left
+    Public warWalkL3 As Image = My.Resources.warWalkL3 ' Third frame of warrior class walking left
+    Public warWalkL4 As Image = My.Resources.warWalkL4 ' Fourth frame of warrior class walking left
 End Module

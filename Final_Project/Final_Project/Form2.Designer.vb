@@ -29,14 +29,15 @@ Partial Class frmInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(462, 511)
+        Me.ClientSize = New System.Drawing.Size(435, 441)
         Me.ControlBox = False
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(478, 550)
+        Me.MaximumSize = New System.Drawing.Size(451, 480)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(478, 550)
+        Me.MinimumSize = New System.Drawing.Size(451, 480)
         Me.Name = "frmInventory"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Inventory"
         Me.ResumeLayout(False)
 

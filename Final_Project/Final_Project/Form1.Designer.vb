@@ -688,6 +688,7 @@ Partial Class frmCharScreen
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(451, 472)
         Me.Name = "frmCharScreen"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Character Information"
         Me.pnlChestF.ResumeLayout(False)
         CType(Me.picChest, System.ComponentModel.ISupportInitialize).EndInit()

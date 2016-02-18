@@ -25,17 +25,17 @@ Partial Class frmMainScr
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMainScr))
         Me.pnlMenu = New System.Windows.Forms.Panel()
+        Me.lblTest = New System.Windows.Forms.Label()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnCharI = New System.Windows.Forms.Button()
         Me.btnInv = New System.Windows.Forms.Button()
         Me.pnlMain = New System.Windows.Forms.Panel()
-        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
         Me.pcbPlayer2 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer4 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer3 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer1 = New System.Windows.Forms.PictureBox()
         Me.picMainScr = New System.Windows.Forms.PictureBox()
-        Me.lblTest = New System.Windows.Forms.Label()
+        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +56,15 @@ Partial Class frmMainScr
         Me.pnlMenu.Name = "pnlMenu"
         Me.pnlMenu.Size = New System.Drawing.Size(700, 100)
         Me.pnlMenu.TabIndex = 0
+        '
+        'lblTest
+        '
+        Me.lblTest.AutoSize = True
+        Me.lblTest.Location = New System.Drawing.Point(17, 27)
+        Me.lblTest.Name = "lblTest"
+        Me.lblTest.Size = New System.Drawing.Size(42, 13)
+        Me.lblTest.TabIndex = 5
+        Me.lblTest.Text = "Testing"
         '
         'btnExit
         '
@@ -98,15 +107,11 @@ Partial Class frmMainScr
         Me.pnlMain.Size = New System.Drawing.Size(699, 415)
         Me.pnlMain.TabIndex = 3
         '
-        'tmrAnim
-        '
-        Me.tmrAnim.Interval = 200
-        '
         'pcbPlayer2
         '
         Me.pcbPlayer2.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer2.Image = Global.WindowsApplication1.My.Resources.Resources.warWalkL2
+        Me.pcbPlayer2.Image = Global.WindowsApplication1.My.Resources.Resources.warWalkR2
         Me.pcbPlayer2.Location = New System.Drawing.Point(0, 330)
         Me.pcbPlayer2.Name = "pcbPlayer2"
         Me.pcbPlayer2.Size = New System.Drawing.Size(56, 67)
@@ -163,14 +168,9 @@ Partial Class frmMainScr
         Me.picMainScr.TabIndex = 1
         Me.picMainScr.TabStop = False
         '
-        'lblTest
+        'tmrAnim
         '
-        Me.lblTest.AutoSize = True
-        Me.lblTest.Location = New System.Drawing.Point(17, 27)
-        Me.lblTest.Name = "lblTest"
-        Me.lblTest.Size = New System.Drawing.Size(42, 13)
-        Me.lblTest.TabIndex = 5
-        Me.lblTest.Text = "Testing"
+        Me.tmrAnim.Interval = 200
         '
         'frmMainScr
         '

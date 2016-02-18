@@ -10,23 +10,29 @@
     Dim charDir As Integer = 2 ' Player's direction
 
     Private Sub btnCharI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCharI.Click
-        If infStat = False Then ' Checks if the inventory screen is closed
-            charInfoScr.Show() ' Opens the inventory screen
-            infStat = True ' Inventory screen status is set as open
-        ElseIf infStat = True Then ' Checks if the inventory screen is open
-            charInfoScr.Hide() ' Closes the inventory screen
-            infStat = False ' Inventory screen status is set to closed
+        If infStat = False Then ' Checks if the character info screen is closed
+            ' Places character information screen on the left side of the main screen
+            charInfoScr.Left = Location.X \ 4 + 7
+            charInfoScr.Top = Location.Y + Location.Y \ 3
+            charInfoScr.Show() ' Opens the character info screen
+            infStat = True ' Character info screen status is set as open
+        ElseIf infStat = True Then ' Checks if the character info screen is open
+            charInfoScr.Hide() ' Closes the character info screen
+            infStat = False ' Character info screen status is set to closed
         End If
     End Sub
 
     Private Sub btnInv_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInv.Click
         ' Launches inventory screen if it's closed. Closes inventory screen if it's open
-        If invStat = False Then ' 
-            inventoryScr.Show()
-            invStat = True
-        ElseIf invStat = True Then
-            inventoryScr.Hide()
-            invStat = False
+        If invStat = False Then ' Checks if the inventory screen is closed
+            ' Places inventory screen on the right side of the main screen
+            inventoryScr.Left = Location.X * 2 - Location.X \ 2 + inventoryScr.Size.Width - 21
+            inventoryScr.Top = Location.Y + Location.Y \ 3
+            inventoryScr.Show() ' Opens the inventory screen
+            invStat = True ' Inventory screen status is set as open
+        ElseIf invStat = True Then ' Checks if the inventory screen is open
+            inventoryScr.Hide() ' Closes the inventory screen
+            invStat = False ' Inventory screen status is set to closed
         End If
     End Sub
 
@@ -106,7 +112,6 @@
                 charDir = 2 ' Character's direction set to "right"
                 charX = charX + charMovSpd ' Updates player's x coord (Increase)
         End Select
-        lblTest.Text = charX
     End Sub
 
     Private Sub frmMainScr_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp

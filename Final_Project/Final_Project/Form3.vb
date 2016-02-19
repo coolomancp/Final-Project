@@ -1,4 +1,5 @@
-﻿Public Class frmMainScr
+﻿Imports WMPLib
+Public Class frmMainScr
     Dim inventoryScr As New frmInventory ' Inventory screen is loaded (hidden)
     Dim charInfoScr As New frmCharScreen ' Character Info screen is loaded (hidden)
     Dim exitWarning As New frmExitWarning ' Warns player to save before exiting
@@ -61,6 +62,13 @@
         pcbPlayer2.Location = New Point(charX, charY)
         pcbPlayer3.Location = New Point(charX, charY)
         pcbPlayer4.Location = New Point(charX, charY)
+        ' Sets background music
+        wmpMusic.URL = "G:\GitHub\Final-Project\Final_Project\Final_Project\Resources\bgmusicGreen.wav"
+        wmpMusic.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
+        ' Sets ambient sounds and sets ambient sound volume low
+        wmpAmbient.URL = "G:\GitHub\Final-Project\Final_Project\Final_Project\Resources\waterfallAmbient.wav"
+        wmpAmbient.settings.volume = 10
+        wmpAmbient.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
     End Sub
     Private Sub timeanim_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles tmrAnim.Tick
         ' Animates the player's character by turning one frame on as the previous frame is turned off

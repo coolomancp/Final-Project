@@ -30,12 +30,14 @@ Partial Class frmMainScr
         Me.btnCharI = New System.Windows.Forms.Button()
         Me.btnInv = New System.Windows.Forms.Button()
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
         Me.pcbPlayer2 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer4 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer3 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer1 = New System.Windows.Forms.PictureBox()
         Me.picMainScr = New System.Windows.Forms.PictureBox()
-        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
+        Me.wmpMusic = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.wmpAmbient = New AxWMPLib.AxWindowsMediaPlayer()
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -43,6 +45,8 @@ Partial Class frmMainScr
         CType(Me.pcbPlayer3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMainScr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlMenu
@@ -97,6 +101,8 @@ Partial Class frmMainScr
         '
         'pnlMain
         '
+        Me.pnlMain.Controls.Add(Me.wmpAmbient)
+        Me.pnlMain.Controls.Add(Me.wmpMusic)
         Me.pnlMain.Controls.Add(Me.pcbPlayer2)
         Me.pnlMain.Controls.Add(Me.pcbPlayer4)
         Me.pnlMain.Controls.Add(Me.pcbPlayer3)
@@ -106,6 +112,10 @@ Partial Class frmMainScr
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(699, 415)
         Me.pnlMain.TabIndex = 3
+        '
+        'tmrAnim
+        '
+        Me.tmrAnim.Interval = 200
         '
         'pcbPlayer2
         '
@@ -168,9 +178,25 @@ Partial Class frmMainScr
         Me.picMainScr.TabIndex = 1
         Me.picMainScr.TabStop = False
         '
-        'tmrAnim
+        'wmpMusic
         '
-        Me.tmrAnim.Interval = 200
+        Me.wmpMusic.Enabled = True
+        Me.wmpMusic.Location = New System.Drawing.Point(323, 224)
+        Me.wmpMusic.Name = "wmpMusic"
+        Me.wmpMusic.OcxState = CType(resources.GetObject("wmpMusic.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
+        Me.wmpMusic.TabIndex = 4
+        Me.wmpMusic.Visible = False
+        '
+        'wmpAmbient
+        '
+        Me.wmpAmbient.Enabled = True
+        Me.wmpAmbient.Location = New System.Drawing.Point(323, 139)
+        Me.wmpAmbient.Name = "wmpAmbient"
+        Me.wmpAmbient.OcxState = CType(resources.GetObject("wmpAmbient.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.wmpAmbient.Size = New System.Drawing.Size(75, 23)
+        Me.wmpAmbient.TabIndex = 6
+        Me.wmpAmbient.Visible = False
         '
         'frmMainScr
         '
@@ -198,6 +224,8 @@ Partial Class frmMainScr
         CType(Me.pcbPlayer3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picMainScr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -213,4 +241,6 @@ Partial Class frmMainScr
     Friend WithEvents pcbPlayer3 As PictureBox
     Friend WithEvents btnExit As Button
     Friend WithEvents lblTest As Label
+    Friend WithEvents wmpMusic As AxWMPLib.AxWindowsMediaPlayer
+    Friend WithEvents wmpAmbient As AxWMPLib.AxWindowsMediaPlayer
 End Class

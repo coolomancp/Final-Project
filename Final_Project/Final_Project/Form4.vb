@@ -1,9 +1,7 @@
 ﻿Public Class frmLaunchScr
-    Dim loadScr As New frmLoadScr
-    Dim mainScr As New frmMainScr
-    Dim playerInf As playerInfo
     Private Sub btnNew_Click(sender As Object, e As EventArgs) Handles btnNew.Click
-        'Me.Hide() ' Hides launch screen
+        Me.Hide() ' Hides launch screen
+        creation.Show() ' Shows character creation screen
     End Sub
 
     Private Sub frmLaunchScr_Load(sender As Object, e As EventArgs) Handles MyBase.Load

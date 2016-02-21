@@ -2,7 +2,7 @@
 Public Class frmLoadScr
     Dim usrSelection As String
     Dim file2 As String
-    Dim playerInf As playerInfo
+    'Dim playerInf As playerInfo
     Private Sub frmLoadScr_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Checks saves file for save files
         For Each foundFile As String In
@@ -43,9 +43,7 @@ Public Class frmLoadScr
             playerInf.activeWepR = r.ReadLine
             playerInf.charClass = r.ReadLine
         End Using
-        MsgBox(playerInf.HP)
         ' Launches main window and hides load screen
-        Dim mainScr As New frmMainScr
         mainScr.Show()
         Me.Hide()
     End Sub

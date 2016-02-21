@@ -26,18 +26,18 @@ Partial Class frmMainScr
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMainScr))
         Me.pnlMenu = New System.Windows.Forms.Panel()
         Me.lblTest = New System.Windows.Forms.Label()
-        Me.btnExit = New System.Windows.Forms.Button()
-        Me.btnCharI = New System.Windows.Forms.Button()
-        Me.btnInv = New System.Windows.Forms.Button()
         Me.pnlMain = New System.Windows.Forms.Panel()
         Me.wmpAmbient = New AxWMPLib.AxWindowsMediaPlayer()
         Me.wmpMusic = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
+        Me.btnExit = New System.Windows.Forms.Button()
+        Me.btnCharI = New System.Windows.Forms.Button()
+        Me.btnInv = New System.Windows.Forms.Button()
         Me.pcbPlayer2 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer4 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer3 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer1 = New System.Windows.Forms.PictureBox()
         Me.picMainScr = New System.Windows.Forms.PictureBox()
-        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
         CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,6 +69,44 @@ Partial Class frmMainScr
         Me.lblTest.Size = New System.Drawing.Size(42, 13)
         Me.lblTest.TabIndex = 5
         Me.lblTest.Text = "Testing"
+        '
+        'pnlMain
+        '
+        Me.pnlMain.Controls.Add(Me.wmpAmbient)
+        Me.pnlMain.Controls.Add(Me.wmpMusic)
+        Me.pnlMain.Controls.Add(Me.pcbPlayer2)
+        Me.pnlMain.Controls.Add(Me.pcbPlayer4)
+        Me.pnlMain.Controls.Add(Me.pcbPlayer3)
+        Me.pnlMain.Controls.Add(Me.pcbPlayer1)
+        Me.pnlMain.Controls.Add(Me.picMainScr)
+        Me.pnlMain.Location = New System.Drawing.Point(13, 12)
+        Me.pnlMain.Name = "pnlMain"
+        Me.pnlMain.Size = New System.Drawing.Size(699, 415)
+        Me.pnlMain.TabIndex = 3
+        '
+        'wmpAmbient
+        '
+        Me.wmpAmbient.Enabled = True
+        Me.wmpAmbient.Location = New System.Drawing.Point(323, 139)
+        Me.wmpAmbient.Name = "wmpAmbient"
+        Me.wmpAmbient.OcxState = CType(resources.GetObject("wmpAmbient.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.wmpAmbient.Size = New System.Drawing.Size(75, 23)
+        Me.wmpAmbient.TabIndex = 6
+        Me.wmpAmbient.Visible = False
+        '
+        'wmpMusic
+        '
+        Me.wmpMusic.Enabled = True
+        Me.wmpMusic.Location = New System.Drawing.Point(323, 224)
+        Me.wmpMusic.Name = "wmpMusic"
+        Me.wmpMusic.OcxState = CType(resources.GetObject("wmpMusic.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
+        Me.wmpMusic.TabIndex = 4
+        Me.wmpMusic.Visible = False
+        '
+        'tmrAnim
+        '
+        Me.tmrAnim.Interval = 200
         '
         'btnExit
         '
@@ -111,49 +149,14 @@ Partial Class frmMainScr
         Me.btnInv.Text = "Inventory"
         Me.btnInv.UseVisualStyleBackColor = False
         '
-        'pnlMain
-        '
-        Me.pnlMain.Controls.Add(Me.wmpAmbient)
-        Me.pnlMain.Controls.Add(Me.wmpMusic)
-        Me.pnlMain.Controls.Add(Me.pcbPlayer2)
-        Me.pnlMain.Controls.Add(Me.pcbPlayer4)
-        Me.pnlMain.Controls.Add(Me.pcbPlayer3)
-        Me.pnlMain.Controls.Add(Me.pcbPlayer1)
-        Me.pnlMain.Controls.Add(Me.picMainScr)
-        Me.pnlMain.Location = New System.Drawing.Point(13, 12)
-        Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(699, 415)
-        Me.pnlMain.TabIndex = 3
-        '
-        'wmpAmbient
-        '
-        Me.wmpAmbient.Enabled = True
-        Me.wmpAmbient.Location = New System.Drawing.Point(323, 139)
-        Me.wmpAmbient.Name = "wmpAmbient"
-        Me.wmpAmbient.OcxState = CType(resources.GetObject("wmpAmbient.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.wmpAmbient.Size = New System.Drawing.Size(75, 23)
-        Me.wmpAmbient.TabIndex = 6
-        Me.wmpAmbient.Visible = False
-        '
-        'wmpMusic
-        '
-        Me.wmpMusic.Enabled = True
-        Me.wmpMusic.Location = New System.Drawing.Point(323, 224)
-        Me.wmpMusic.Name = "wmpMusic"
-        Me.wmpMusic.OcxState = CType(resources.GetObject("wmpMusic.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
-        Me.wmpMusic.TabIndex = 4
-        Me.wmpMusic.Visible = False
-        '
         'pcbPlayer2
         '
         Me.pcbPlayer2.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer2.Image = Global.WindowsApplication1.My.Resources.Resources.warWalkR2
-        Me.pcbPlayer2.Location = New System.Drawing.Point(0, 330)
+        Me.pcbPlayer2.Location = New System.Drawing.Point(115, 330)
         Me.pcbPlayer2.Name = "pcbPlayer2"
-        Me.pcbPlayer2.Size = New System.Drawing.Size(56, 67)
-        Me.pcbPlayer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbPlayer2.Size = New System.Drawing.Size(72, 61)
+        Me.pcbPlayer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pcbPlayer2.TabIndex = 5
         Me.pcbPlayer2.TabStop = False
         Me.pcbPlayer2.Visible = False
@@ -162,11 +165,10 @@ Partial Class frmMainScr
         '
         Me.pcbPlayer4.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer4.Image = Global.WindowsApplication1.My.Resources.Resources.warWalkL4
-        Me.pcbPlayer4.Location = New System.Drawing.Point(0, 330)
+        Me.pcbPlayer4.Location = New System.Drawing.Point(54, 340)
         Me.pcbPlayer4.Name = "pcbPlayer4"
-        Me.pcbPlayer4.Size = New System.Drawing.Size(56, 67)
-        Me.pcbPlayer4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbPlayer4.Size = New System.Drawing.Size(38, 57)
+        Me.pcbPlayer4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pcbPlayer4.TabIndex = 4
         Me.pcbPlayer4.TabStop = False
         Me.pcbPlayer4.Visible = False
@@ -175,11 +177,10 @@ Partial Class frmMainScr
         '
         Me.pcbPlayer3.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer3.Image = Global.WindowsApplication1.My.Resources.Resources.warWalkL3
         Me.pcbPlayer3.Location = New System.Drawing.Point(0, 330)
         Me.pcbPlayer3.Name = "pcbPlayer3"
-        Me.pcbPlayer3.Size = New System.Drawing.Size(56, 67)
-        Me.pcbPlayer3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbPlayer3.Size = New System.Drawing.Size(38, 57)
+        Me.pcbPlayer3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pcbPlayer3.TabIndex = 3
         Me.pcbPlayer3.TabStop = False
         Me.pcbPlayer3.Visible = False
@@ -188,11 +189,10 @@ Partial Class frmMainScr
         '
         Me.pcbPlayer1.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer1.Image = Global.WindowsApplication1.My.Resources.Resources.warWalkL1
         Me.pcbPlayer1.Location = New System.Drawing.Point(0, 330)
         Me.pcbPlayer1.Name = "pcbPlayer1"
-        Me.pcbPlayer1.Size = New System.Drawing.Size(56, 67)
-        Me.pcbPlayer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbPlayer1.Size = New System.Drawing.Size(38, 57)
+        Me.pcbPlayer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pcbPlayer1.TabIndex = 2
         Me.pcbPlayer1.TabStop = False
         '
@@ -205,10 +205,6 @@ Partial Class frmMainScr
         Me.picMainScr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picMainScr.TabIndex = 1
         Me.picMainScr.TabStop = False
-        '
-        'tmrAnim
-        '
-        Me.tmrAnim.Interval = 200
         '
         'frmMainScr
         '
@@ -232,6 +228,7 @@ Partial Class frmMainScr
         Me.pnlMenu.ResumeLayout(False)
         Me.pnlMenu.PerformLayout()
         Me.pnlMain.ResumeLayout(False)
+        Me.pnlMain.PerformLayout()
         CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).EndInit()

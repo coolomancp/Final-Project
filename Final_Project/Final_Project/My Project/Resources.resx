@@ -208,4 +208,64 @@
   <data name="btnDefault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnDefault.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="magFlyL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magFlyL1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magFlyL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magFlyL2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magFlyL3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magFlyL3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magFlyL4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magFlyL4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magFlyR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magFlyR1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magFlyR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magFlyR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magFlyR3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magFlyR3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magFlyR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magFlyR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magIdleL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magIdleL.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magIdleR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magIdleR.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogIdleL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogIdleL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogIdleR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogIdleR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogWalkL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogWalkL1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogWalkL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogWalkL2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogWalkL3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogWalkL3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogWalkL4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogWalkL4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogWalkR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogWalkR1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogWalkR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogWalkR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogWalkR3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogWalkR3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogWalkR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogWalkR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

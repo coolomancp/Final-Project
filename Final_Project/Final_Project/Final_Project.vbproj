@@ -133,6 +133,12 @@
     <Compile Include="Form6.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form7.Designer.vb">
+      <DependentUpon>Form7.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form7.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Module1.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -168,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form6.resx">
       <DependentUpon>Form6.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form7.resx">
+      <DependentUpon>Form7.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -222,6 +231,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\magFlyL4.png" />
+    <None Include="Resources\magFlyL3.png" />
+    <None Include="Resources\magFlyL2.png" />
+    <None Include="Resources\magFlyL1.png" />
+    <None Include="Resources\magFlyR4.png" />
+    <None Include="Resources\magFlyR3.png" />
+    <None Include="Resources\magFlyR2.png" />
+    <None Include="Resources\magFlyR1.png" />
+    <None Include="Resources\magIdleR.gif" />
+    <None Include="Resources\magIdleL.gif" />
+    <None Include="Resources\rogIdleR.png" />
+    <None Include="Resources\rogIdleL.png" />
+    <None Include="Resources\rogWalkR4.png" />
+    <None Include="Resources\rogWalkR3.png" />
+    <None Include="Resources\rogWalkR2.png" />
+    <None Include="Resources\rogWalkR1.png" />
+    <None Include="Resources\rogWalkL4.png" />
+    <None Include="Resources\rogWalkL3.png" />
+    <None Include="Resources\rogWalkL2.png" />
+    <None Include="Resources\rogWalkL1.png" />
     <None Include="Resources\btnDefault.png" />
     <None Include="Resources\btnChaIn.png" />
     <None Include="Resources\btnInv.png" />

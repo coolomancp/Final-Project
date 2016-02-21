@@ -13,12 +13,5 @@ Testing
 (none)
 (none)
 (none)
-Warrior
-
-
-
-
-
-
-
-
+Mage
+0

@@ -68,12 +68,8 @@ Partial Class frmCharScreen
         Me.lblAgiVal = New System.Windows.Forms.Label()
         Me.pnlStats = New System.Windows.Forms.Panel()
         Me.lblManaVal = New System.Windows.Forms.Label()
-        Me.chkHelmVis = New System.Windows.Forms.CheckBox()
         Me.lblCharName = New System.Windows.Forms.Label()
         Me.lblCNVal = New System.Windows.Forms.Label()
-        Me.lblReName = New System.Windows.Forms.Label()
-        Me.txtChngCN = New System.Windows.Forms.TextBox()
-        Me.btnConfirmNC = New System.Windows.Forms.Button()
         Me.proBarHealthVal = New System.Windows.Forms.ProgressBar()
         Me.proBarManaVal = New System.Windows.Forms.ProgressBar()
         Me.pnlChestF.SuspendLayout()
@@ -547,19 +543,6 @@ Partial Class frmCharScreen
         Me.lblManaVal.TabIndex = 35
         Me.lblManaVal.Text = "(50/50)"
         '
-        'chkHelmVis
-        '
-        Me.chkHelmVis.AutoSize = True
-        Me.chkHelmVis.Checked = True
-        Me.chkHelmVis.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkHelmVis.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkHelmVis.Location = New System.Drawing.Point(254, 96)
-        Me.chkHelmVis.Name = "chkHelmVis"
-        Me.chkHelmVis.Size = New System.Drawing.Size(87, 17)
-        Me.chkHelmVis.TabIndex = 36
-        Me.chkHelmVis.Text = "Helm Visable"
-        Me.chkHelmVis.UseVisualStyleBackColor = True
-        '
         'lblCharName
         '
         Me.lblCharName.AutoSize = True
@@ -579,35 +562,6 @@ Partial Class frmCharScreen
         Me.lblCNVal.Size = New System.Drawing.Size(70, 15)
         Me.lblCNVal.TabIndex = 38
         Me.lblCNVal.Text = "[Undefined]"
-        '
-        'lblReName
-        '
-        Me.lblReName.AutoSize = True
-        Me.lblReName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblReName.Location = New System.Drawing.Point(152, 391)
-        Me.lblReName.Name = "lblReName"
-        Me.lblReName.Size = New System.Drawing.Size(58, 15)
-        Me.lblReName.TabIndex = 39
-        Me.lblReName.Text = "Rename:"
-        '
-        'txtChngCN
-        '
-        Me.txtChngCN.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtChngCN.Location = New System.Drawing.Point(207, 390)
-        Me.txtChngCN.MaxLength = 12
-        Me.txtChngCN.Name = "txtChngCN"
-        Me.txtChngCN.Size = New System.Drawing.Size(92, 21)
-        Me.txtChngCN.TabIndex = 40
-        '
-        'btnConfirmNC
-        '
-        Me.btnConfirmNC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfirmNC.Location = New System.Drawing.Point(219, 413)
-        Me.btnConfirmNC.Name = "btnConfirmNC"
-        Me.btnConfirmNC.Size = New System.Drawing.Size(63, 26)
-        Me.btnConfirmNC.TabIndex = 41
-        Me.btnConfirmNC.Text = "Confirm"
-        Me.btnConfirmNC.UseVisualStyleBackColor = True
         '
         'proBarHealthVal
         '
@@ -642,12 +596,8 @@ Partial Class frmCharScreen
         Me.ControlBox = False
         Me.Controls.Add(Me.proBarManaVal)
         Me.Controls.Add(Me.proBarHealthVal)
-        Me.Controls.Add(Me.btnConfirmNC)
-        Me.Controls.Add(Me.txtChngCN)
-        Me.Controls.Add(Me.lblReName)
         Me.Controls.Add(Me.lblCNVal)
         Me.Controls.Add(Me.lblCharName)
-        Me.Controls.Add(Me.chkHelmVis)
         Me.Controls.Add(Me.lblManaVal)
         Me.Controls.Add(Me.pnlStats)
         Me.Controls.Add(Me.lblMana)
@@ -743,12 +693,8 @@ Partial Class frmCharScreen
     Friend WithEvents lblAgiVal As Label
     Friend WithEvents pnlStats As Panel
     Friend WithEvents lblManaVal As Label
-    Friend WithEvents chkHelmVis As CheckBox
     Friend WithEvents lblCharName As Label
     Friend WithEvents lblCNVal As Label
-    Friend WithEvents lblReName As Label
-    Friend WithEvents txtChngCN As TextBox
-    Friend WithEvents btnConfirmNC As Button
     Friend WithEvents proBarHealthVal As ProgressBar
     Friend WithEvents proBarManaVal As ProgressBar
     Friend WithEvents picHelm As System.Windows.Forms.PictureBox

@@ -1,22 +1,24 @@
 ﻿Module Module1
     Public Structure playerInfo ' Stores all of the player's information
-        Public HP As Integer ' Player's current health
-        Public HPM As Integer ' Player's max health
-        Public MP As Integer ' Player's current mana pool
-        Public MPM As Integer ' Player's max mana
-        Public name As String ' Player's current name
-        Public strength As Integer ' Player's strength stat
-        Public intelligence As Integer ' Player's intelligence stat
-        Public agility As Integer ' Player's agility stat
-        Public activeHelm As String ' Player's currently equipped helmet
-        Public activeChest As String ' Player's currently equipped chestpiece
-        Public activeLegs As String ' Player's currently equipped pants / leg armour
-        Public activeGloves As String ' Player's currently equipped gloves
-        Public activeBracers As String ' Player's currently equipped bracers
-        Public activeWepL As String ' Player's currently equipped left weapon / shield
-        Public activeWepR As String ' Player's currently equipped right weapon
-        Public charClass As String ' Player's class
+        Dim HP As Integer ' Player's current health
+        Dim HPM As Integer ' Player's max health
+        Dim MP As Integer ' Player's current mana pool
+        Dim MPM As Integer ' Player's max mana
+        Dim name As String ' Player's current name
+        Dim strength As Integer ' Player's strength stat
+        Dim intelligence As Integer ' Player's intelligence stat
+        Dim agility As Integer ' Player's agility stat
+        Dim activeHelm As String ' Player's currently equipped helmet
+        Dim activeChest As String ' Player's currently equipped chestpiece
+        Dim activeLegs As String ' Player's currently equipped pants / leg armour
+        Dim activeGloves As String ' Player's currently equipped gloves
+        Dim activeBracers As String ' Player's currently equipped bracers
+        Dim activeWepL As String ' Player's currently equipped left weapon / shield
+        Dim activeWepR As String ' Player's currently equipped right weapon
+        Dim charClass As String ' Player's class
     End Structure
+    Dim playerInf As playerInfo
+    Public save() As String = {playerInf.name, playerInf.HP, playerInf.HPM, playerInf.MP, playerInf.MPM, playerInf.strength, playerInf.intelligence, playerInf.agility, playerInf.activeBracers, playerInf.activeChest, playerInf.activeGloves, playerInf.activeHelm, playerInf.activeLegs, playerInf.activeWepL, playerInf.activeWepR, playerInf.charClass}
     Public Structure playerInv ' Stores all of the player's inventory information
         Dim invS1 As String ' Player's first inventory slot
     End Structure

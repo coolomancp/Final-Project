@@ -50,7 +50,6 @@ Partial Class frmLoadScr
         'lstSaves
         '
         Me.lstSaves.FormattingEnabled = True
-        Me.lstSaves.Items.AddRange(New Object() {"Save1", "Save2"})
         Me.lstSaves.Location = New System.Drawing.Point(12, 12)
         Me.lstSaves.Name = "lstSaves"
         Me.lstSaves.Size = New System.Drawing.Size(444, 485)

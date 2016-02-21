@@ -28,25 +28,25 @@ Partial Class frmMainScr
         Me.lblTest = New System.Windows.Forms.Label()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnCharI = New System.Windows.Forms.Button()
-        Me.btnInv = New System.Windows.Forms.Button()
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.wmpAmbient = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.wmpMusic = New AxWMPLib.AxWindowsMediaPlayer()
         Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
+        Me.btnInv = New System.Windows.Forms.Button()
         Me.pcbPlayer2 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer4 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer3 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer1 = New System.Windows.Forms.PictureBox()
         Me.picMainScr = New System.Windows.Forms.PictureBox()
-        Me.wmpMusic = New AxWMPLib.AxWindowsMediaPlayer()
-        Me.wmpAmbient = New AxWMPLib.AxWindowsMediaPlayer()
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
+        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMainScr, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlMenu
@@ -72,6 +72,9 @@ Partial Class frmMainScr
         '
         'btnExit
         '
+        Me.btnExit.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnDefault
+        Me.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExit.Location = New System.Drawing.Point(605, 1)
         Me.btnExit.Name = "btnExit"
         Me.btnExit.Size = New System.Drawing.Size(92, 23)
@@ -81,6 +84,9 @@ Partial Class frmMainScr
         '
         'btnCharI
         '
+        Me.btnCharI.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnChaIn
+        Me.btnCharI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnCharI.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCharI.Font = New System.Drawing.Font("Myriad Web Pro", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCharI.Location = New System.Drawing.Point(605, 27)
         Me.btnCharI.Name = "btnCharI"
@@ -88,16 +94,6 @@ Partial Class frmMainScr
         Me.btnCharI.TabIndex = 1
         Me.btnCharI.Text = "Char Info"
         Me.btnCharI.UseVisualStyleBackColor = True
-        '
-        'btnInv
-        '
-        Me.btnInv.Font = New System.Drawing.Font("Myriad Web Pro", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInv.Location = New System.Drawing.Point(605, 63)
-        Me.btnInv.Name = "btnInv"
-        Me.btnInv.Size = New System.Drawing.Size(92, 34)
-        Me.btnInv.TabIndex = 0
-        Me.btnInv.Text = "Inventory"
-        Me.btnInv.UseVisualStyleBackColor = True
         '
         'pnlMain
         '
@@ -113,9 +109,44 @@ Partial Class frmMainScr
         Me.pnlMain.Size = New System.Drawing.Size(699, 415)
         Me.pnlMain.TabIndex = 3
         '
+        'wmpAmbient
+        '
+        Me.wmpAmbient.Enabled = True
+        Me.wmpAmbient.Location = New System.Drawing.Point(323, 139)
+        Me.wmpAmbient.Name = "wmpAmbient"
+        Me.wmpAmbient.OcxState = CType(resources.GetObject("wmpAmbient.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.wmpAmbient.Size = New System.Drawing.Size(75, 23)
+        Me.wmpAmbient.TabIndex = 6
+        Me.wmpAmbient.Visible = False
+        '
+        'wmpMusic
+        '
+        Me.wmpMusic.Enabled = True
+        Me.wmpMusic.Location = New System.Drawing.Point(323, 224)
+        Me.wmpMusic.Name = "wmpMusic"
+        Me.wmpMusic.OcxState = CType(resources.GetObject("wmpMusic.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
+        Me.wmpMusic.TabIndex = 4
+        Me.wmpMusic.Visible = False
+        '
         'tmrAnim
         '
         Me.tmrAnim.Interval = 200
+        '
+        'btnInv
+        '
+        Me.btnInv.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.btnInv.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnInv
+        Me.btnInv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnInv.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnInv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInv.Font = New System.Drawing.Font("Myriad Web Pro", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInv.Location = New System.Drawing.Point(605, 63)
+        Me.btnInv.Name = "btnInv"
+        Me.btnInv.Size = New System.Drawing.Size(92, 34)
+        Me.btnInv.TabIndex = 0
+        Me.btnInv.Text = "Inventory"
+        Me.btnInv.UseVisualStyleBackColor = False
         '
         'pcbPlayer2
         '
@@ -178,26 +209,6 @@ Partial Class frmMainScr
         Me.picMainScr.TabIndex = 1
         Me.picMainScr.TabStop = False
         '
-        'wmpMusic
-        '
-        Me.wmpMusic.Enabled = True
-        Me.wmpMusic.Location = New System.Drawing.Point(323, 224)
-        Me.wmpMusic.Name = "wmpMusic"
-        Me.wmpMusic.OcxState = CType(resources.GetObject("wmpMusic.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
-        Me.wmpMusic.TabIndex = 4
-        Me.wmpMusic.Visible = False
-        '
-        'wmpAmbient
-        '
-        Me.wmpAmbient.Enabled = True
-        Me.wmpAmbient.Location = New System.Drawing.Point(323, 139)
-        Me.wmpAmbient.Name = "wmpAmbient"
-        Me.wmpAmbient.OcxState = CType(resources.GetObject("wmpAmbient.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.wmpAmbient.Size = New System.Drawing.Size(75, 23)
-        Me.wmpAmbient.TabIndex = 6
-        Me.wmpAmbient.Visible = False
-        '
         'frmMainScr
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -219,13 +230,13 @@ Partial Class frmMainScr
         Me.pnlMenu.ResumeLayout(False)
         Me.pnlMenu.PerformLayout()
         Me.pnlMain.ResumeLayout(False)
+        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picMainScr, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

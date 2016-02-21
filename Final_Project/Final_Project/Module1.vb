@@ -28,4 +28,5 @@
     Public warWalkR2 As Image = My.Resources.warWalkR2 ' Second frame of warrior class walking right
     Public warWalkR3 As Image = My.Resources.warWalkR3 ' Third frame of warrior class walking right
     Public warWalkR4 As Image = My.Resources.warWalkR4 ' Fourth frame of warrior class walking right
+    Public resPath As String = Replace(My.Application.Info.DirectoryPath, "\bin\Debug", "\Resources\") ' Path to the resource files to allow use in any directory
 End Module

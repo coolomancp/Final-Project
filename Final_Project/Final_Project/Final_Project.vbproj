@@ -213,6 +213,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\btnDefault.png" />
+    <None Include="Resources\btnChaIn.png" />
+    <None Include="Resources\btnInv.png" />
+    <None Include="Resources\NLogo.png" />
+    <None Include="Resources\TitleScreenN.gif" />
     <None Include="Resources\test.wav" />
     <None Include="Resources\waterfallAmbient.wav" />
     <None Include="Resources\bgmusicGreen.wav" />

@@ -4,6 +4,7 @@ Public Class frmMainScr
     Dim inventoryScr As New frmInventory ' Inventory screen is loaded (hidden)
     Dim charInfoScr As New frmCharScreen ' Character Info screen is loaded (hidden)
     Dim exitWarning As New frmExitWarning ' Warns player to save before exiting
+    Dim playerInf As playerInfo
     Dim invStat As Boolean = False ' Default status of the inventory screen is hidden
     Dim infStat As Boolean = False ' Default status of the char info screen is hidden
     Dim charX As Integer = 0 ' Player's starting x coord
@@ -12,6 +13,22 @@ Public Class frmMainScr
     Dim charDir As Integer = 2 ' Player's direction
 
     Private Sub btnCharI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCharI.Click
+        ' Sets all of the comboboxes starting text to the player's current equipment
+        charInfoScr.cboBracer.Text = playerInf.activeBracers
+        charInfoScr.cboChest.Text = playerInf.activeChest
+        charInfoScr.cboGloves.Text = playerInf.activeGloves
+        charInfoScr.cboHead.Text = playerInf.activeHelm
+        charInfoScr.cboLegs.Text = playerInf.activeLegs
+        charInfoScr.cboLHand.Text = playerInf.activeWepL
+        charInfoScr.cboRHand.Text = playerInf.activeWepR
+        ' Updates all of the player's stats
+        charInfoScr.lblDPSVal.Text = "WIP"
+        charInfoScr.lblArmorVal.Text = "WIP"
+        charInfoScr.lblStrVal.Text = Convert.ToString(playerInf.strength)
+        charInfoScr.lblIntelVal.Text = Convert.ToString(playerInf.intelligence)
+        charInfoScr.lblAgiVal.Text = Convert.ToString(playerInf.agility)
+        charInfoScr.lblHPVal.Text = "(" & Convert.ToString(playerInf.HP) & "/" & Convert.ToString(playerInf.HPM) & ")"
+        charInfoScr.lblManaVal.Text = "(" & Convert.ToString(playerInf.MP) & "/" & Convert.ToString(playerInf.MPM) & ")"
         If infStat = False Then ' Checks if the character info screen is closed
             ' Places character information screen on the left side of the main screen
             charInfoScr.Left = Location.X \ 4 + 7

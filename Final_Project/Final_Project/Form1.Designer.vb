@@ -394,7 +394,7 @@ Partial Class frmCharScreen
         Me.btnSav.Name = "btnSav"
         Me.btnSav.Size = New System.Drawing.Size(79, 26)
         Me.btnSav.TabIndex = 20
-        Me.btnSav.Text = "Save set"
+        Me.btnSav.Text = "Save"
         Me.btnSav.UseVisualStyleBackColor = True
         '
         'lblStats
@@ -474,9 +474,8 @@ Partial Class frmCharScreen
         Me.lblDPSVal.ForeColor = System.Drawing.Color.Yellow
         Me.lblDPSVal.Location = New System.Drawing.Point(56, 30)
         Me.lblDPSVal.Name = "lblDPSVal"
-        Me.lblDPSVal.Size = New System.Drawing.Size(21, 15)
+        Me.lblDPSVal.Size = New System.Drawing.Size(0, 15)
         Me.lblDPSVal.TabIndex = 28
-        Me.lblDPSVal.Text = "34"
         '
         'lblArmorVal
         '
@@ -485,9 +484,8 @@ Partial Class frmCharScreen
         Me.lblArmorVal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.lblArmorVal.Location = New System.Drawing.Point(56, 44)
         Me.lblArmorVal.Name = "lblArmorVal"
-        Me.lblArmorVal.Size = New System.Drawing.Size(21, 15)
+        Me.lblArmorVal.Size = New System.Drawing.Size(0, 15)
         Me.lblArmorVal.TabIndex = 29
-        Me.lblArmorVal.Text = "25"
         '
         'lblIntelVal
         '
@@ -496,9 +494,8 @@ Partial Class frmCharScreen
         Me.lblIntelVal.ForeColor = System.Drawing.Color.Blue
         Me.lblIntelVal.Location = New System.Drawing.Point(84, 69)
         Me.lblIntelVal.Name = "lblIntelVal"
-        Me.lblIntelVal.Size = New System.Drawing.Size(14, 15)
+        Me.lblIntelVal.Size = New System.Drawing.Size(0, 15)
         Me.lblIntelVal.TabIndex = 30
-        Me.lblIntelVal.Text = "5"
         '
         'lblStrVal
         '
@@ -507,9 +504,8 @@ Partial Class frmCharScreen
         Me.lblStrVal.ForeColor = System.Drawing.Color.Red
         Me.lblStrVal.Location = New System.Drawing.Point(84, 82)
         Me.lblStrVal.Name = "lblStrVal"
-        Me.lblStrVal.Size = New System.Drawing.Size(21, 15)
+        Me.lblStrVal.Size = New System.Drawing.Size(0, 15)
         Me.lblStrVal.TabIndex = 31
-        Me.lblStrVal.Text = "20"
         '
         'lblAgiVal
         '
@@ -518,9 +514,8 @@ Partial Class frmCharScreen
         Me.lblAgiVal.ForeColor = System.Drawing.Color.Lime
         Me.lblAgiVal.Location = New System.Drawing.Point(84, 94)
         Me.lblAgiVal.Name = "lblAgiVal"
-        Me.lblAgiVal.Size = New System.Drawing.Size(21, 15)
+        Me.lblAgiVal.Size = New System.Drawing.Size(0, 15)
         Me.lblAgiVal.TabIndex = 32
-        Me.lblAgiVal.Text = "11"
         '
         'pnlStats
         '
@@ -607,7 +602,7 @@ Partial Class frmCharScreen
         'btnConfirmNC
         '
         Me.btnConfirmNC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfirmNC.Location = New System.Drawing.Point(219, 414)
+        Me.btnConfirmNC.Location = New System.Drawing.Point(219, 413)
         Me.btnConfirmNC.Name = "btnConfirmNC"
         Me.btnConfirmNC.Size = New System.Drawing.Size(63, 26)
         Me.btnConfirmNC.TabIndex = 41

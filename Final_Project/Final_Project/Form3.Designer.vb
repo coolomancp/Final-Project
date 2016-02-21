@@ -28,16 +28,16 @@ Partial Class frmMainScr
         Me.lblTest = New System.Windows.Forms.Label()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnCharI = New System.Windows.Forms.Button()
+        Me.btnInv = New System.Windows.Forms.Button()
         Me.pnlMain = New System.Windows.Forms.Panel()
         Me.wmpAmbient = New AxWMPLib.AxWindowsMediaPlayer()
         Me.wmpMusic = New AxWMPLib.AxWindowsMediaPlayer()
-        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
-        Me.btnInv = New System.Windows.Forms.Button()
         Me.pcbPlayer2 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer4 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer3 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer1 = New System.Windows.Forms.PictureBox()
         Me.picMainScr = New System.Windows.Forms.PictureBox()
+        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
         CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,6 +74,7 @@ Partial Class frmMainScr
         '
         Me.btnExit.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnDefault
         Me.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnExit.Location = New System.Drawing.Point(605, 1)
         Me.btnExit.Name = "btnExit"
@@ -94,6 +95,21 @@ Partial Class frmMainScr
         Me.btnCharI.TabIndex = 1
         Me.btnCharI.Text = "Char Info"
         Me.btnCharI.UseVisualStyleBackColor = True
+        '
+        'btnInv
+        '
+        Me.btnInv.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.btnInv.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnInv
+        Me.btnInv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnInv.Cursor = System.Windows.Forms.Cursors.Default
+        Me.btnInv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnInv.Font = New System.Drawing.Font("Myriad Web Pro", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnInv.Location = New System.Drawing.Point(605, 63)
+        Me.btnInv.Name = "btnInv"
+        Me.btnInv.Size = New System.Drawing.Size(92, 34)
+        Me.btnInv.TabIndex = 0
+        Me.btnInv.Text = "Inventory"
+        Me.btnInv.UseVisualStyleBackColor = False
         '
         'pnlMain
         '
@@ -128,25 +144,6 @@ Partial Class frmMainScr
         Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
         Me.wmpMusic.TabIndex = 4
         Me.wmpMusic.Visible = False
-        '
-        'tmrAnim
-        '
-        Me.tmrAnim.Interval = 200
-        '
-        'btnInv
-        '
-        Me.btnInv.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.btnInv.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnInv
-        Me.btnInv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnInv.Cursor = System.Windows.Forms.Cursors.Default
-        Me.btnInv.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnInv.Font = New System.Drawing.Font("Myriad Web Pro", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnInv.Location = New System.Drawing.Point(605, 63)
-        Me.btnInv.Name = "btnInv"
-        Me.btnInv.Size = New System.Drawing.Size(92, 34)
-        Me.btnInv.TabIndex = 0
-        Me.btnInv.Text = "Inventory"
-        Me.btnInv.UseVisualStyleBackColor = False
         '
         'pcbPlayer2
         '
@@ -209,11 +206,16 @@ Partial Class frmMainScr
         Me.picMainScr.TabIndex = 1
         Me.picMainScr.TabStop = False
         '
+        'tmrAnim
+        '
+        Me.tmrAnim.Interval = 200
+        '
         'frmMainScr
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.CancelButton = Me.btnExit
         Me.ClientSize = New System.Drawing.Size(724, 545)
         Me.ControlBox = False
         Me.Controls.Add(Me.pnlMenu)

@@ -1,7 +1,9 @@
 ﻿Module Module1
     Public Structure playerInfo ' Stores all of the player's information
         Dim HP As Integer ' Player's current health
+        Dim HPM As Integer ' Player's max health
         Dim MP As Integer ' Player's current mana pool
+        Dim MPM As Integer ' Player's max mana
         Dim name As String ' Player's current name
         Dim strength As Integer ' Player's strength stat
         Dim intelligence As Integer ' Player's intelligence stat
@@ -13,8 +15,10 @@
         Dim activeBracers As String ' Player's currently equipped bracers
         Dim activeWepL As String ' Player's currently equipped left weapon / shield
         Dim activeWepR As String ' Player's currently equipped right weapon
-        Dim charClass As Integer ' Player's class
+        Dim charClass As String ' Player's class
     End Structure
+    Dim playerInf As playerInfo
+    Public save() As String = {playerInf.name, playerInf.HP, playerInf.HPM, playerInf.MP, playerInf.MPM, playerInf.strength, playerInf.intelligence, playerInf.agility, playerInf.activeBracers, playerInf.activeChest, playerInf.activeGloves, playerInf.activeHelm, playerInf.activeLegs, playerInf.activeWepL, playerInf.activeWepR, playerInf.charClass}
     Public Structure playerInv ' Stores all of the player's inventory information
         Dim invS1 As String ' Player's first inventory slot
     End Structure

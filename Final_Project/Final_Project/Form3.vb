@@ -56,6 +56,7 @@ Public Class frmMainScr
     End Sub
 
     Private Sub frmMainScr_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        MsgBox(playerInf.HP)
         KeyPreview = True ' Form accepts indirect keyboard input
         ' Sets each character frame's parent to the background to allow transparency
         With pcbPlayer1

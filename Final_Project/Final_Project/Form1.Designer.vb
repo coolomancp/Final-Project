@@ -72,6 +72,8 @@ Partial Class frmCharScreen
         Me.lblCNVal = New System.Windows.Forms.Label()
         Me.proBarHealthVal = New System.Windows.Forms.ProgressBar()
         Me.proBarManaVal = New System.Windows.Forms.ProgressBar()
+        Me.lblLevel = New System.Windows.Forms.Label()
+        Me.lblLvl = New System.Windows.Forms.Label()
         Me.pnlChestF.SuspendLayout()
         CType(Me.picChest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlHeadF.SuspendLayout()
@@ -299,12 +301,12 @@ Partial Class frmCharScreen
         '
         Me.lblHPVal.AutoSize = True
         Me.lblHPVal.BackColor = System.Drawing.Color.Transparent
-        Me.lblHPVal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHPVal.Location = New System.Drawing.Point(2, 28)
+        Me.lblHPVal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHPVal.Location = New System.Drawing.Point(26, 28)
         Me.lblHPVal.Name = "lblHPVal"
-        Me.lblHPVal.Size = New System.Drawing.Size(87, 24)
+        Me.lblHPVal.Size = New System.Drawing.Size(34, 16)
         Me.lblHPVal.TabIndex = 12
-        Me.lblHPVal.Text = "(213/250)"
+        Me.lblHPVal.Text = "(1/1)"
         '
         'cboLHand
         '
@@ -457,7 +459,7 @@ Partial Class frmCharScreen
         '
         Me.lblMana.AutoSize = True
         Me.lblMana.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblMana.Location = New System.Drawing.Point(22, 53)
+        Me.lblMana.Location = New System.Drawing.Point(19, 54)
         Me.lblMana.Name = "lblMana"
         Me.lblMana.Size = New System.Drawing.Size(62, 24)
         Me.lblMana.TabIndex = 27
@@ -536,20 +538,20 @@ Partial Class frmCharScreen
         '
         Me.lblManaVal.AutoSize = True
         Me.lblManaVal.BackColor = System.Drawing.Color.Transparent
-        Me.lblManaVal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblManaVal.Location = New System.Drawing.Point(17, 73)
+        Me.lblManaVal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblManaVal.Location = New System.Drawing.Point(32, 73)
         Me.lblManaVal.Name = "lblManaVal"
-        Me.lblManaVal.Size = New System.Drawing.Size(67, 24)
+        Me.lblManaVal.Size = New System.Drawing.Size(34, 16)
         Me.lblManaVal.TabIndex = 35
-        Me.lblManaVal.Text = "(50/50)"
+        Me.lblManaVal.Text = "(1/1)"
         '
         'lblCharName
         '
         Me.lblCharName.AutoSize = True
-        Me.lblCharName.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCharName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCharName.Location = New System.Drawing.Point(163, 366)
         Me.lblCharName.Name = "lblCharName"
-        Me.lblCharName.Size = New System.Drawing.Size(44, 15)
+        Me.lblCharName.Size = New System.Drawing.Size(49, 15)
         Me.lblCharName.TabIndex = 37
         Me.lblCharName.Text = "Name:"
         '
@@ -557,7 +559,7 @@ Partial Class frmCharScreen
         '
         Me.lblCNVal.AutoSize = True
         Me.lblCNVal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCNVal.Location = New System.Drawing.Point(199, 366)
+        Me.lblCNVal.Location = New System.Drawing.Point(213, 366)
         Me.lblCNVal.Name = "lblCNVal"
         Me.lblCNVal.Size = New System.Drawing.Size(70, 15)
         Me.lblCNVal.TabIndex = 38
@@ -573,7 +575,7 @@ Partial Class frmCharScreen
         Me.proBarHealthVal.Step = 1
         Me.proBarHealthVal.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.proBarHealthVal.TabIndex = 42
-        Me.proBarHealthVal.Value = 83
+        Me.proBarHealthVal.Value = 100
         '
         'proBarManaVal
         '
@@ -587,6 +589,25 @@ Partial Class frmCharScreen
         Me.proBarManaVal.TabIndex = 43
         Me.proBarManaVal.Value = 100
         '
+        'lblLevel
+        '
+        Me.lblLevel.AutoSize = True
+        Me.lblLevel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLevel.Location = New System.Drawing.Point(167, 400)
+        Me.lblLevel.Name = "lblLevel"
+        Me.lblLevel.Size = New System.Drawing.Size(45, 15)
+        Me.lblLevel.TabIndex = 44
+        Me.lblLevel.Text = "Level:"
+        '
+        'lblLvl
+        '
+        Me.lblLvl.AutoSize = True
+        Me.lblLvl.Location = New System.Drawing.Point(213, 402)
+        Me.lblLvl.Name = "lblLvl"
+        Me.lblLvl.Size = New System.Drawing.Size(13, 13)
+        Me.lblLvl.TabIndex = 45
+        Me.lblLvl.Text = "0"
+        '
         'frmCharScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -594,6 +615,8 @@ Partial Class frmCharScreen
         Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
         Me.ClientSize = New System.Drawing.Size(435, 441)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lblLvl)
+        Me.Controls.Add(Me.lblLevel)
         Me.Controls.Add(Me.proBarManaVal)
         Me.Controls.Add(Me.proBarHealthVal)
         Me.Controls.Add(Me.lblCNVal)
@@ -704,4 +727,6 @@ Partial Class frmCharScreen
     Friend WithEvents picHandL As System.Windows.Forms.PictureBox
     Friend WithEvents picBracer As System.Windows.Forms.PictureBox
     Friend WithEvents picLegs As System.Windows.Forms.PictureBox
+    Friend WithEvents lblLevel As Label
+    Friend WithEvents lblLvl As Label
 End Class

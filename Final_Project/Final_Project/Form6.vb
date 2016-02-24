@@ -42,6 +42,8 @@ Public Class frmLoadScr
             playerInf.activeWepL = r.ReadLine
             playerInf.activeWepR = r.ReadLine
             playerInf.charClass = r.ReadLine
+            playerInf.level = r.ReadLine
+            playerInf.moneyAmount = r.ReadLine
         End Using
         ' Launches main window and hides load screen
         mainScr.Show()

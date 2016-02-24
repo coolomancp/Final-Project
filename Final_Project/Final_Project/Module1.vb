@@ -23,6 +23,7 @@
         Public activeWepL As String ' Player's currently equipped left weapon / shield
         Public activeWepR As String ' Player's currently equipped right weapon
         Public charClass As String ' Player's class
+        Public moneyAmount As Integer ' PLayer's amount of money
     End Structure
     Public playerInf As playerInfo
     Public Structure playerInv ' Stores all of the player's inventory information

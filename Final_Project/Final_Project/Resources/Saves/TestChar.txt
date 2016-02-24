@@ -1,11 +1,11 @@
 TestChar
-500
-500
-350
-350
-50
-30
-60
+75
+75
+65
+65
+3
+2
+5
 (none)
 (none)
 (none)
@@ -14,5 +14,5 @@ TestChar
 (none)
 (none)
 Rogue
-45
-2000
+1
+0

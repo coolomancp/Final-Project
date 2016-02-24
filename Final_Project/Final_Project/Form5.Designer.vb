@@ -35,7 +35,7 @@ Partial Class frmExitWarning
         Me.lblWarning.Font = New System.Drawing.Font("Myriad Web Pro", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWarning.Location = New System.Drawing.Point(99, 30)
         Me.lblWarning.Name = "lblWarning"
-        Me.lblWarning.Size = New System.Drawing.Size(166, 14)
+        Me.lblWarning.Size = New System.Drawing.Size(164, 12)
         Me.lblWarning.TabIndex = 0
         Me.lblWarning.Text = "Are you sure you want to exit?"
         '
@@ -43,11 +43,11 @@ Partial Class frmExitWarning
         '
         Me.lblSaveWarn.AutoSize = True
         Me.lblSaveWarn.Font = New System.Drawing.Font("Myriad Web Pro", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSaveWarn.Location = New System.Drawing.Point(71, 42)
+        Me.lblSaveWarn.Location = New System.Drawing.Point(64, 42)
         Me.lblSaveWarn.Name = "lblSaveWarn"
-        Me.lblSaveWarn.Size = New System.Drawing.Size(222, 14)
+        Me.lblSaveWarn.Size = New System.Drawing.Size(235, 12)
         Me.lblSaveWarn.TabIndex = 1
-        Me.lblSaveWarn.Text = "(Make sure you've saved your game data)"
+        Me.lblSaveWarn.Text = "(Your game data will be saved upon exiting)"
         '
         'btnYes
         '
@@ -71,9 +71,9 @@ Partial Class frmExitWarning
         '
         'frmExitWarning
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(373, 125)
+        Me.ClientSize = New System.Drawing.Size(363, 114)
         Me.ControlBox = False
         Me.Controls.Add(Me.btnNo)
         Me.Controls.Add(Me.btnYes)

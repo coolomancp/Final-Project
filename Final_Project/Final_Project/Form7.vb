@@ -1,13 +1,22 @@
-﻿Public Class frmCharCreate
+﻿Imports System.IO
+Public Class frmCharCreate
     Private Sub btnConfirm_Click(sender As Object, e As EventArgs) Handles btnConfirm.Click
         Dim validInp1 As Boolean = txtChName.Text Like "[A-Z]*[A-Z]" ' Allows name to be upper case
         Dim validInp2 As Boolean = txtChName.Text Like "[a-z]*[a-z]" ' Allows name to be lower case
         Dim validInp3 As Boolean = txtChName.Text Like "[A-Z]*[a-z]" ' Allows name to start upper case and end lower case
         Dim validInp4 As Boolean = txtChName.Text Like "[a-z]*[A-Z]" ' Allows name to start lower case and end upper case
         Dim wasValid As Boolean
-        If validInp1 = True Or validInp2 = True Or validInp3 = True Or validInp4 = True And txtChName.Text IsNot "" Then 'Prevents user from entering an invalid name
-            playerInf.name = txtChName.Text
-            wasValid = True
+        ' Determines if name is valid (rules above)
+        If validInp1 = True Or validInp2 = True Or validInp3 = True Or validInp4 = True And txtChName.Text IsNot "" Then
+            ' Determines if the name has already been used
+            If File.Exists(resPath & "\Saves\" & txtChName.Text & ".txt") = False Then
+                playerInf.name = txtChName.Text
+                wasValid = True
+            ElseIf File.Exists(resPath & "\Saves\" & txtChName.Text & ".txt") = True Then
+                txtChName.Clear()
+                MessageBox.Show("A character with this name already exists, please choose a different name.")
+                wasValid = False
+            End If
         Else
             txtChName.Clear()
             MessageBox.Show("Please only enter letters (A-Z)")

@@ -27,9 +27,9 @@ Partial Class frmMainScr
         Me.pnlMenu = New System.Windows.Forms.Panel()
         Me.lblTest = New System.Windows.Forms.Label()
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
         Me.wmpAmbient = New AxWMPLib.AxWindowsMediaPlayer()
         Me.wmpMusic = New AxWMPLib.AxWindowsMediaPlayer()
-        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnCharI = New System.Windows.Forms.Button()
         Me.btnInv = New System.Windows.Forms.Button()
@@ -84,6 +84,10 @@ Partial Class frmMainScr
         Me.pnlMain.Size = New System.Drawing.Size(699, 415)
         Me.pnlMain.TabIndex = 3
         '
+        'tmrAnim
+        '
+        Me.tmrAnim.Interval = 200
+        '
         'wmpAmbient
         '
         Me.wmpAmbient.Enabled = True
@@ -103,10 +107,6 @@ Partial Class frmMainScr
         Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
         Me.wmpMusic.TabIndex = 4
         Me.wmpMusic.Visible = False
-        '
-        'tmrAnim
-        '
-        Me.tmrAnim.Interval = 200
         '
         'btnExit
         '
@@ -153,9 +153,10 @@ Partial Class frmMainScr
         '
         Me.pcbPlayer2.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer2.Location = New System.Drawing.Point(115, 330)
+        Me.pcbPlayer2.Image = Global.WindowsApplication1.My.Resources.Resources.rogAttL3
+        Me.pcbPlayer2.Location = New System.Drawing.Point(323, 63)
         Me.pcbPlayer2.Name = "pcbPlayer2"
-        Me.pcbPlayer2.Size = New System.Drawing.Size(72, 61)
+        Me.pcbPlayer2.Size = New System.Drawing.Size(107, 70)
         Me.pcbPlayer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pcbPlayer2.TabIndex = 5
         Me.pcbPlayer2.TabStop = False
@@ -165,7 +166,7 @@ Partial Class frmMainScr
         '
         Me.pcbPlayer4.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer4.Location = New System.Drawing.Point(54, 340)
+        Me.pcbPlayer4.Location = New System.Drawing.Point(149, 128)
         Me.pcbPlayer4.Name = "pcbPlayer4"
         Me.pcbPlayer4.Size = New System.Drawing.Size(38, 57)
         Me.pcbPlayer4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -177,7 +178,7 @@ Partial Class frmMainScr
         '
         Me.pcbPlayer3.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer3.Location = New System.Drawing.Point(0, 330)
+        Me.pcbPlayer3.Location = New System.Drawing.Point(213, 128)
         Me.pcbPlayer3.Name = "pcbPlayer3"
         Me.pcbPlayer3.Size = New System.Drawing.Size(38, 57)
         Me.pcbPlayer3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -189,7 +190,7 @@ Partial Class frmMainScr
         '
         Me.pcbPlayer1.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer1.Location = New System.Drawing.Point(0, 330)
+        Me.pcbPlayer1.Location = New System.Drawing.Point(269, 82)
         Me.pcbPlayer1.Name = "pcbPlayer1"
         Me.pcbPlayer1.Size = New System.Drawing.Size(38, 57)
         Me.pcbPlayer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -212,7 +213,7 @@ Partial Class frmMainScr
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.btnExit
-        Me.ClientSize = New System.Drawing.Size(724, 545)
+        Me.ClientSize = New System.Drawing.Size(724, 546)
         Me.ControlBox = False
         Me.Controls.Add(Me.pnlMenu)
         Me.Controls.Add(Me.pnlMain)

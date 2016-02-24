@@ -231,6 +231,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\rogAttR4.png" />
+    <None Include="Resources\rogAttR3.png" />
+    <None Include="Resources\rogAttR2.png" />
+    <None Include="Resources\rogAttR1.png" />
+    <None Include="Resources\rogAttL4.png" />
+    <None Include="Resources\rogAttL3.png" />
+    <None Include="Resources\rogAttL2.png" />
+    <None Include="Resources\rogAttL1.png" />
     <None Include="Resources\magFlyL4.png" />
     <None Include="Resources\magFlyL3.png" />
     <None Include="Resources\magFlyL2.png" />

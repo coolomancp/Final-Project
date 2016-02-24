@@ -268,4 +268,28 @@
   <data name="rogWalkR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rogWalkR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="rogAttL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogAttL1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogAttL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogAttL2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogAttL3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogAttL3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogAttL4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogAttL4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogAttR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogAttR1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogAttR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogAttR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogAttR3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogAttR3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rogAttR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rogAttR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

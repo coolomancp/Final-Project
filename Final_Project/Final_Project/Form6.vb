@@ -44,8 +44,13 @@ Public Class frmLoadScr
             playerInf.charClass = r.ReadLine
             playerInf.level = r.ReadLine
             playerInf.moneyAmount = r.ReadLine
+            playerInf.charX = r.ReadLine
+            playerInf.charY = r.ReadLine
+            playerInf.dungeonID = r.ReadLine
+            playerInf.dungeonRM = r.ReadLine
         End Using
         ' Launches main window and hides load screen
+        mainScr.Refresh()
         mainScr.Show()
         Me.Hide()
     End Sub

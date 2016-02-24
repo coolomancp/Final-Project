@@ -3,10 +3,11 @@ Imports AxWMPLib
 Public Class frmMainScr
     Dim invStat As Boolean = False ' Default status of the inventory screen is hidden
     Dim infStat As Boolean = False ' Default status of the char info screen is hidden
-    Dim charX As Integer = 0 ' Player's starting x coord
-    Dim charY As Integer = 330 ' Player's starting y coord
+    Dim charX As Integer ' Player's starting x coord
+    Dim charY As Integer ' Player's starting y coord
     Dim charMovSpd As Integer = 5 ' Player's movement speed
     Dim charDir As Integer = 2 ' Player's direction
+    Dim attStat As Boolean = False ' Is player attacking?
 
     Private Sub btnCharI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCharI.Click
         If infStat = False Then ' Checks if the character info screen is closed
@@ -41,15 +42,30 @@ Public Class frmMainScr
             charY = 340
             charMovSpd = 5
             pcbPlayer1.Image = My.Resources.warIdleR
+            pcbPlayer2.Image = My.Resources.warIdleR
+            pcbPlayer3.Image = My.Resources.warIdleR
+            pcbPlayer4.Image = My.Resources.warIdleR
         ElseIf playerInf.charClass = "Rogue" Then
             charY = 350
             charMovSpd = 10
             pcbPlayer1.Image = My.Resources.rogIdleR
+            pcbPlayer2.Image = My.Resources.rogIdleR
+            pcbPlayer3.Image = My.Resources.rogIdleR
+            pcbPlayer4.Image = My.Resources.rogIdleR
         ElseIf playerInf.charClass = "Mage" Then
             charY = 330
             charMovSpd = 5
             pcbPlayer1.Image = My.Resources.magIdleR
+            pcbPlayer2.Image = My.Resources.magIdleR
+            pcbPlayer3.Image = My.Resources.magIdleR
+            pcbPlayer4.Image = My.Resources.magIdleR
         End If
+        ' Reloads player's last position
+        pcbPlayer1.Location = New Point(charX, charY)
+        pcbPlayer2.Location = New Point(charX, charY)
+        pcbPlayer3.Location = New Point(charX, charY)
+        pcbPlayer4.Location = New Point(charX, charY)
+        lblTest.Text = Convert.ToString(pcbPlayer1.Location)
         KeyPreview = True ' Form accepts indirect keyboard input
         ' Sets each character frame's parent to the background to allow transparency
         With pcbPlayer1
@@ -64,16 +80,6 @@ Public Class frmMainScr
         With pcbPlayer4
             .Parent = picMainScr
         End With
-        If charDir = 1 Then
-            pcbPlayer1.Image = warIdleL
-        ElseIf charDir = 2 Then
-            pcbPlayer1.Image = warIdleR
-        End If
-        ' Reloads player's last position
-        pcbPlayer1.Location = New Point(charX, charY)
-        pcbPlayer2.Location = New Point(charX, charY)
-        pcbPlayer3.Location = New Point(charX, charY)
-        pcbPlayer4.Location = New Point(charX, charY)
         ' Sets background music
         wmpMusic.URL = resPath + "bgmusicGreen.wav"
         wmpMusic.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
@@ -97,9 +103,11 @@ Public Class frmMainScr
             pcbPlayer4.Visible = False
             pcbPlayer1.Visible = True
         End If
+        attStat = False
     End Sub
 
-    Private Sub frmMainScr_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+    Private Sub frmMainScr_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyDown
+        lblTest.Text = Convert.ToString(pcbPlayer1.Location)
         Select Case e.KeyCode
             Case Keys.A And charX > -5 ' Moves player to the left if they are pressing "A" and are not already the maximum amount left
                 ' Sets the picture boxes up for frames 1-4 of the player walking left
@@ -112,6 +120,7 @@ Public Class frmMainScr
                     pcbPlayer1.Image = rogWalkL1
                     pcbPlayer2.Image = rogWalkL2
                     pcbPlayer3.Image = rogWalkL3
+                    charY = 350
                     pcbPlayer4.Image = rogWalkL4
                 ElseIf playerInf.charClass = "Mage" Then
                     pcbPlayer1.Image = magFlyL1
@@ -132,7 +141,7 @@ Public Class frmMainScr
                 pcbPlayer4.Left -= charMovSpd
                 charDir = 1 ' Character's direction set to "left"
                 charX = charX - charMovSpd ' Updates player's x coord (Decrease)
-            Case = Keys.D And charX < 655 ' Moves player to the right if they are pressing "D" and are not already the maximum amount right
+            Case Keys.D And charX < 655 ' Moves player to the right if they are pressing "D" and are not already the maximum amount right
                 ' Sets the picture boxes up for frames 1-4 of the player walking right
                 If playerInf.charClass = "Warrior" Then
                     pcbPlayer1.Image = warWalkR1
@@ -144,6 +153,7 @@ Public Class frmMainScr
                     pcbPlayer2.Image = rogWalkR2
                     pcbPlayer3.Image = rogWalkR3
                     pcbPlayer4.Image = rogWalkR4
+                    charY = 350
                 ElseIf playerInf.charClass = "Mage" Then
                     pcbPlayer1.Image = magFlyR1
                     pcbPlayer2.Image = magFlyR2
@@ -163,11 +173,62 @@ Public Class frmMainScr
                 pcbPlayer4.Left += charMovSpd
                 charDir = 2 ' Character's direction set to "right"
                 charX = charX + charMovSpd ' Updates player's x coord (Increase)
+            Case Keys.X And charX < 655 And charDir = 2 ' Character attacks
+                attStat = True
+                If playerInf.charClass = "Warrior" Then
+                    'pcbPlayer1.Image = warAttR1
+                    'pcbPlayer2.Image = warAttR2
+                    'pcbPlayer3.Image = warAttR3
+                    'pcbPlayer4.Image = warAttR4
+                ElseIf playerInf.charClass = "Rogue" Then
+                    pcbPlayer1.Image = rogAttR1
+                    pcbPlayer2.Image = rogAttR2
+                    pcbPlayer3.Image = rogAttR3
+                    pcbPlayer4.Image = rogAttR4
+                    charY = 330
+                ElseIf playerInf.charClass = "Mage" Then
+                    'pcbPlayer1.Image = magAttR1
+                    'pcbPlayer2.Image = magAttR2
+                    'pcbPlayer3.Image = magAttR3
+                    'pcbPlayer4.Image = magAttR4
+                End If
+                ' Resets player Y
+                pcbPlayer1.Location = New Point(charX, charY)
+                pcbPlayer2.Location = New Point(charX, charY)
+                pcbPlayer3.Location = New Point(charX, charY)
+                pcbPlayer4.Location = New Point(charX, charY)
+                tmrAnim.Enabled = True ' Starts animation
+            Case Keys.X And charX > -5 And charDir = 1 ' Character attacks
+                attStat = True
+                If playerInf.charClass = "Warrior" Then
+                    'pcbPlayer1.Image = warAttL1
+                    'pcbPlayer2.Image = warAttL2
+                    'pcbPlayer3.Image = warAttL3
+                    'pcbPlayer4.Image = warAttL4
+                ElseIf playerInf.charClass = "Rogue" Then
+                    pcbPlayer1.Image = rogAttL1
+                    pcbPlayer2.Image = rogAttL2
+                    pcbPlayer3.Image = rogAttL3
+                    pcbPlayer4.Image = rogAttL4
+                    charY = 330
+                ElseIf playerInf.charClass = "Mage" Then
+                    'pcbPlayer1.Image = magAttL1
+                    'pcbPlayer2.Image = magAttL2
+                    'pcbPlayer3.Image = magAttL3
+                    'pcbPlayer4.Image = magAttL4
+                End If
+                ' Resets player Y
+                pcbPlayer1.Location = New Point(charX, charY)
+                pcbPlayer2.Location = New Point(charX, charY)
+                pcbPlayer3.Location = New Point(charX, charY)
+                pcbPlayer4.Location = New Point(charX, charY)
+                tmrAnim.Enabled = True ' Starts animation
         End Select
     End Sub
 
     Private Sub frmMainScr_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
         tmrAnim.Enabled = False ' Stops animation
+        lblTest.Text = Convert.ToString(pcbPlayer1.Location)
         ' Sets whatever frame is currently visible to the idle image in respect to the direction the player is facing
         If playerInf.charClass = "Warrior" Then
             If charDir = 1 And pcbPlayer1.Visible = True Then
@@ -208,35 +269,50 @@ Public Class frmMainScr
         ElseIf playerInf.charClass = "Rogue" Then
             If charDir = 1 And pcbPlayer1.Visible = True Then
                 pcbPlayer1.Image = rogIdleL
+                charY = 350
                 pcbPlayer1.Location = New Point(charX, charY - 10) ' Offset for idle image
                 pcbPlayer1.Size = New Size(72, 61)
             ElseIf charDir = 1 And pcbPlayer2.Visible = True Then
+                charY = 350
                 pcbPlayer2.Image = rogIdleL
                 pcbPlayer2.Location = New Point(charX, charY - 10) ' Offset for idle image
+                charY = 350
                 pcbPlayer2.Size = New Size(72, 61)
             ElseIf charDir = 1 And pcbPlayer3.Visible = True Then
+                charY = 350
                 pcbPlayer3.Image = rogIdleL
                 pcbPlayer3.Location = New Point(charX, charY - 10) ' Offset for idle image
+                charY = 350
                 pcbPlayer3.Size = New Size(72, 61)
             ElseIf charDir = 1 And pcbPlayer4.Visible = True Then
+                charY = 350
                 pcbPlayer4.Image = rogIdleL
                 pcbPlayer4.Location = New Point(charX, charY - 10) ' Offset for idle image
+                charY = 350
                 pcbPlayer4.Size = New Size(72, 61)
             ElseIf charDir = 2 And pcbPlayer1.Visible = True Then
+                charY = 350
                 pcbPlayer1.Image = rogIdleR
                 pcbPlayer1.Location = New Point(charX, charY - 10) ' Offset for idle image
+                charY = 350
                 pcbPlayer1.Size = New Size(72, 61)
             ElseIf charDir = 2 And pcbPlayer2.Visible = True Then
+                charY = 350
                 pcbPlayer2.Image = rogIdleR
                 pcbPlayer2.Location = New Point(charX, charY - 10) ' Offset for idle image
+                charY = 350
                 pcbPlayer2.Size = New Size(72, 61)
             ElseIf charDir = 2 And pcbPlayer3.Visible = True Then
+                charY = 350
                 pcbPlayer3.Image = rogIdleR
                 pcbPlayer3.Location = New Point(charX, charY - 10) ' Offset for idle image
+                charY = 350
                 pcbPlayer3.Size = New Size(72, 61)
             ElseIf charDir = 2 And pcbPlayer4.Visible = True Then
+                charY = 350
                 pcbPlayer4.Image = rogIdleR
                 pcbPlayer4.Location = New Point(charX, charY - 10) ' Offset for idle image
+                charY = 350
                 pcbPlayer4.Size = New Size(72, 61)
             End If
         End If

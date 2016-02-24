@@ -24,6 +24,10 @@
         Public activeWepR As String ' Player's currently equipped right weapon
         Public charClass As String ' Player's class
         Public moneyAmount As Integer ' PLayer's amount of money
+        Public charX As Integer ' Player's X coord
+        Public charY As Integer ' Player's Y coord
+        Public dungeonID As Integer ' What dungeon the player is in
+        Public dungeonRM As Integer ' What room in the dungeon the player is in
     End Structure
     Public playerInf As playerInfo
     Public Structure playerInv ' Stores all of the player's inventory information
@@ -49,6 +53,14 @@
     Public rogWalkR2 As Image = My.Resources.rogWalkR2 ' Second frame of rogue class walking right
     Public rogWalkR3 As Image = My.Resources.rogWalkR3 ' Third frame of rogue class walking right
     Public rogWalkR4 As Image = My.Resources.rogWalkR4 ' Fourth frame of rogue class walking right
+    Public rogAttR1 As Image = My.Resources.rogAttR1 ' Character attacks to the right (rogue)
+    Public rogAttR2 As Image = My.Resources.rogAttR2 ' Character attacks to the right (rogue)
+    Public rogAttR3 As Image = My.Resources.rogAttR3 ' Character attacks to the right (rogue)
+    Public rogAttR4 As Image = My.Resources.rogAttR4 ' Character attacks to the right (rogue)
+    Public rogAttL1 As Image = My.Resources.rogAttL1 ' Character attacks to the left (rogue)
+    Public rogAttL2 As Image = My.Resources.rogAttL2 ' Character attacks to the left (rogue)
+    Public rogAttL3 As Image = My.Resources.rogAttL3 ' Character attacks to the left (rogue)
+    Public rogAttL4 As Image = My.Resources.rogAttL4 ' Character attacks to the left (rogue)
     Public magIdleR As Image = My.Resources.magIdleR ' Character idle facing the left (mage)
     Public magIdleL As Image = My.Resources.magIdleL ' Character idle facing the left (mage)
     Public magFlyL1 As Image = My.Resources.magFlyL1 ' First frame of mage class walking left

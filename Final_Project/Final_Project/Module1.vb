@@ -33,6 +33,7 @@
     Public Structure playerInv ' Stores all of the player's inventory information
         Dim invS1 As String ' Player's first inventory slot
     End Structure
+    ' Warrior
     Public warIdleR As Image = My.Resources.warIdleR ' Character idle facing the right (warrior)
     Public warIdleL As Image = My.Resources.warIdleL ' Character idle facing the left (warrior)
     Public warWalkL1 As Image = My.Resources.warWalkL1 ' First frame of warrior class walking left
@@ -43,6 +44,15 @@
     Public warWalkR2 As Image = My.Resources.warWalkR2 ' Second frame of warrior class walking right
     Public warWalkR3 As Image = My.Resources.warWalkR3 ' Third frame of warrior class walking right
     Public warWalkR4 As Image = My.Resources.warWalkR4 ' Fourth frame of warrior class walking right
+    Public warAttL1 As Image = My.Resources.warAttL1 ' First frame of warrior class attacking to the left
+    Public warAttL2 As Image = My.Resources.warAttL2 ' Second frame of warrior class attacking to the left
+    Public warAttL3 As Image = My.Resources.warAttL3 ' Third frame of warrior class attacking to the left
+    Public warAttL4 As Image = My.Resources.warAttL4 ' Fourth frame of warrior class attacking to the left
+    Public warAttR1 As Image = My.Resources.warAttR1 ' First frame of warrior class attacking to the right
+    Public warAttR2 As Image = My.Resources.warAttR2 ' Second frame of warrior class attacking to the right
+    Public warAttR3 As Image = My.Resources.warAttR3 ' Third frame of warrior class attacking to the right
+    Public warAttR4 As Image = My.Resources.warAttR4 ' Fourth frame of warrior class attacking to the right
+    ' Rogue
     Public rogIdleR As Image = My.Resources.rogIdleR ' Character idle facing the left (rogue)
     Public rogIdleL As Image = My.Resources.rogIdleL ' Character idle facing the left (rogue)
     Public rogWalkL1 As Image = My.Resources.rogWalkL1 ' First frame of rogue class walking left
@@ -61,6 +71,7 @@
     Public rogAttL2 As Image = My.Resources.rogAttL2 ' Character attacks to the left (rogue)
     Public rogAttL3 As Image = My.Resources.rogAttL3 ' Character attacks to the left (rogue)
     Public rogAttL4 As Image = My.Resources.rogAttL4 ' Character attacks to the left (rogue)
+    ' Mage
     Public magIdleR As Image = My.Resources.magIdleR ' Character idle facing the left (mage)
     Public magIdleL As Image = My.Resources.magIdleL ' Character idle facing the left (mage)
     Public magFlyL1 As Image = My.Resources.magFlyL1 ' First frame of mage class walking left
@@ -71,5 +82,14 @@
     Public magFlyR2 As Image = My.Resources.magFlyR2 ' Second frame of mage class walking right
     Public magFlyR3 As Image = My.Resources.magFlyR3 ' Third frame of mage class walking right
     Public magFlyR4 As Image = My.Resources.magFlyR4 ' Fourth frame of mage class walking right
-    Public resPath As String = Replace(My.Application.Info.DirectoryPath, "\bin\Debug", "\Resources\") ' Path to the resource files to allow use in any directory
+    Public magAttR1 As Image = My.Resources.magAttR1 ' First frame of mage class attacking to the right
+    Public magAttR2 As Image = My.Resources.magAttR2 ' Second frame of mage class attacking to the right
+    Public magAttR3 As Image = My.Resources.magAttR3 ' Third frame of mage class attacking to the right
+    Public magAttR4 As Image = My.Resources.magAttR4 ' Fourth frame of mage class attacking to the right
+    Public magAttL1 As Image = My.Resources.magAttL1 ' First frame of mage class attacking to the left
+    Public magAttL2 As Image = My.Resources.magAttL2 ' Second frame of mage class attacking to the left
+    Public magAttL3 As Image = My.Resources.magAttL3 ' Third frame of mage class attacking to the left
+    Public magAttL4 As Image = My.Resources.magAttL4 ' Fourth frame of mage class attacking to the left
+    ' Path to the resource files to allow use in any directory
+    Public resPath As String = Replace(My.Application.Info.DirectoryPath, "\bin\Debug", "\Resources\")
 End Module

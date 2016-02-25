@@ -292,4 +292,52 @@
   <data name="rogAttR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rogAttR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="magAttL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magAttL1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magAttL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magAttL2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magAttL3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magAttL3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magAttL4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magAttL4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magAttR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magAttR1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magAttR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magAttR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magAttR3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magAttR3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="magAttR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\magAttR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warAttL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warAttL1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warAttL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warAttL2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warAttL3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warAttL3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warAttL4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warAttL4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warAttR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warAttR1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warAttR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warAttR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warAttR3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warAttR3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warAttR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warAttR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

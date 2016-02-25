@@ -116,6 +116,7 @@ Public Class frmMainScr
                     pcbPlayer2.Image = warWalkL2
                     pcbPlayer3.Image = warWalkL3
                     pcbPlayer4.Image = warWalkL4
+                    charY = 340
                 ElseIf playerInf.charClass = "Rogue" Then
                     pcbPlayer1.Image = rogWalkL1
                     pcbPlayer2.Image = rogWalkL2
@@ -148,6 +149,7 @@ Public Class frmMainScr
                     pcbPlayer2.Image = warWalkR2
                     pcbPlayer3.Image = warWalkR3
                     pcbPlayer4.Image = warWalkR4
+                    charY = 340
                 ElseIf playerInf.charClass = "Rogue" Then
                     pcbPlayer1.Image = rogWalkR1
                     pcbPlayer2.Image = rogWalkR2
@@ -176,10 +178,11 @@ Public Class frmMainScr
             Case Keys.X And charX < 655 And charDir = 2 ' Character attacks
                 attStat = True
                 If playerInf.charClass = "Warrior" Then
-                    'pcbPlayer1.Image = warAttR1
-                    'pcbPlayer2.Image = warAttR2
-                    'pcbPlayer3.Image = warAttR3
-                    'pcbPlayer4.Image = warAttR4
+                    pcbPlayer1.Image = warAttR1
+                    pcbPlayer2.Image = warAttR2
+                    pcbPlayer3.Image = warAttR3
+                    pcbPlayer4.Image = warAttR4
+                    charY = 258
                 ElseIf playerInf.charClass = "Rogue" Then
                     pcbPlayer1.Image = rogAttR1
                     pcbPlayer2.Image = rogAttR2
@@ -187,10 +190,10 @@ Public Class frmMainScr
                     pcbPlayer4.Image = rogAttR4
                     charY = 330
                 ElseIf playerInf.charClass = "Mage" Then
-                    'pcbPlayer1.Image = magAttR1
-                    'pcbPlayer2.Image = magAttR2
-                    'pcbPlayer3.Image = magAttR3
-                    'pcbPlayer4.Image = magAttR4
+                    pcbPlayer1.Image = magAttR1
+                    pcbPlayer2.Image = magAttR2
+                    pcbPlayer3.Image = magAttR3
+                    pcbPlayer4.Image = magAttR4
                 End If
                 ' Resets player Y
                 pcbPlayer1.Location = New Point(charX, charY)
@@ -201,10 +204,11 @@ Public Class frmMainScr
             Case Keys.X And charX > -5 And charDir = 1 ' Character attacks
                 attStat = True
                 If playerInf.charClass = "Warrior" Then
-                    'pcbPlayer1.Image = warAttL1
-                    'pcbPlayer2.Image = warAttL2
-                    'pcbPlayer3.Image = warAttL3
-                    'pcbPlayer4.Image = warAttL4
+                    pcbPlayer1.Image = warAttL1
+                    pcbPlayer2.Image = warAttL2
+                    pcbPlayer3.Image = warAttL3
+                    pcbPlayer4.Image = warAttL4
+                    charY = 258
                 ElseIf playerInf.charClass = "Rogue" Then
                     pcbPlayer1.Image = rogAttL1
                     pcbPlayer2.Image = rogAttL2
@@ -212,10 +216,10 @@ Public Class frmMainScr
                     pcbPlayer4.Image = rogAttL4
                     charY = 330
                 ElseIf playerInf.charClass = "Mage" Then
-                    'pcbPlayer1.Image = magAttL1
-                    'pcbPlayer2.Image = magAttL2
-                    'pcbPlayer3.Image = magAttL3
-                    'pcbPlayer4.Image = magAttL4
+                    pcbPlayer1.Image = magAttL1
+                    pcbPlayer2.Image = magAttL2
+                    pcbPlayer3.Image = magAttL3
+                    pcbPlayer4.Image = magAttL4
                 End If
                 ' Resets player Y
                 pcbPlayer1.Location = New Point(charX, charY)
@@ -232,38 +236,54 @@ Public Class frmMainScr
         ' Sets whatever frame is currently visible to the idle image in respect to the direction the player is facing
         If playerInf.charClass = "Warrior" Then
             If charDir = 1 And pcbPlayer1.Visible = True Then
+                charY = 340
                 pcbPlayer1.Image = warIdleL
             ElseIf charDir = 1 And pcbPlayer2.Visible = True Then
+                charY = 340
                 pcbPlayer2.Image = warIdleL
             ElseIf charDir = 1 And pcbPlayer3.Visible = True Then
+                charY = 340
                 pcbPlayer3.Image = warIdleL
             ElseIf charDir = 1 And pcbPlayer4.Visible = True Then
+                charY = 340
                 pcbPlayer4.Image = warIdleL
             ElseIf charDir = 2 And pcbPlayer1.Visible = True Then
+                charY = 340
                 pcbPlayer1.Image = warIdleR
             ElseIf charDir = 2 And pcbPlayer2.Visible = True Then
+                charY = 340
                 pcbPlayer2.Image = warIdleR
             ElseIf charDir = 2 And pcbPlayer3.Visible = True Then
+                charY = 340
                 pcbPlayer3.Image = warIdleR
             ElseIf charDir = 2 And pcbPlayer4.Visible = True Then
+                charY = 340
                 pcbPlayer4.Image = warIdleR
             End If
         ElseIf playerInf.charClass = "Mage" Then
             If charDir = 1 And pcbPlayer1.Visible = True Then
+                charY = 330
                 pcbPlayer1.Image = magIdleL
             ElseIf charDir = 1 And pcbPlayer2.Visible = True Then
+                charY = 330
                 pcbPlayer2.Image = magIdleL
             ElseIf charDir = 1 And pcbPlayer3.Visible = True Then
+                charY = 330
                 pcbPlayer3.Image = magIdleL
             ElseIf charDir = 1 And pcbPlayer4.Visible = True Then
+                charY = 330
                 pcbPlayer4.Image = magIdleL
             ElseIf charDir = 2 And pcbPlayer1.Visible = True Then
+                charY = 330
                 pcbPlayer1.Image = magIdleR
             ElseIf charDir = 2 And pcbPlayer2.Visible = True Then
+                charY = 330
                 pcbPlayer2.Image = magIdleR
             ElseIf charDir = 2 And pcbPlayer3.Visible = True Then
+                charY = 330
                 pcbPlayer3.Image = magIdleR
             ElseIf charDir = 2 And pcbPlayer4.Visible = True Then
+                charY = 330
                 pcbPlayer4.Image = magIdleR
             End If
         ElseIf playerInf.charClass = "Rogue" Then
@@ -316,6 +336,11 @@ Public Class frmMainScr
                 pcbPlayer4.Size = New Size(72, 61)
             End If
         End If
+        ' Resets player Y
+        pcbPlayer1.Location = New Point(charX, charY)
+        pcbPlayer2.Location = New Point(charX, charY)
+        pcbPlayer3.Location = New Point(charX, charY)
+        pcbPlayer4.Location = New Point(charX, charY)
     End Sub
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click

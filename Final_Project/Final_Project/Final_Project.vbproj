@@ -231,6 +231,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\warAttR4.png" />
+    <None Include="Resources\warAttR3.png" />
+    <None Include="Resources\warAttR2.png" />
+    <None Include="Resources\warAttR1.png" />
+    <None Include="Resources\warAttL4.png" />
+    <None Include="Resources\warAttL3.png" />
+    <None Include="Resources\warAttL2.png" />
+    <None Include="Resources\warAttL1.png" />
+    <None Include="Resources\magAttL4.png" />
+    <None Include="Resources\magAttL3.png" />
+    <None Include="Resources\magAttL2.png" />
+    <None Include="Resources\magAttL1.png" />
+    <None Include="Resources\magAttR4.png" />
+    <None Include="Resources\magAttR3.png" />
+    <None Include="Resources\magAttR2.png" />
+    <None Include="Resources\magAttR1.png" />
     <None Include="Resources\rogAttR4.png" />
     <None Include="Resources\rogAttR3.png" />
     <None Include="Resources\rogAttR2.png" />

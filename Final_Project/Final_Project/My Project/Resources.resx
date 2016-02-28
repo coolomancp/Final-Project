@@ -400,4 +400,28 @@
   <data name="gobWalkR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gobWalkR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gobDeathL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobDeathL1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobDeathL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobDeathL2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobDeathL3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobDeathL3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobDeathL4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobDeathL4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobDeathR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobDeathR1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobDeathR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobDeathR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobDeathR3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobDeathR3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobDeathR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobDeathR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

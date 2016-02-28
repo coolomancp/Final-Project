@@ -122,6 +122,14 @@
     Public gobAttR4 As Image = My.Resources.gobAttR4 ' Fourth frame of goblin attacking to the right
     Public gobHitL As Image = My.Resources.gobHitL ' Goblin being hit while facing the left
     Public gobHitR As Image = My.Resources.gobHitR ' Goblin being hit while facing the right
+    Public gobDeathL1 As Image = My.Resources.gobDeathL1 ' First frame of goblin turning to ash facing to the left
+    Public gobDeathL2 As Image = My.Resources.gobDeathL2 ' Second frame of goblin turning to ash facing to the left
+    Public gobDeathL3 As Image = My.Resources.gobDeathL3 ' Third frame of goblin turning to ash facing to the left
+    Public gobDeathL4 As Image = My.Resources.gobDeathL4 ' Fourth frame of goblin turning to ash facing to the left
+    Public gobDeathR1 As Image = My.Resources.gobDeathR1 ' First frame of goblin turning to ash facing to the right
+    Public gobDeathR2 As Image = My.Resources.gobDeathR2 ' Second frame of goblin turning to ash facing to the right
+    Public gobDeathR3 As Image = My.Resources.gobDeathR3 ' Third frame of goblin turning to ash facing to the right
+    Public gobDeathR4 As Image = My.Resources.gobDeathR4 ' Fourth frame of goblin turning to ash facing to the right
     ' Dungeon Information
     Public Structure dungeonInfo
         Dim monstertype As String ' Determines what monster the level has

@@ -231,6 +231,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\gobDeathR4.png" />
+    <None Include="Resources\gobDeathR3.png" />
+    <None Include="Resources\gobDeathR2.png" />
+    <None Include="Resources\gobDeathR1.png" />
+    <None Include="Resources\gobDeathL4.png" />
+    <None Include="Resources\gobDeathL3.png" />
+    <None Include="Resources\gobDeathL2.png" />
+    <None Include="Resources\gobDeathL1.png" />
     <None Include="Resources\gobAttL4.png" />
     <None Include="Resources\gobAttL3.png" />
     <None Include="Resources\gobAttL2.png" />

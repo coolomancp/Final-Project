@@ -26,45 +26,45 @@ Partial Class frmMainScr
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMainScr))
         Me.pnlMenu = New System.Windows.Forms.Panel()
         Me.lblTest = New System.Windows.Forms.Label()
+        Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.wmpAmbient = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.wmpMusic = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
+        Me.bgWorkerMonsterAI = New System.ComponentModel.BackgroundWorker()
+        Me.tmrMonstAnim = New System.Windows.Forms.Timer(Me.components)
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnCharI = New System.Windows.Forms.Button()
         Me.btnInv = New System.Windows.Forms.Button()
-        Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.pcbMonster23 = New System.Windows.Forms.PictureBox()
+        Me.pcbMonster24 = New System.Windows.Forms.PictureBox()
+        Me.pcbMonster22 = New System.Windows.Forms.PictureBox()
+        Me.pcbMonster21 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster13 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster14 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster12 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster11 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer3 = New System.Windows.Forms.PictureBox()
-        Me.wmpAmbient = New AxWMPLib.AxWindowsMediaPlayer()
-        Me.wmpMusic = New AxWMPLib.AxWindowsMediaPlayer()
         Me.pcbPlayer2 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer4 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer1 = New System.Windows.Forms.PictureBox()
         Me.picMainScr = New System.Windows.Forms.PictureBox()
-        Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
-        Me.bgWorkerMonsterAI = New System.ComponentModel.BackgroundWorker()
-        Me.pcbMonster23 = New System.Windows.Forms.PictureBox()
-        Me.pcbMonster24 = New System.Windows.Forms.PictureBox()
-        Me.pcbMonster22 = New System.Windows.Forms.PictureBox()
-        Me.pcbMonster21 = New System.Windows.Forms.PictureBox()
-        Me.tmrMonstAnim = New System.Windows.Forms.Timer(Me.components)
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
+        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbMonster23, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbMonster24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbMonster22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbMonster21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbMonster13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbMonster14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbMonster12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbMonster11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMainScr, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMonster23, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMonster24, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMonster22, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMonster21, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlMenu
@@ -87,6 +87,59 @@ Partial Class frmMainScr
         Me.lblTest.Size = New System.Drawing.Size(42, 13)
         Me.lblTest.TabIndex = 5
         Me.lblTest.Text = "Testing"
+        '
+        'pnlMain
+        '
+        Me.pnlMain.Controls.Add(Me.pcbMonster23)
+        Me.pnlMain.Controls.Add(Me.pcbMonster24)
+        Me.pnlMain.Controls.Add(Me.pcbMonster22)
+        Me.pnlMain.Controls.Add(Me.pcbMonster21)
+        Me.pnlMain.Controls.Add(Me.pcbMonster13)
+        Me.pnlMain.Controls.Add(Me.pcbMonster14)
+        Me.pnlMain.Controls.Add(Me.pcbMonster12)
+        Me.pnlMain.Controls.Add(Me.pcbMonster11)
+        Me.pnlMain.Controls.Add(Me.pcbPlayer3)
+        Me.pnlMain.Controls.Add(Me.wmpAmbient)
+        Me.pnlMain.Controls.Add(Me.wmpMusic)
+        Me.pnlMain.Controls.Add(Me.pcbPlayer2)
+        Me.pnlMain.Controls.Add(Me.pcbPlayer4)
+        Me.pnlMain.Controls.Add(Me.pcbPlayer1)
+        Me.pnlMain.Controls.Add(Me.picMainScr)
+        Me.pnlMain.Location = New System.Drawing.Point(13, 12)
+        Me.pnlMain.Name = "pnlMain"
+        Me.pnlMain.Size = New System.Drawing.Size(699, 415)
+        Me.pnlMain.TabIndex = 3
+        '
+        'wmpAmbient
+        '
+        Me.wmpAmbient.Enabled = True
+        Me.wmpAmbient.Location = New System.Drawing.Point(323, 139)
+        Me.wmpAmbient.Name = "wmpAmbient"
+        Me.wmpAmbient.OcxState = CType(resources.GetObject("wmpAmbient.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.wmpAmbient.Size = New System.Drawing.Size(75, 23)
+        Me.wmpAmbient.TabIndex = 6
+        Me.wmpAmbient.Visible = False
+        '
+        'wmpMusic
+        '
+        Me.wmpMusic.Enabled = True
+        Me.wmpMusic.Location = New System.Drawing.Point(323, 224)
+        Me.wmpMusic.Name = "wmpMusic"
+        Me.wmpMusic.OcxState = CType(resources.GetObject("wmpMusic.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
+        Me.wmpMusic.TabIndex = 4
+        Me.wmpMusic.Visible = False
+        '
+        'tmrAnim
+        '
+        Me.tmrAnim.Interval = 200
+        '
+        'bgWorkerMonsterAI
+        '
+        '
+        'tmrMonstAnim
+        '
+        Me.tmrMonstAnim.Interval = 200
         '
         'btnExit
         '
@@ -129,27 +182,48 @@ Partial Class frmMainScr
         Me.btnInv.Text = "Inventory"
         Me.btnInv.UseVisualStyleBackColor = False
         '
-        'pnlMain
+        'pcbMonster23
         '
-        Me.pnlMain.Controls.Add(Me.pcbMonster23)
-        Me.pnlMain.Controls.Add(Me.pcbMonster24)
-        Me.pnlMain.Controls.Add(Me.pcbMonster22)
-        Me.pnlMain.Controls.Add(Me.pcbMonster21)
-        Me.pnlMain.Controls.Add(Me.pcbMonster13)
-        Me.pnlMain.Controls.Add(Me.pcbMonster14)
-        Me.pnlMain.Controls.Add(Me.pcbMonster12)
-        Me.pnlMain.Controls.Add(Me.pcbMonster11)
-        Me.pnlMain.Controls.Add(Me.pcbPlayer3)
-        Me.pnlMain.Controls.Add(Me.wmpAmbient)
-        Me.pnlMain.Controls.Add(Me.wmpMusic)
-        Me.pnlMain.Controls.Add(Me.pcbPlayer2)
-        Me.pnlMain.Controls.Add(Me.pcbPlayer4)
-        Me.pnlMain.Controls.Add(Me.pcbPlayer1)
-        Me.pnlMain.Controls.Add(Me.picMainScr)
-        Me.pnlMain.Location = New System.Drawing.Point(13, 12)
-        Me.pnlMain.Name = "pnlMain"
-        Me.pnlMain.Size = New System.Drawing.Size(699, 415)
-        Me.pnlMain.TabIndex = 3
+        Me.pcbMonster23.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR3
+        Me.pcbMonster23.Location = New System.Drawing.Point(435, 52)
+        Me.pcbMonster23.Name = "pcbMonster23"
+        Me.pcbMonster23.Size = New System.Drawing.Size(43, 40)
+        Me.pcbMonster23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pcbMonster23.TabIndex = 14
+        Me.pcbMonster23.TabStop = False
+        Me.pcbMonster23.Visible = False
+        '
+        'pcbMonster24
+        '
+        Me.pcbMonster24.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR4
+        Me.pcbMonster24.Location = New System.Drawing.Point(519, 23)
+        Me.pcbMonster24.Name = "pcbMonster24"
+        Me.pcbMonster24.Size = New System.Drawing.Size(43, 40)
+        Me.pcbMonster24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pcbMonster24.TabIndex = 13
+        Me.pcbMonster24.TabStop = False
+        Me.pcbMonster24.Visible = False
+        '
+        'pcbMonster22
+        '
+        Me.pcbMonster22.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR2
+        Me.pcbMonster22.Location = New System.Drawing.Point(506, 99)
+        Me.pcbMonster22.Name = "pcbMonster22"
+        Me.pcbMonster22.Size = New System.Drawing.Size(43, 40)
+        Me.pcbMonster22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pcbMonster22.TabIndex = 12
+        Me.pcbMonster22.TabStop = False
+        Me.pcbMonster22.Visible = False
+        '
+        'pcbMonster21
+        '
+        Me.pcbMonster21.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR1
+        Me.pcbMonster21.Location = New System.Drawing.Point(435, 133)
+        Me.pcbMonster21.Name = "pcbMonster21"
+        Me.pcbMonster21.Size = New System.Drawing.Size(43, 40)
+        Me.pcbMonster21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pcbMonster21.TabIndex = 11
+        Me.pcbMonster21.TabStop = False
         '
         'pcbMonster13
         '
@@ -207,26 +281,6 @@ Partial Class frmMainScr
         Me.pcbPlayer3.TabStop = False
         Me.pcbPlayer3.Visible = False
         '
-        'wmpAmbient
-        '
-        Me.wmpAmbient.Enabled = True
-        Me.wmpAmbient.Location = New System.Drawing.Point(323, 139)
-        Me.wmpAmbient.Name = "wmpAmbient"
-        Me.wmpAmbient.OcxState = CType(resources.GetObject("wmpAmbient.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.wmpAmbient.Size = New System.Drawing.Size(75, 23)
-        Me.wmpAmbient.TabIndex = 6
-        Me.wmpAmbient.Visible = False
-        '
-        'wmpMusic
-        '
-        Me.wmpMusic.Enabled = True
-        Me.wmpMusic.Location = New System.Drawing.Point(323, 224)
-        Me.wmpMusic.Name = "wmpMusic"
-        Me.wmpMusic.OcxState = CType(resources.GetObject("wmpMusic.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
-        Me.wmpMusic.TabIndex = 4
-        Me.wmpMusic.Visible = False
-        '
         'pcbPlayer2
         '
         Me.pcbPlayer2.BackColor = System.Drawing.Color.Transparent
@@ -257,9 +311,10 @@ Partial Class frmMainScr
         '
         Me.pcbPlayer1.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer1.Location = New System.Drawing.Point(269, 82)
+        Me.pcbPlayer1.Image = Global.WindowsApplication1.My.Resources.Resources.rogIdleR
+        Me.pcbPlayer1.Location = New System.Drawing.Point(362, 340)
         Me.pcbPlayer1.Name = "pcbPlayer1"
-        Me.pcbPlayer1.Size = New System.Drawing.Size(38, 57)
+        Me.pcbPlayer1.Size = New System.Drawing.Size(72, 61)
         Me.pcbPlayer1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pcbPlayer1.TabIndex = 2
         Me.pcbPlayer1.TabStop = False
@@ -273,56 +328,6 @@ Partial Class frmMainScr
         Me.picMainScr.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picMainScr.TabIndex = 1
         Me.picMainScr.TabStop = False
-        '
-        'tmrAnim
-        '
-        Me.tmrAnim.Interval = 200
-        '
-        'bgWorkerMonsterAI
-        '
-        '
-        'pcbMonster23
-        '
-        Me.pcbMonster23.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR3
-        Me.pcbMonster23.Location = New System.Drawing.Point(435, 52)
-        Me.pcbMonster23.Name = "pcbMonster23"
-        Me.pcbMonster23.Size = New System.Drawing.Size(43, 40)
-        Me.pcbMonster23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pcbMonster23.TabIndex = 14
-        Me.pcbMonster23.TabStop = False
-        Me.pcbMonster23.Visible = False
-        '
-        'pcbMonster24
-        '
-        Me.pcbMonster24.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR4
-        Me.pcbMonster24.Location = New System.Drawing.Point(519, 23)
-        Me.pcbMonster24.Name = "pcbMonster24"
-        Me.pcbMonster24.Size = New System.Drawing.Size(43, 40)
-        Me.pcbMonster24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pcbMonster24.TabIndex = 13
-        Me.pcbMonster24.TabStop = False
-        Me.pcbMonster24.Visible = False
-        '
-        'pcbMonster22
-        '
-        Me.pcbMonster22.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR2
-        Me.pcbMonster22.Location = New System.Drawing.Point(506, 99)
-        Me.pcbMonster22.Name = "pcbMonster22"
-        Me.pcbMonster22.Size = New System.Drawing.Size(43, 40)
-        Me.pcbMonster22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pcbMonster22.TabIndex = 12
-        Me.pcbMonster22.TabStop = False
-        Me.pcbMonster22.Visible = False
-        '
-        'pcbMonster21
-        '
-        Me.pcbMonster21.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR1
-        Me.pcbMonster21.Location = New System.Drawing.Point(435, 133)
-        Me.pcbMonster21.Name = "pcbMonster21"
-        Me.pcbMonster21.Size = New System.Drawing.Size(43, 40)
-        Me.pcbMonster21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pcbMonster21.TabIndex = 11
-        Me.pcbMonster21.TabStop = False
         '
         'frmMainScr
         '
@@ -347,21 +352,21 @@ Partial Class frmMainScr
         Me.pnlMenu.PerformLayout()
         Me.pnlMain.ResumeLayout(False)
         Me.pnlMain.PerformLayout()
+        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbMonster23, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbMonster24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbMonster22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbMonster21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbMonster13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbMonster14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbMonster12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbMonster11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picMainScr, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMonster23, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMonster24, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMonster22, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMonster21, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

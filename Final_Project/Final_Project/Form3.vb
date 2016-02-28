@@ -43,8 +43,9 @@ Public Class frmMainScr
     End Sub
 
     Private Sub frmMainScr_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        monstmulti.level = 1
-        bgWorkerMonsterAI.RunWorkerAsync()
+        monstmulti.level = 1 ' Sets level of monsters
+        dungeon.monstertype = "Goblin" ' Dungeon monster type set as Goblins
+        bgWorkerMonsterAI.RunWorkerAsync() ' Starts monster AI
         If playerInf.charClass = "Warrior" Then
             charY = 340
             charMovSpd = 5
@@ -53,7 +54,7 @@ Public Class frmMainScr
             pcbPlayer3.Image = My.Resources.warIdleR
             pcbPlayer4.Image = My.Resources.warIdleR
         ElseIf playerInf.charClass = "Rogue" Then
-            charY = 350
+            charY = 340
             charMovSpd = 10
             pcbPlayer1.Image = My.Resources.rogIdleR
             pcbPlayer2.Image = My.Resources.rogIdleR
@@ -74,19 +75,19 @@ Public Class frmMainScr
         pcbPlayer4.Location = New Point(charX, charY)
         lblTest.Text = Convert.ToString(pcbPlayer1.Location)
         KeyPreview = True ' Form accepts indirect keyboard input
-        ' Sets each character frame's parent to the background to allow transparency
-        With pcbPlayer1
-            .Parent = picMainScr
-        End With
-        With pcbPlayer2
-            .Parent = picMainScr
-        End With
-        With pcbPlayer3
-            .Parent = picMainScr
-        End With
-        With pcbPlayer4
-            .Parent = picMainScr
-        End With
+        ' Sets each frame's parent to the background to allow transparency
+        pcbPlayer1.Parent = picMainScr
+        pcbPlayer2.Parent = picMainScr
+        pcbPlayer3.Parent = picMainScr
+        pcbPlayer4.Parent = picMainScr
+        pcbMonster11.Parent = picMainScr
+        pcbMonster12.Parent = picMainScr
+        pcbMonster13.Parent = picMainScr
+        pcbMonster14.Parent = picMainScr
+        pcbMonster21.Parent = picMainScr
+        pcbMonster22.Parent = picMainScr
+        pcbMonster23.Parent = picMainScr
+        pcbMonster24.Parent = picMainScr
         ' Sets background music
         wmpMusic.URL = resPath + "bgmusicGreen.wav"
         wmpMusic.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
@@ -296,50 +297,43 @@ Public Class frmMainScr
         ElseIf playerInf.charClass = "Rogue" Then
             If charDir = 1 And pcbPlayer1.Visible = True Then
                 pcbPlayer1.Image = rogIdleL
-                charY = 350
+                charY = 340
                 pcbPlayer1.Location = New Point(charX, charY - 10) ' Offset for idle image
                 pcbPlayer1.Size = New Size(72, 61)
             ElseIf charDir = 1 And pcbPlayer2.Visible = True Then
-                charY = 350
+                charY = 340
                 pcbPlayer2.Image = rogIdleL
                 pcbPlayer2.Location = New Point(charX, charY - 10) ' Offset for idle image
-                charY = 350
                 pcbPlayer2.Size = New Size(72, 61)
             ElseIf charDir = 1 And pcbPlayer3.Visible = True Then
-                charY = 350
+                charY = 340
                 pcbPlayer3.Image = rogIdleL
                 pcbPlayer3.Location = New Point(charX, charY - 10) ' Offset for idle image
-                charY = 350
                 pcbPlayer3.Size = New Size(72, 61)
             ElseIf charDir = 1 And pcbPlayer4.Visible = True Then
-                charY = 350
+                charY = 340
                 pcbPlayer4.Image = rogIdleL
                 pcbPlayer4.Location = New Point(charX, charY - 10) ' Offset for idle image
-                charY = 350
                 pcbPlayer4.Size = New Size(72, 61)
             ElseIf charDir = 2 And pcbPlayer1.Visible = True Then
-                charY = 350
+                charY = 340
                 pcbPlayer1.Image = rogIdleR
                 pcbPlayer1.Location = New Point(charX, charY - 10) ' Offset for idle image
-                charY = 350
                 pcbPlayer1.Size = New Size(72, 61)
             ElseIf charDir = 2 And pcbPlayer2.Visible = True Then
-                charY = 350
+                charY = 340
                 pcbPlayer2.Image = rogIdleR
                 pcbPlayer2.Location = New Point(charX, charY - 10) ' Offset for idle image
-                charY = 350
                 pcbPlayer2.Size = New Size(72, 61)
             ElseIf charDir = 2 And pcbPlayer3.Visible = True Then
-                charY = 350
+                charY = 340
                 pcbPlayer3.Image = rogIdleR
                 pcbPlayer3.Location = New Point(charX, charY - 10) ' Offset for idle image
-                charY = 350
                 pcbPlayer3.Size = New Size(72, 61)
             ElseIf charDir = 2 And pcbPlayer4.Visible = True Then
-                charY = 350
+                charY = 340
                 pcbPlayer4.Image = rogIdleR
                 pcbPlayer4.Location = New Point(charX, charY - 10) ' Offset for idle image
-                charY = 350
                 pcbPlayer4.Size = New Size(72, 61)
             End If
         End If
@@ -361,10 +355,7 @@ Public Class frmMainScr
                 pcbMonster12.Image = gobWalkL2
                 pcbMonster13.Image = gobWalkL3
                 pcbMonster14.Image = gobWalkL4
-                pcbMonster21.Image = Nothing
-                pcbMonster22.Image = Nothing
-                pcbMonster23.Image = Nothing
-                pcbMonster24.Image = Nothing
+                tmrMonstAnim.Enabled = True
             ElseIf dungeon.monstNum = 2 Then
                 pcbMonster11.Image = gobWalkL1
                 pcbMonster12.Image = gobWalkL2
@@ -406,5 +397,9 @@ Public Class frmMainScr
                 'pcbMonster44.Image = gobWalkL4
             End If
         End If
+    End Sub
+
+    Private Sub tmrMonstAnim_Tick(sender As Object, e As EventArgs) Handles tmrMonstAnim.Tick
+
     End Sub
 End Class

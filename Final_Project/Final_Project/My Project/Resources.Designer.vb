@@ -212,6 +212,86 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property gobDeathL1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gobDeathL1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property gobDeathL2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gobDeathL2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property gobDeathL3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gobDeathL3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property gobDeathL4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gobDeathL4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property gobDeathR1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gobDeathR1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property gobDeathR2() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gobDeathR2", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property gobDeathR3() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gobDeathR3", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property gobDeathR4() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("gobDeathR4", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property gobHitL() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("gobHitL", resourceCulture)

@@ -48,6 +48,8 @@ Partial Class frmSvFilRdr
         Me.lblSavesDir = New System.Windows.Forms.Label()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.btnUpdate = New System.Windows.Forms.Button()
+        Me.txtClass = New System.Windows.Forms.TextBox()
+        Me.lblClass = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblCharName
@@ -153,9 +155,9 @@ Partial Class frmSvFilRdr
         'lstSaves
         '
         Me.lstSaves.FormattingEnabled = True
-        Me.lstSaves.Location = New System.Drawing.Point(16, 231)
+        Me.lstSaves.Location = New System.Drawing.Point(16, 244)
         Me.lstSaves.Name = "lstSaves"
-        Me.lstSaves.Size = New System.Drawing.Size(532, 134)
+        Me.lstSaves.Size = New System.Drawing.Size(532, 121)
         Me.lstSaves.TabIndex = 20
         '
         'txtCN
@@ -264,11 +266,30 @@ Partial Class frmSvFilRdr
         Me.btnUpdate.Text = "Update"
         Me.btnUpdate.UseVisualStyleBackColor = True
         '
+        'txtClass
+        '
+        Me.txtClass.Location = New System.Drawing.Point(155, 221)
+        Me.txtClass.Name = "txtClass"
+        Me.txtClass.Size = New System.Drawing.Size(100, 20)
+        Me.txtClass.TabIndex = 36
+        '
+        'lblClass
+        '
+        Me.lblClass.AutoSize = True
+        Me.lblClass.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblClass.Location = New System.Drawing.Point(98, 220)
+        Me.lblClass.Name = "lblClass"
+        Me.lblClass.Size = New System.Drawing.Size(58, 20)
+        Me.lblClass.TabIndex = 37
+        Me.lblClass.Text = "Class:"
+        '
         'frmSvFilRdr
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(560, 379)
+        Me.Controls.Add(Me.lblClass)
+        Me.Controls.Add(Me.txtClass)
         Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.lblSavesDir)
         Me.Controls.Add(Me.txtSavesDirectory)
@@ -326,4 +347,6 @@ Partial Class frmSvFilRdr
     Friend WithEvents lblSavesDir As Label
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
     Friend WithEvents btnUpdate As Button
+    Friend WithEvents txtClass As System.Windows.Forms.TextBox
+    Friend WithEvents lblClass As System.Windows.Forms.Label
 End Class

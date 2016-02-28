@@ -340,4 +340,64 @@
   <data name="warAttR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\warAttR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gobAttL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobAttL1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobAttL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobAttL2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobAttL3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobAttL3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobAttL4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobAttL4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobAttR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobAttR1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobAttR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobAttR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobAttR3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobAttR3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobAttR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobAttR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobHitL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobHitL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobHitR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobHitR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobIdleL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobIdleL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobIdleR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobIdleR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobWalkL1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobWalkL1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobWalkL2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobWalkL2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobWalkL3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobWalkL3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobWalkL4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobWalkL4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobWalkR1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobWalkR1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobWalkR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobWalkR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobWalkR3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobWalkR3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gobWalkR4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gobWalkR4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

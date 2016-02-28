@@ -8,6 +8,11 @@ Public Class frmMainScr
     Dim charMovSpd As Integer = 5 ' Player's movement speed
     Dim charDir As Integer = 2 ' Player's direction
     Dim attStat As Boolean = False ' Is player attacking?
+    Dim monstY As Integer ' Monster's Y coord
+    Dim monst1X As Integer ' First monster's X coord
+    Dim monst2X As Integer ' Second monster's X coord
+    Dim monst3X As Integer ' Third monster's X coord
+    Dim monst4X As Integer ' Fourth monster's X coord
 
     Private Sub btnCharI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCharI.Click
         If infStat = False Then ' Checks if the character info screen is closed
@@ -38,6 +43,8 @@ Public Class frmMainScr
     End Sub
 
     Private Sub frmMainScr_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        monstmulti.level = 1
+        bgWorkerMonsterAI.RunWorkerAsync()
         If playerInf.charClass = "Warrior" Then
             charY = 340
             charMovSpd = 5
@@ -345,5 +352,59 @@ Public Class frmMainScr
 
     Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
         exitWarning.Show() ' Shows exit screen
+    End Sub
+
+    Private Sub bgWorkerMonsterAI_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles bgWorkerMonsterAI.DoWork
+        If dungeon.monstertype = "Goblin" Then
+            If dungeon.monstNum = 1 Then
+                pcbMonster11.Image = gobWalkL1
+                pcbMonster12.Image = gobWalkL2
+                pcbMonster13.Image = gobWalkL3
+                pcbMonster14.Image = gobWalkL4
+                pcbMonster21.Image = Nothing
+                pcbMonster22.Image = Nothing
+                pcbMonster23.Image = Nothing
+                pcbMonster24.Image = Nothing
+            ElseIf dungeon.monstNum = 2 Then
+                pcbMonster11.Image = gobWalkL1
+                pcbMonster12.Image = gobWalkL2
+                pcbMonster13.Image = gobWalkL3
+                pcbMonster14.Image = gobWalkL4
+                pcbMonster21.Image = gobWalkL1
+                pcbMonster22.Image = gobWalkL2
+                pcbMonster23.Image = gobWalkL3
+                pcbMonster24.Image = gobWalkL4
+            ElseIf dungeon.monstNum = 3 Then
+                pcbMonster11.Image = gobWalkL1
+                pcbMonster12.Image = gobWalkL2
+                pcbMonster13.Image = gobWalkL3
+                pcbMonster14.Image = gobWalkL4
+                pcbMonster21.Image = gobWalkL1
+                pcbMonster22.Image = gobWalkL2
+                pcbMonster23.Image = gobWalkL3
+                pcbMonster24.Image = gobWalkL4
+                'pcbMonster31.Image = gobWalkL1
+                'pcbMonster32.Image = gobWalkL2
+                'pcbMonster33.Image = gobWalkL3
+                'pcbMonster34.Image = gobWalkL4
+            ElseIf dungeon.monstNum = 4 Then
+                pcbMonster11.Image = gobWalkL1
+                pcbMonster12.Image = gobWalkL2
+                pcbMonster13.Image = gobWalkL3
+                pcbMonster14.Image = gobWalkL4
+                pcbMonster21.Image = gobWalkL1
+                pcbMonster22.Image = gobWalkL2
+                pcbMonster23.Image = gobWalkL3
+                pcbMonster24.Image = gobWalkL4
+                'pcbMonster31.Image = gobWalkL1
+                'pcbMonster32.Image = gobWalkL2
+                'pcbMonster33.Image = gobWalkL3
+                'pcbMonster34.Image = gobWalkL4
+                'pcbMonster41.Image = gobWalkL1
+                'pcbMonster42.Image = gobWalkL2
+                'pcbMonster43.Image = gobWalkL3
+                'pcbMonster44.Image = gobWalkL4
+            End If
+        End If
     End Sub
 End Class

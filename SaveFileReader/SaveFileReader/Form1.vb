@@ -23,10 +23,11 @@ Public Class frmSvFilRdr
             r.ReadLine()
             r.ReadLine()
             r.ReadLine()
-            plyrClass = r.ReadLine
+            txtClass.Text = r.ReadLine
             txtLvl.Text = r.ReadLine
             txtMon.Text = r.ReadLine
         End Using
+        plyrClass = txtClass.Text
     End Sub
 
     Private Sub btnBrowse_Click(sender As Object, e As EventArgs) Handles btnBrowse.Click

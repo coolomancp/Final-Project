@@ -30,7 +30,7 @@ Partial Class frmLoadScr
         '
         'btnLoad
         '
-        Me.btnLoad.Location = New System.Drawing.Point(12, 518)
+        Me.btnLoad.Location = New System.Drawing.Point(12, 209)
         Me.btnLoad.Name = "btnLoad"
         Me.btnLoad.Size = New System.Drawing.Size(75, 23)
         Me.btnLoad.TabIndex = 0
@@ -40,7 +40,7 @@ Partial Class frmLoadScr
         'btnCancel
         '
         Me.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancel.Location = New System.Drawing.Point(381, 518)
+        Me.btnCancel.Location = New System.Drawing.Point(381, 209)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 23)
         Me.btnCancel.TabIndex = 1
@@ -52,7 +52,7 @@ Partial Class frmLoadScr
         Me.lstSaves.FormattingEnabled = True
         Me.lstSaves.Location = New System.Drawing.Point(12, 12)
         Me.lstSaves.Name = "lstSaves"
-        Me.lstSaves.Size = New System.Drawing.Size(444, 485)
+        Me.lstSaves.Size = New System.Drawing.Size(444, 186)
         Me.lstSaves.TabIndex = 2
         '
         'frmLoadScr
@@ -60,16 +60,16 @@ Partial Class frmLoadScr
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancel
-        Me.ClientSize = New System.Drawing.Size(468, 553)
+        Me.ClientSize = New System.Drawing.Size(468, 246)
         Me.ControlBox = False
         Me.Controls.Add(Me.lstSaves)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnLoad)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MaximumSize = New System.Drawing.Size(484, 592)
+        Me.MaximumSize = New System.Drawing.Size(484, 284)
         Me.MinimizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(484, 592)
+        Me.MinimumSize = New System.Drawing.Size(484, 284)
         Me.Name = "frmLoadScr"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Load"

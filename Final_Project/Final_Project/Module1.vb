@@ -92,4 +92,42 @@
     Public magAttL4 As Image = My.Resources.magAttL4 ' Fourth frame of mage class attacking to the left
     ' Path to the resource files to allow use in any directory
     Public resPath As String = Replace(My.Application.Info.DirectoryPath, "\bin\Debug", "\Resources\")
+    ' Dungeon Monsters (Non-Boss)
+    ' Monster Multiplyers
+    Public Structure monstermultiply
+        Dim level As Integer ' Used to define the level / difficulty of the area
+    End Structure
+
+    Public monstmulti As monstermultiply
+    ' Goblin
+    Public goblinDmg As Integer = 5 * monstmulti.level ' Goblin's damage
+    Public goblinDef As Integer = 1 * monstmulti.level ' Goblin's defence
+    Public gobWalkL1 As Image = My.Resources.gobWalkL1 ' First frame of goblin walking to the left
+    Public gobWalkL2 As Image = My.Resources.gobWalkL2 ' Second frame of goblin walking to the left
+    Public gobWalkL3 As Image = My.Resources.gobWalkL3 ' Third frame of goblin walking to the left
+    Public gobWalkL4 As Image = My.Resources.gobWalkL4 ' Fourth frame of goblin walking to the left
+    Public gobWalkR1 As Image = My.Resources.gobWalkR1 ' First frame of goblin walking to the right
+    Public gobWalkR2 As Image = My.Resources.gobWalkR2 ' Second frame of goblin walking to the right
+    Public gobWalkR3 As Image = My.Resources.gobWalkR3 ' Third frame of goblin walking to the right
+    Public gobWalkR4 As Image = My.Resources.gobWalkR4 ' Fourth frame of goblin walking to the right
+    Public gobIdleL As Image = My.Resources.gobIdleL ' Goblin idle facing the left
+    Public gobIdleR As Image = My.Resources.gobIdleR ' Goblin idle facing the right
+    Public gobAttL1 As Image = My.Resources.gobAttL1 ' First frame of goblin attacking to the left
+    Public gobAttL2 As Image = My.Resources.gobAttL2 ' Second frame of goblin attacking to the left
+    Public gobAttL3 As Image = My.Resources.gobAttL3 ' Third frame of goblin attacking to the left
+    Public gobAttL4 As Image = My.Resources.gobAttL4 ' Fourth frame of goblin attacking to the left
+    Public gobAttR1 As Image = My.Resources.gobAttR1 ' First frame of goblin attacking to the right
+    Public gobAttR2 As Image = My.Resources.gobAttR2 ' Second frame of goblin attacking to the right
+    Public gobAttR3 As Image = My.Resources.gobAttR3 ' Third frame of goblin attacking to the right
+    Public gobAttR4 As Image = My.Resources.gobAttR4 ' Fourth frame of goblin attacking to the right
+    Public gobHitL As Image = My.Resources.gobHitL ' Goblin being hit while facing the left
+    Public gobHitR As Image = My.Resources.gobHitR ' Goblin being hit while facing the right
+    ' Dungeon Information
+    Public Structure dungeonInfo
+        Dim monstertype As String ' Determines what monster the level has
+        Dim monstNum As Integer ' Determines how many monsters there are per stage
+        Dim difficulty As Integer ' Determines the strength of the monsters
+        Dim type As String ' Defines what type of dungeon
+    End Structure
+    Public dungeon As dungeonInfo
 End Module

@@ -13,7 +13,7 @@ TestChar
 (none)
 (none)
 (none)
-Warrior
+Rogue
 45
 2000
 0

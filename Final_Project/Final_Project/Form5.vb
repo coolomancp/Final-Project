@@ -6,8 +6,8 @@ Public Class frmExitWarning
         Dim save() As String = {playerInf.name, playerInf.HP, playerInf.HPM, playerInf.MP, playerInf.MPM, playerInf.strength, playerInf.intelligence, playerInf.agility, playerInf.activeBracers, playerInf.activeChest, playerInf.activeGloves, playerInf.activeHelm, playerInf.activeLegs, playerInf.activeWepL, playerInf.activeWepR, playerInf.charClass, playerInf.level, playerInf.moneyAmount, playerInf.charX, playerInf.charY, playerInf.dungeonID, playerInf.dungeonRM}
         File.AppendAllLines(resPath & "Saves\" & Convert.ToString(playerInf.name & ".txt"), save)
         ' Frees up RAM from music
-        frmMainScr.wmpAmbient = Nothing
-        frmMainScr.wmpMusic = Nothing
+        mainScr.wmpAmbient = Nothing
+        mainScr.wmpMusic = Nothing
         ' Exits
         Application.Exit()
     End Sub

@@ -231,6 +231,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\gobAttL4.png" />
+    <None Include="Resources\gobAttL3.png" />
+    <None Include="Resources\gobAttL2.png" />
+    <None Include="Resources\gobAttL1.png" />
+    <None Include="Resources\gobAttR4.png" />
+    <None Include="Resources\gobAttR3.png" />
+    <None Include="Resources\gobAttR2.png" />
+    <None Include="Resources\gobAttR1.png" />
+    <None Include="Resources\gobHitR.png" />
+    <None Include="Resources\gobHitL.png" />
+    <None Include="Resources\gobIdleR.png" />
+    <None Include="Resources\gobIdleL.png" />
+    <None Include="Resources\gobWalkR4.png" />
+    <None Include="Resources\gobWalkR3.png" />
+    <None Include="Resources\gobWalkR2.png" />
+    <None Include="Resources\gobWalkR1.png" />
+    <None Include="Resources\gobWalkL4.png" />
+    <None Include="Resources\gobWalkL3.png" />
+    <None Include="Resources\gobWalkL2.png" />
+    <None Include="Resources\gobWalkL1.png" />
     <None Include="Resources\warAttR4.png" />
     <None Include="Resources\warAttR3.png" />
     <None Include="Resources\warAttR2.png" />

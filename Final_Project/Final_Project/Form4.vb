@@ -4,7 +4,7 @@
         creation.Show() ' Shows character creation screen
     End Sub
 
-    Private Sub frmLaunchScr_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frmLaunchScr_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         With picLogo
             .Parent = picBackground
         End With

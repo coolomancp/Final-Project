@@ -5,6 +5,7 @@
     Public charInfoScr As New frmCharScreen ' Character Info screen is loaded
     Public exitWarning As New frmExitWarning ' Warns player to save before exiting
     Public creation As New frmCharCreate ' Character creation screen
+    Public battleScr As New frmBattle ' Screen used for battle
     Public Structure playerInfo ' Stores all of the player's information
         Public HP As Integer ' Player's current health
         Public HPM As Integer ' Player's max health
@@ -29,6 +30,9 @@
         Public dungeonID As Integer ' What dungeon the player is in
         Public dungeonRM As Integer ' What room in the dungeon the player is in
     End Structure
+    Public charDir As Integer = 2 ' Player's direction
+    Public charX As Integer ' Player's starting x coord
+    Public charY As Integer ' Player's starting y coord
     Public playerInf As playerInfo
     Public Structure playerInv ' Stores all of the player's inventory information
         Dim invS1 As String ' Player's first inventory slot
@@ -130,7 +134,10 @@
     Public gobDeathR2 As Image = My.Resources.gobDeathR2 ' Second frame of goblin turning to ash facing to the right
     Public gobDeathR3 As Image = My.Resources.gobDeathR3 ' Third frame of goblin turning to ash facing to the right
     Public gobDeathR4 As Image = My.Resources.gobDeathR4 ' Fourth frame of goblin turning to ash facing to the right
+    ' Dungeon Backgrounds
+    Public grasslandBG As Image = My.Resources.grasslandDungeonBG ' Corresponds to any fighting grounds within a grassland
     ' Dungeon Information
+    Public monst1Dead As Boolean
     Public Structure dungeonInfo
         Dim monstertype As String ' Determines what monster the level has
         Dim monstNum As Integer ' Determines how many monsters there are per stage

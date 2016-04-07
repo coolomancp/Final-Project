@@ -7,10 +7,7 @@ Imports System.Windows.Forms
 Public Class frmMainScr
     Dim invStat As Boolean = False ' Default status of the inventory screen is hidden
     Dim infStat As Boolean = False ' Default status of the char info screen is hidden
-    Dim charX As Integer ' Player's starting x coord
-    Dim charY As Integer ' Player's starting y coord
     Dim charMovSpd As Integer = 5 ' Player's movement speed
-    Dim charDir As Integer = 2 ' Player's direction
     Dim attStat As Boolean = False ' Is player attacking?
     Dim monstY As Integer ' Monster's Y coord
     Dim monst1X As Integer ' First monster's X coord
@@ -50,6 +47,8 @@ Public Class frmMainScr
         monstmulti.level = 1 ' Sets level of monsters
         dungeon.monstertype = "Goblin" ' Dungeon monster type set as Goblins
         dungeon.monstNum = 2 ' Number of monsters
+        dungeon.type = "grasslands"
+        monst1Dead = False ' Monster is alive
         If dungeon.monstertype = "Goblin" Then
             If dungeon.monstNum = 1 Then
                 pcbMonster11.Image = gobWalkL1
@@ -198,6 +197,7 @@ Public Class frmMainScr
                     pcbPlayer3.Image = rogWalkL3
                     charY = 350
                     pcbPlayer4.Image = rogWalkL4
+                    battleTrigger() ' Triggers battle if player is close to a monster
                 ElseIf playerInf.charClass = "Mage" Then
                     pcbPlayer1.Image = magFlyL1
                     pcbPlayer2.Image = magFlyL2
@@ -231,6 +231,7 @@ Public Class frmMainScr
                     pcbPlayer3.Image = rogWalkR3
                     pcbPlayer4.Image = rogWalkR4
                     charY = 350
+                    battleTrigger() ' Triggers battle if player is close to a monster
                 ElseIf playerInf.charClass = "Mage" Then
                     pcbPlayer1.Image = magFlyR1
                     pcbPlayer2.Image = magFlyR2
@@ -306,7 +307,21 @@ Public Class frmMainScr
                 tmrAnim.Enabled = True ' Starts animation
         End Select
     End Sub
-
+    ' ADD PROCEDURE DOC
+    Sub battleTrigger()
+        If pcbPlayer1.Right > pcbMonster11.Left - (pcbMonster11.Width - 20) And monst1Dead = False Then
+            Hide()
+            battleScr.Show()
+        Else
+            lblTest2.Text = "{ " & pcbPlayer1.Right & " / " & pcbMonster11.Left - (pcbMonster11.Width - 20) & " }"
+        End If
+        If pcbPlayer1.Right > pcbMonster21.Left - (pcbMonster21.Width - 20) And monst1Dead = False Then
+            Hide()
+            battleScr.Show()
+        Else
+            lblTest2.Text = "{ " & pcbPlayer1.Right & " / " & pcbMonster11.Left - (pcbMonster11.Width - 20) & " }"
+        End If
+    End Sub
     Private Sub frmMainScr_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyUp
         tmrAnim.Enabled = False ' Stops animation
         lblTest.Text = Convert.ToString(pcbPlayer1.Location)

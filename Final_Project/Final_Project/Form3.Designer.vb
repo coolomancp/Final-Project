@@ -49,6 +49,7 @@ Partial Class frmMainScr
         Me.bgWrkrMonstMove = New System.ComponentModel.BackgroundWorker()
         Me.tmrMonst1Anim = New System.Windows.Forms.Timer(Me.components)
         Me.tmrMonst2Anim = New System.Windows.Forms.Timer(Me.components)
+        Me.lblTest2 = New System.Windows.Forms.Label()
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
         CType(Me.pcbMonster23, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,6 +72,7 @@ Partial Class frmMainScr
         'pnlMenu
         '
         Me.pnlMenu.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.pnlMenu.Controls.Add(Me.lblTest2)
         Me.pnlMenu.Controls.Add(Me.lblTest)
         Me.pnlMenu.Controls.Add(Me.btnExit)
         Me.pnlMenu.Controls.Add(Me.btnCharI)
@@ -283,10 +285,10 @@ Partial Class frmMainScr
         '
         Me.pcbPlayer2.BackColor = System.Drawing.Color.Transparent
         Me.pcbPlayer2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.pcbPlayer2.Image = Global.WindowsApplication1.My.Resources.Resources.magAttL1
+        Me.pcbPlayer2.Image = Global.WindowsApplication1.My.Resources.Resources.rogAttR4
         Me.pcbPlayer2.Location = New System.Drawing.Point(213, 316)
         Me.pcbPlayer2.Name = "pcbPlayer2"
-        Me.pcbPlayer2.Size = New System.Drawing.Size(120, 90)
+        Me.pcbPlayer2.Size = New System.Drawing.Size(107, 70)
         Me.pcbPlayer2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.pcbPlayer2.TabIndex = 5
         Me.pcbPlayer2.TabStop = False
@@ -335,6 +337,18 @@ Partial Class frmMainScr
         '
         Me.tmrMonst1Anim.Enabled = True
         Me.tmrMonst1Anim.Interval = 200
+        '
+        'tmrMonst2Anim
+        '
+        '
+        'lblTest2
+        '
+        Me.lblTest2.AutoSize = True
+        Me.lblTest2.Location = New System.Drawing.Point(20, 44)
+        Me.lblTest2.Name = "lblTest2"
+        Me.lblTest2.Size = New System.Drawing.Size(39, 13)
+        Me.lblTest2.TabIndex = 6
+        Me.lblTest2.Text = "Label1"
         '
         'frmMainScr
         '
@@ -402,4 +416,5 @@ Partial Class frmMainScr
     Friend WithEvents pcbMonster21 As PictureBox
     Friend WithEvents tmrMonst1Anim As Timer
     Friend WithEvents tmrMonst2Anim As System.Windows.Forms.Timer
+    Friend WithEvents lblTest2 As System.Windows.Forms.Label
 End Class

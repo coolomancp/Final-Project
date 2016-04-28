@@ -24,25 +24,25 @@ Partial Class frmCharScreen
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmCharScreen))
         Me.pnlChestF = New System.Windows.Forms.Panel()
-        Me.picChest = New System.Windows.Forms.PictureBox()
+        Me.pcbChest = New System.Windows.Forms.PictureBox()
         Me.pnlChestB = New System.Windows.Forms.Panel()
         Me.pnlHeadF = New System.Windows.Forms.Panel()
-        Me.picHelm = New System.Windows.Forms.PictureBox()
+        Me.pcbHelm = New System.Windows.Forms.PictureBox()
         Me.pnlHeadB = New System.Windows.Forms.Panel()
         Me.pnlGlovesF = New System.Windows.Forms.Panel()
-        Me.picGloves = New System.Windows.Forms.PictureBox()
+        Me.pcbGloves = New System.Windows.Forms.PictureBox()
         Me.pnlGlovesB = New System.Windows.Forms.Panel()
         Me.pnlWepRightF = New System.Windows.Forms.Panel()
-        Me.picHandR = New System.Windows.Forms.PictureBox()
+        Me.pcbHandR = New System.Windows.Forms.PictureBox()
         Me.pnlWepRightB = New System.Windows.Forms.Panel()
         Me.pnlWepLeftF = New System.Windows.Forms.Panel()
-        Me.picHandL = New System.Windows.Forms.PictureBox()
+        Me.pcbHandL = New System.Windows.Forms.PictureBox()
         Me.pnlWepLeftB = New System.Windows.Forms.Panel()
         Me.pnlBracerF = New System.Windows.Forms.Panel()
-        Me.picBracer = New System.Windows.Forms.PictureBox()
+        Me.pcbBracer = New System.Windows.Forms.PictureBox()
         Me.pnlBracerB = New System.Windows.Forms.Panel()
         Me.pnlLegsF = New System.Windows.Forms.Panel()
-        Me.picLegs = New System.Windows.Forms.PictureBox()
+        Me.pcbLegs = New System.Windows.Forms.PictureBox()
         Me.pnlLegsB = New System.Windows.Forms.Panel()
         Me.lblCIHP = New System.Windows.Forms.Label()
         Me.lblHPVal = New System.Windows.Forms.Label()
@@ -75,41 +75,41 @@ Partial Class frmCharScreen
         Me.lblLevel = New System.Windows.Forms.Label()
         Me.lblLvl = New System.Windows.Forms.Label()
         Me.pnlChestF.SuspendLayout()
-        CType(Me.picChest, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbChest, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlHeadF.SuspendLayout()
-        CType(Me.picHelm, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbHelm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlGlovesF.SuspendLayout()
-        CType(Me.picGloves, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbGloves, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlWepRightF.SuspendLayout()
-        CType(Me.picHandR, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbHandR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlWepLeftF.SuspendLayout()
-        CType(Me.picHandL, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbHandL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlBracerF.SuspendLayout()
-        CType(Me.picBracer, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbBracer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlLegsF.SuspendLayout()
-        CType(Me.picLegs, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbLegs, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStats.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlChestF
         '
         Me.pnlChestF.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.pnlChestF.Controls.Add(Me.picChest)
+        Me.pnlChestF.Controls.Add(Me.pcbChest)
         Me.pnlChestF.Location = New System.Drawing.Point(197, 190)
         Me.pnlChestF.Name = "pnlChestF"
         Me.pnlChestF.Size = New System.Drawing.Size(50, 50)
         Me.pnlChestF.TabIndex = 0
         '
-        'picChest
+        'pcbChest
         '
-        Me.picChest.ErrorImage = CType(resources.GetObject("picChest.ErrorImage"), System.Drawing.Image)
-        Me.picChest.Image = Global.WindowsApplication1.My.Resources.Resources.Chest
-        Me.picChest.Location = New System.Drawing.Point(0, -3)
-        Me.picChest.Name = "picChest"
-        Me.picChest.Size = New System.Drawing.Size(53, 47)
-        Me.picChest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picChest.TabIndex = 45
-        Me.picChest.TabStop = False
+        Me.pcbChest.ErrorImage = CType(resources.GetObject("pcbChest.ErrorImage"), System.Drawing.Image)
+        Me.pcbChest.Image = Global.WindowsApplication1.My.Resources.Resources.Chest
+        Me.pcbChest.Location = New System.Drawing.Point(0, -3)
+        Me.pcbChest.Name = "pcbChest"
+        Me.pcbChest.Size = New System.Drawing.Size(53, 47)
+        Me.pcbChest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbChest.TabIndex = 45
+        Me.pcbChest.TabStop = False
         '
         'pnlChestB
         '
@@ -122,22 +122,22 @@ Partial Class frmCharScreen
         'pnlHeadF
         '
         Me.pnlHeadF.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.pnlHeadF.Controls.Add(Me.picHelm)
+        Me.pnlHeadF.Controls.Add(Me.pcbHelm)
         Me.pnlHeadF.Location = New System.Drawing.Point(197, 96)
         Me.pnlHeadF.Name = "pnlHeadF"
         Me.pnlHeadF.Size = New System.Drawing.Size(50, 50)
         Me.pnlHeadF.TabIndex = 2
         '
-        'picHelm
+        'pcbHelm
         '
-        Me.picHelm.ErrorImage = CType(resources.GetObject("picHelm.ErrorImage"), System.Drawing.Image)
-        Me.picHelm.Image = Global.WindowsApplication1.My.Resources.Resources.Helm
-        Me.picHelm.Location = New System.Drawing.Point(0, 0)
-        Me.picHelm.Name = "picHelm"
-        Me.picHelm.Size = New System.Drawing.Size(53, 47)
-        Me.picHelm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picHelm.TabIndex = 44
-        Me.picHelm.TabStop = False
+        Me.pcbHelm.ErrorImage = CType(resources.GetObject("pcbHelm.ErrorImage"), System.Drawing.Image)
+        Me.pcbHelm.Image = Global.WindowsApplication1.My.Resources.Resources.Helm
+        Me.pcbHelm.Location = New System.Drawing.Point(0, 0)
+        Me.pcbHelm.Name = "pcbHelm"
+        Me.pcbHelm.Size = New System.Drawing.Size(53, 47)
+        Me.pcbHelm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbHelm.TabIndex = 44
+        Me.pcbHelm.TabStop = False
         '
         'pnlHeadB
         '
@@ -150,22 +150,22 @@ Partial Class frmCharScreen
         'pnlGlovesF
         '
         Me.pnlGlovesF.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.pnlGlovesF.Controls.Add(Me.picGloves)
+        Me.pnlGlovesF.Controls.Add(Me.pcbGloves)
         Me.pnlGlovesF.Location = New System.Drawing.Point(82, 156)
         Me.pnlGlovesF.Name = "pnlGlovesF"
         Me.pnlGlovesF.Size = New System.Drawing.Size(50, 50)
         Me.pnlGlovesF.TabIndex = 2
         '
-        'picGloves
+        'pcbGloves
         '
-        Me.picGloves.ErrorImage = CType(resources.GetObject("picGloves.ErrorImage"), System.Drawing.Image)
-        Me.picGloves.Image = Global.WindowsApplication1.My.Resources.Resources.Gloves
-        Me.picGloves.Location = New System.Drawing.Point(0, -3)
-        Me.picGloves.Name = "picGloves"
-        Me.picGloves.Size = New System.Drawing.Size(53, 47)
-        Me.picGloves.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picGloves.TabIndex = 45
-        Me.picGloves.TabStop = False
+        Me.pcbGloves.ErrorImage = CType(resources.GetObject("pcbGloves.ErrorImage"), System.Drawing.Image)
+        Me.pcbGloves.Image = Global.WindowsApplication1.My.Resources.Resources.Gloves
+        Me.pcbGloves.Location = New System.Drawing.Point(0, -3)
+        Me.pcbGloves.Name = "pcbGloves"
+        Me.pcbGloves.Size = New System.Drawing.Size(53, 47)
+        Me.pcbGloves.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbGloves.TabIndex = 45
+        Me.pcbGloves.TabStop = False
         '
         'pnlGlovesB
         '
@@ -178,22 +178,22 @@ Partial Class frmCharScreen
         'pnlWepRightF
         '
         Me.pnlWepRightF.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.pnlWepRightF.Controls.Add(Me.picHandR)
+        Me.pnlWepRightF.Controls.Add(Me.pcbHandR)
         Me.pnlWepRightF.Location = New System.Drawing.Point(82, 228)
         Me.pnlWepRightF.Name = "pnlWepRightF"
         Me.pnlWepRightF.Size = New System.Drawing.Size(50, 50)
         Me.pnlWepRightF.TabIndex = 2
         '
-        'picHandR
+        'pcbHandR
         '
-        Me.picHandR.ErrorImage = CType(resources.GetObject("picHandR.ErrorImage"), System.Drawing.Image)
-        Me.picHandR.Image = Global.WindowsApplication1.My.Resources.Resources.SwordR
-        Me.picHandR.Location = New System.Drawing.Point(0, 0)
-        Me.picHandR.Name = "picHandR"
-        Me.picHandR.Size = New System.Drawing.Size(53, 47)
-        Me.picHandR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picHandR.TabIndex = 45
-        Me.picHandR.TabStop = False
+        Me.pcbHandR.ErrorImage = CType(resources.GetObject("pcbHandR.ErrorImage"), System.Drawing.Image)
+        Me.pcbHandR.Image = Global.WindowsApplication1.My.Resources.Resources.SwordR
+        Me.pcbHandR.Location = New System.Drawing.Point(0, 0)
+        Me.pcbHandR.Name = "pcbHandR"
+        Me.pcbHandR.Size = New System.Drawing.Size(53, 47)
+        Me.pcbHandR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbHandR.TabIndex = 45
+        Me.pcbHandR.TabStop = False
         '
         'pnlWepRightB
         '
@@ -206,22 +206,22 @@ Partial Class frmCharScreen
         'pnlWepLeftF
         '
         Me.pnlWepLeftF.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.pnlWepLeftF.Controls.Add(Me.picHandL)
+        Me.pnlWepLeftF.Controls.Add(Me.pcbHandL)
         Me.pnlWepLeftF.Location = New System.Drawing.Point(310, 231)
         Me.pnlWepLeftF.Name = "pnlWepLeftF"
         Me.pnlWepLeftF.Size = New System.Drawing.Size(50, 50)
         Me.pnlWepLeftF.TabIndex = 5
         '
-        'picHandL
+        'pcbHandL
         '
-        Me.picHandL.ErrorImage = CType(resources.GetObject("picHandL.ErrorImage"), System.Drawing.Image)
-        Me.picHandL.Image = Global.WindowsApplication1.My.Resources.Resources.SwordL
-        Me.picHandL.Location = New System.Drawing.Point(0, 0)
-        Me.picHandL.Name = "picHandL"
-        Me.picHandL.Size = New System.Drawing.Size(53, 47)
-        Me.picHandL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picHandL.TabIndex = 45
-        Me.picHandL.TabStop = False
+        Me.pcbHandL.ErrorImage = CType(resources.GetObject("pcbHandL.ErrorImage"), System.Drawing.Image)
+        Me.pcbHandL.Image = Global.WindowsApplication1.My.Resources.Resources.SwordL
+        Me.pcbHandL.Location = New System.Drawing.Point(0, 0)
+        Me.pcbHandL.Name = "pcbHandL"
+        Me.pcbHandL.Size = New System.Drawing.Size(53, 47)
+        Me.pcbHandL.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbHandL.TabIndex = 45
+        Me.pcbHandL.TabStop = False
         '
         'pnlWepLeftB
         '
@@ -234,22 +234,22 @@ Partial Class frmCharScreen
         'pnlBracerF
         '
         Me.pnlBracerF.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.pnlBracerF.Controls.Add(Me.picBracer)
+        Me.pnlBracerF.Controls.Add(Me.pcbBracer)
         Me.pnlBracerF.Location = New System.Drawing.Point(310, 159)
         Me.pnlBracerF.Name = "pnlBracerF"
         Me.pnlBracerF.Size = New System.Drawing.Size(50, 50)
         Me.pnlBracerF.TabIndex = 4
         '
-        'picBracer
+        'pcbBracer
         '
-        Me.picBracer.ErrorImage = CType(resources.GetObject("picBracer.ErrorImage"), System.Drawing.Image)
-        Me.picBracer.Image = Global.WindowsApplication1.My.Resources.Resources.Bracer
-        Me.picBracer.Location = New System.Drawing.Point(-3, 0)
-        Me.picBracer.Name = "picBracer"
-        Me.picBracer.Size = New System.Drawing.Size(53, 47)
-        Me.picBracer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picBracer.TabIndex = 45
-        Me.picBracer.TabStop = False
+        Me.pcbBracer.ErrorImage = CType(resources.GetObject("pcbBracer.ErrorImage"), System.Drawing.Image)
+        Me.pcbBracer.Image = Global.WindowsApplication1.My.Resources.Resources.Bracer
+        Me.pcbBracer.Location = New System.Drawing.Point(-3, 0)
+        Me.pcbBracer.Name = "pcbBracer"
+        Me.pcbBracer.Size = New System.Drawing.Size(53, 47)
+        Me.pcbBracer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbBracer.TabIndex = 45
+        Me.pcbBracer.TabStop = False
         '
         'pnlBracerB
         '
@@ -262,22 +262,22 @@ Partial Class frmCharScreen
         'pnlLegsF
         '
         Me.pnlLegsF.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.pnlLegsF.Controls.Add(Me.picLegs)
+        Me.pnlLegsF.Controls.Add(Me.pcbLegs)
         Me.pnlLegsF.Location = New System.Drawing.Point(197, 282)
         Me.pnlLegsF.Name = "pnlLegsF"
         Me.pnlLegsF.Size = New System.Drawing.Size(50, 50)
         Me.pnlLegsF.TabIndex = 8
         '
-        'picLegs
+        'pcbLegs
         '
-        Me.picLegs.ErrorImage = CType(resources.GetObject("picLegs.ErrorImage"), System.Drawing.Image)
-        Me.picLegs.Image = Global.WindowsApplication1.My.Resources.Resources.Legs
-        Me.picLegs.Location = New System.Drawing.Point(0, 0)
-        Me.picLegs.Name = "picLegs"
-        Me.picLegs.Size = New System.Drawing.Size(53, 47)
-        Me.picLegs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLegs.TabIndex = 45
-        Me.picLegs.TabStop = False
+        Me.pcbLegs.ErrorImage = CType(resources.GetObject("pcbLegs.ErrorImage"), System.Drawing.Image)
+        Me.pcbLegs.Image = Global.WindowsApplication1.My.Resources.Resources.Legs
+        Me.pcbLegs.Location = New System.Drawing.Point(0, 0)
+        Me.pcbLegs.Name = "pcbLegs"
+        Me.pcbLegs.Size = New System.Drawing.Size(53, 47)
+        Me.pcbLegs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbLegs.TabIndex = 45
+        Me.pcbLegs.TabStop = False
         '
         'pnlLegsB
         '
@@ -613,7 +613,7 @@ Partial Class frmCharScreen
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
-        Me.ClientSize = New System.Drawing.Size(435, 441)
+        Me.ClientSize = New System.Drawing.Size(445, 452)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblLvl)
         Me.Controls.Add(Me.lblLevel)
@@ -659,19 +659,19 @@ Partial Class frmCharScreen
         Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "Character Information"
         Me.pnlChestF.ResumeLayout(False)
-        CType(Me.picChest, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbChest, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlHeadF.ResumeLayout(False)
-        CType(Me.picHelm, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbHelm, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlGlovesF.ResumeLayout(False)
-        CType(Me.picGloves, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbGloves, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlWepRightF.ResumeLayout(False)
-        CType(Me.picHandR, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbHandR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlWepLeftF.ResumeLayout(False)
-        CType(Me.picHandL, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbHandL, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlBracerF.ResumeLayout(False)
-        CType(Me.picBracer, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbBracer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlLegsF.ResumeLayout(False)
-        CType(Me.picLegs, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbLegs, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStats.ResumeLayout(False)
         Me.pnlStats.PerformLayout()
         Me.ResumeLayout(False)
@@ -720,13 +720,13 @@ Partial Class frmCharScreen
     Friend WithEvents lblCNVal As Label
     Friend WithEvents proBarHealthVal As ProgressBar
     Friend WithEvents proBarManaVal As ProgressBar
-    Friend WithEvents picHelm As System.Windows.Forms.PictureBox
-    Friend WithEvents picChest As System.Windows.Forms.PictureBox
-    Friend WithEvents picGloves As System.Windows.Forms.PictureBox
-    Friend WithEvents picHandR As System.Windows.Forms.PictureBox
-    Friend WithEvents picHandL As System.Windows.Forms.PictureBox
-    Friend WithEvents picBracer As System.Windows.Forms.PictureBox
-    Friend WithEvents picLegs As System.Windows.Forms.PictureBox
+    Friend WithEvents pcbHelm As System.Windows.Forms.PictureBox
+    Friend WithEvents pcbChest As System.Windows.Forms.PictureBox
+    Friend WithEvents pcbGloves As System.Windows.Forms.PictureBox
+    Friend WithEvents pcbHandR As System.Windows.Forms.PictureBox
+    Friend WithEvents pcbHandL As System.Windows.Forms.PictureBox
+    Friend WithEvents pcbBracer As System.Windows.Forms.PictureBox
+    Friend WithEvents pcbLegs As System.Windows.Forms.PictureBox
     Friend WithEvents lblLevel As Label
     Friend WithEvents lblLvl As Label
 End Class

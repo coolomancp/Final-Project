@@ -44,11 +44,21 @@ Public Class frmMainScr
     End Sub
 
     Private Sub frmMainScr_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+        ' TEMP CODE : ADD DAGGERS TO IMAGE
+        playerInf.activeWepL = "basicDaggerL"
+        playerInf.activeWepR = "basicDaggerR"
+        If playerInf.activeWepL = "basicDaggerL" Then
+            charInfoScr.pcbHandL.Image = rogBasDagL
+        End If
+        If playerInf.activeWepR = "basicDaggerR" Then
+            charInfoScr.pcbHandR.Image = rogBasDagR
+        End If
         monstmulti.level = 1 ' Sets level of monsters
         dungeon.monstertype = "Goblin" ' Dungeon monster type set as Goblins
         dungeon.monstNum = 2 ' Number of monsters
         dungeon.type = "grasslands"
-        monst1Dead = False ' Monster is alive
+        monst1Dead = False ' Monster 1 is alive
+        monst2Dead = False ' Monster 2 is alive
         If dungeon.monstertype = "Goblin" Then
             If dungeon.monstNum = 1 Then
                 pcbMonster11.Image = gobWalkL1
@@ -154,13 +164,16 @@ Public Class frmMainScr
         pcbMonster22.Parent = picMainScr
         pcbMonster23.Parent = picMainScr
         pcbMonster24.Parent = picMainScr
-        ' Sets background music
-        wmpMusic.URL = resPath + "bgmusicGreen.wav"
-        wmpMusic.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
+        ' Sets lvl up label for transparency
+        lblLevelUp.Parent = picMainScr
+        lblLevelUp.Visible = False
+        ' Sets background music UNDO COMMENTS!***************************************************************************************
+        'wmpMusic.URL = resPath + "bgmusicGreen.wav"
+        'wmpMusic.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
         ' Sets ambient sounds and sets ambient sound volume low
-        wmpAmbient.URL = resPath + "waterfallAmbient.wav"
-        wmpAmbient.settings.volume = 10
-        wmpAmbient.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
+        'wmpAmbient.URL = resPath + "waterfallAmbient.wav"
+        'wmpAmbient.settings.volume = 10
+        'wmpAmbient.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
     End Sub
     Private Sub timeanim_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles tmrAnim.Tick
         ' Animates the player's character by turning one frame on as the previous frame is turned off
@@ -190,6 +203,7 @@ Public Class frmMainScr
                     pcbPlayer2.Image = warWalkL2
                     pcbPlayer3.Image = warWalkL3
                     pcbPlayer4.Image = warWalkL4
+                    battleTrigger() ' Triggers battle if player is close to a monster
                     charY = 340
                 ElseIf playerInf.charClass = "Rogue" Then
                     pcbPlayer1.Image = rogWalkL1
@@ -203,6 +217,7 @@ Public Class frmMainScr
                     pcbPlayer2.Image = magFlyL2
                     pcbPlayer3.Image = magFlyL3
                     pcbPlayer4.Image = magFlyL4
+                    battleTrigger() ' Triggers battle if player is close to a monster
                 End If
                 ' Resets player Y
                 pcbPlayer1.Location = New Point(charX, charY)
@@ -224,6 +239,7 @@ Public Class frmMainScr
                     pcbPlayer2.Image = warWalkR2
                     pcbPlayer3.Image = warWalkR3
                     pcbPlayer4.Image = warWalkR4
+                    battleTrigger() ' Triggers battle if player is close to a monster
                     charY = 340
                 ElseIf playerInf.charClass = "Rogue" Then
                     pcbPlayer1.Image = rogWalkR1
@@ -237,6 +253,7 @@ Public Class frmMainScr
                     pcbPlayer2.Image = magFlyR2
                     pcbPlayer3.Image = magFlyR3
                     pcbPlayer4.Image = magFlyR4
+                    battleTrigger() ' Triggers battle if player is close to a monster
                 End If
                 ' Resets player Y
                 pcbPlayer1.Location = New Point(charX, charY)
@@ -311,15 +328,25 @@ Public Class frmMainScr
     Sub battleTrigger()
         If pcbPlayer1.Right > pcbMonster11.Left - (pcbMonster11.Width - 20) And monst1Dead = False Then
             Hide()
-            battleScr.Show()
+            If dungeon.monstertype = "Goblin" Then
+                fleeMod = 30 ' 30% more likely to flee
+            End If
+            monst1Battle = True
+            battleScr.refreshForm() ' Refreshes screen for updates
+            battleScr.Show() ' Battle screen appears
         Else
-            lblTest2.Text = "{ " & pcbPlayer1.Right & " / " & pcbMonster11.Left - (pcbMonster11.Width - 20) & " }"
+            lblTest2.Text = "{ " & playerInf.exp & " }"
         End If
-        If pcbPlayer1.Right > pcbMonster21.Left - (pcbMonster21.Width - 20) And monst1Dead = False Then
+        If pcbPlayer1.Right > pcbMonster21.Left - (pcbMonster21.Width - 20) And monst2Dead = False Then
             Hide()
+            If dungeon.monstertype = "Goblin" Then
+                fleeMod = 30 ' 30% more likely to flee
+            End If
+            monst2Battle = True
+            battleScr.refreshForm()
             battleScr.Show()
         Else
-            lblTest2.Text = "{ " & pcbPlayer1.Right & " / " & pcbMonster11.Left - (pcbMonster11.Width - 20) & " }"
+            lblTest2.Text = "{ " & playerInf.exp & " }"
         End If
     End Sub
     Private Sub frmMainScr_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyUp
@@ -462,5 +489,10 @@ Public Class frmMainScr
             pcbMonster24.Visible = False
             pcbMonster21.Visible = True
         End If
+    End Sub
+
+    Private Sub tmrLvlUpInvis_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrLvlUpInvis.Tick
+        lblLevelUp.Visible = False
+        tmrLvlUpInvis.Enabled = False
     End Sub
 End Class

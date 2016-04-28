@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="picChest.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pcbChest.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAABOcSURBVHhe7Z3pWttIFkDzLtMk
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAABOcSURBVHhe7Z3pWttIFkDzLtMk
         rIGEfQ0m2AYM2GHfCXS/er9Ad3oySYbR6JRdIMy1kW1ZVpXuj/NlpsFYVbpHdatUy5s//vjjz5C/0uD3
         33/3lvv7+7/Df7/d3919u729/XfI9+vr6+9nZ2f/OTk5+Xl0dPTz4ODgZ61W/bm3W/m1vbX1q1wq/bdc
         Kj4Ui5svKBWLD+HPH7a2yv+t7Gz/qlb3zeePjg5/Hh8f/wz/5o+Li4vvNzc3379+/Qr/hNfwjWsI4VrE
@@ -208,10 +208,10 @@
         XjA3O/NwdnryQyhr5pHueX/448//AxK7iddZryaUAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="picHelm.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pcbHelm.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAABOcSURBVHhe7Z3pWttIFkDzLtMk
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAABOcSURBVHhe7Z3pWttIFkDzLtMk
         rIGEfQ0m2AYM2GHfCXS/er9Ad3oySYbR6JRdIMy1kW1ZVpXuj/NlpsFYVbpHdatUy5s//vjjz5C/0uD3
         33/3lvv7+7/Df7/d3919u729/XfI9+vr6+9nZ2f/OTk5+Xl0dPTz4ODgZ61W/bm3W/m1vbX1q1wq/bdc
         Kj4Ui5svKBWLD+HPH7a2yv+t7Gz/qlb3zeePjg5/Hh8f/wz/5o+Li4vvNzc3379+/Qr/hNfwjWsI4VrE
@@ -298,10 +298,10 @@
         XjA3O/NwdnryQyhr5pHueX/448//AxK7iddZryaUAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="picGloves.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pcbGloves.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAABOcSURBVHhe7Z3pWttIFkDzLtMk
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAABOcSURBVHhe7Z3pWttIFkDzLtMk
         rIGEfQ0m2AYM2GHfCXS/er9Ad3oySYbR6JRdIMy1kW1ZVpXuj/NlpsFYVbpHdatUy5s//vjjz5C/0uD3
         33/3lvv7+7/Df7/d3919u729/XfI9+vr6+9nZ2f/OTk5+Xl0dPTz4ODgZ61W/bm3W/m1vbX1q1wq/bdc
         Kj4Ui5svKBWLD+HPH7a2yv+t7Gz/qlb3zeePjg5/Hh8f/wz/5o+Li4vvNzc3379+/Qr/hNfwjWsI4VrE
@@ -388,10 +388,10 @@
         XjA3O/NwdnryQyhr5pHueX/448//AxK7iddZryaUAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="picHandR.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pcbHandR.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAABOcSURBVHhe7Z3pWttIFkDzLtMk
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAABOcSURBVHhe7Z3pWttIFkDzLtMk
         rIGEfQ0m2AYM2GHfCXS/er9Ad3oySYbR6JRdIMy1kW1ZVpXuj/NlpsFYVbpHdatUy5s//vjjz5C/0uD3
         33/3lvv7+7/Df7/d3919u729/XfI9+vr6+9nZ2f/OTk5+Xl0dPTz4ODgZ61W/bm3W/m1vbX1q1wq/bdc
         Kj4Ui5svKBWLD+HPH7a2yv+t7Gz/qlb3zeePjg5/Hh8f/wz/5o+Li4vvNzc3379+/Qr/hNfwjWsI4VrE
@@ -478,10 +478,10 @@
         XjA3O/NwdnryQyhr5pHueX/448//AxK7iddZryaUAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="picHandL.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pcbHandL.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAABOcSURBVHhe7Z3pWttIFkDzLtMk
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAABOcSURBVHhe7Z3pWttIFkDzLtMk
         rIGEfQ0m2AYM2GHfCXS/er9Ad3oySYbR6JRdIMy1kW1ZVpXuj/NlpsFYVbpHdatUy5s//vjjz5C/0uD3
         33/3lvv7+7/Df7/d3919u729/XfI9+vr6+9nZ2f/OTk5+Xl0dPTz4ODgZ61W/bm3W/m1vbX1q1wq/bdc
         Kj4Ui5svKBWLD+HPH7a2yv+t7Gz/qlb3zeePjg5/Hh8f/wz/5o+Li4vvNzc3379+/Qr/hNfwjWsI4VrE
@@ -568,10 +568,10 @@
         XjA3O/NwdnryQyhr5pHueX/448//AxK7iddZryaUAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="picBracer.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pcbBracer.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAABOcSURBVHhe7Z3pWttIFkDzLtMk
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAABOcSURBVHhe7Z3pWttIFkDzLtMk
         rIGEfQ0m2AYM2GHfCXS/er9Ad3oySYbR6JRdIMy1kW1ZVpXuj/NlpsFYVbpHdatUy5s//vjjz5C/0uD3
         33/3lvv7+7/Df7/d3919u729/XfI9+vr6+9nZ2f/OTk5+Xl0dPTz4ODgZ61W/bm3W/m1vbX1q1wq/bdc
         Kj4Ui5svKBWLD+HPH7a2yv+t7Gz/qlb3zeePjg5/Hh8f/wz/5o+Li4vvNzc3379+/Qr/hNfwjWsI4VrE
@@ -658,10 +658,10 @@
         XjA3O/NwdnryQyhr5pHueX/448//AxK7iddZryaUAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="picLegs.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pcbLegs.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAABOcSURBVHhe7Z3pWttIFkDzLtMk
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAABOcSURBVHhe7Z3pWttIFkDzLtMk
         rIGEfQ0m2AYM2GHfCXS/er9Ad3oySYbR6JRdIMy1kW1ZVpXuj/NlpsFYVbpHdatUy5s//vjjz5C/0uD3
         33/3lvv7+7/Df7/d3919u729/XfI9+vr6+9nZ2f/OTk5+Xl0dPTz4ODgZ61W/bm3W/m1vbX1q1wq/bdc
         Kj4Ui5svKBWLD+HPH7a2yv+t7Gz/qlb3zeePjg5/Hh8f/wz/5o+Li4vvNzc3379+/Qr/hNfwjWsI4VrE

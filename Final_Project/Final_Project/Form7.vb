@@ -39,6 +39,7 @@ Public Class frmCharCreate
         playerInf.intelligence = 2
         playerInf.agility = 3
         playerInf.level = 1
+        playerInf.exp = 0
         playerInf.activeBracers = "(none)"
         playerInf.activeChest = "(none)"
         playerInf.activeGloves = "(none)"

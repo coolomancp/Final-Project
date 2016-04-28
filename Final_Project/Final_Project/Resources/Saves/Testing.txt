@@ -1,5 +1,5 @@
 Testing
-200
+190
 200
 100
 100
@@ -11,8 +11,8 @@ Testing
 (none)
 (none)
 (none)
-(none)
-(none)
+basicDaggerL
+basicDaggerR
 Mage
 0
 0

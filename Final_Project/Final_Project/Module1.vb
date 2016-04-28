@@ -13,6 +13,7 @@
         Public MPM As Integer ' Player's max mana
         Public name As String ' Player's current name
         Public level As Integer ' Player's current level
+        Public exp As Integer ' Player's experience
         Public strength As Integer ' Player's strength stat
         Public intelligence As Integer ' Player's intelligence stat
         Public agility As Integer ' Player's agility stat
@@ -56,6 +57,7 @@
     Public warAttR2 As Image = My.Resources.warAttR2 ' Second frame of warrior class attacking to the right
     Public warAttR3 As Image = My.Resources.warAttR3 ' Third frame of warrior class attacking to the right
     Public warAttR4 As Image = My.Resources.warAttR4 ' Fourth frame of warrior class attacking to the right
+    Public warBattS As Image = My.Resources.warriorBattleStance ' Warrior's battle stance
     ' Rogue
     Public rogIdleR As Image = My.Resources.rogIdleR ' Character idle facing the left (rogue)
     Public rogIdleL As Image = My.Resources.rogIdleL ' Character idle facing the left (rogue)
@@ -75,6 +77,12 @@
     Public rogAttL2 As Image = My.Resources.rogAttL2 ' Character attacks to the left (rogue)
     Public rogAttL3 As Image = My.Resources.rogAttL3 ' Character attacks to the left (rogue)
     Public rogAttL4 As Image = My.Resources.rogAttL4 ' Character attacks to the left (rogue)
+    Public rogBattS As Image = My.Resources.rogueBattleStanceN ' Rogue's battle stance
+    Public rogHitR As Image = My.Resources.rogHitR ' Rogue facing right and being attacked
+    Public rogMeleeN As Image = My.Resources.rogueBaseAttack ' Rogue Attacking
+    ' Rogue Items
+    Public rogBasDagL As Image = My.Resources.basicDaggerL
+    Public rogBasDagR As Image = My.Resources.basicDaggerR
     ' Mage
     Public magIdleR As Image = My.Resources.magIdleR ' Character idle facing the left (mage)
     Public magIdleL As Image = My.Resources.magIdleL ' Character idle facing the left (mage)
@@ -94,9 +102,19 @@
     Public magAttL2 As Image = My.Resources.magAttL2 ' Second frame of mage class attacking to the left
     Public magAttL3 As Image = My.Resources.magAttL3 ' Third frame of mage class attacking to the left
     Public magAttL4 As Image = My.Resources.magAttL4 ' Fourth frame of mage class attacking to the left
+    Public magBattS As Image = My.Resources.mageBattleStance ' Mage's battle stance
     ' Path to the resource files to allow use in any directory
     Public resPath As String = Replace(My.Application.Info.DirectoryPath, "\bin\Debug", "\Resources\")
     ' Dungeon Monsters (Non-Boss)
+    ' Monster Stats
+    Structure monstStat
+        Dim HP As Integer ' Monster's current health
+        Dim HPM As Integer ' Monster's max health
+        Dim armor As Integer ' Monster's armor
+        Dim MP As Integer ' Monster's current mana
+        Dim MPM As Integer ' Monster's max mana
+    End Structure
+    Public monstInf As monstStat ' Public access to stats
     ' Monster Multiplyers
     Public Structure monstermultiply
         Dim level As Integer ' Used to define the level / difficulty of the area
@@ -116,6 +134,7 @@
     Public gobWalkR4 As Image = My.Resources.gobWalkR4 ' Fourth frame of goblin walking to the right
     Public gobIdleL As Image = My.Resources.gobIdleL ' Goblin idle facing the left
     Public gobIdleR As Image = My.Resources.gobIdleR ' Goblin idle facing the right
+    Public gobAttL As Image = My.Resources.goblinAttack ' Goblin gif, attacking to the left
     Public gobAttL1 As Image = My.Resources.gobAttL1 ' First frame of goblin attacking to the left
     Public gobAttL2 As Image = My.Resources.gobAttL2 ' Second frame of goblin attacking to the left
     Public gobAttL3 As Image = My.Resources.gobAttL3 ' Third frame of goblin attacking to the left
@@ -134,10 +153,19 @@
     Public gobDeathR2 As Image = My.Resources.gobDeathR2 ' Second frame of goblin turning to ash facing to the right
     Public gobDeathR3 As Image = My.Resources.gobDeathR3 ' Third frame of goblin turning to ash facing to the right
     Public gobDeathR4 As Image = My.Resources.gobDeathR4 ' Fourth frame of goblin turning to ash facing to the right
+    Public gobDeath As Image = My.Resources.goblinDeath ' Goblin's death (animated GIF)
+    Public gobBattS As Image = My.Resources.goblinBattleIdle ' Goblin's idle animation in battle
     ' Dungeon Backgrounds
     Public grasslandBG As Image = My.Resources.grasslandDungeonBG ' Corresponds to any fighting grounds within a grassland
     ' Dungeon Information
-    Public monst1Dead As Boolean
+    Public monst1Dead As Boolean ' Status of monst1
+    Public monst2Dead As Boolean ' Status of monst2
+    Public monst3Dead As Boolean ' Status of monst3
+    Public monst4Dead As Boolean ' Status of monst4
+    Public monst1Battle As Boolean ' In battle with monst1
+    Public monst2Battle As Boolean ' In battle with monst2
+    Public monst3Battle As Boolean ' In battle with monst3
+    Public monst4Battle As Boolean ' In battle with monst4
     Public Structure dungeonInfo
         Dim monstertype As String ' Determines what monster the level has
         Dim monstNum As Integer ' Determines how many monsters there are per stage
@@ -145,4 +173,5 @@
         Dim type As String ' Defines what type of dungeon
     End Structure
     Public dungeon As dungeonInfo
+    Public fleeMod As Integer ' Modifies the chance of fleeing (making it harder or easier)
 End Module

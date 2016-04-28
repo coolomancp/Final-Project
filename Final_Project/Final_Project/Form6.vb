@@ -43,6 +43,7 @@ Public Class frmLoadScr
             playerInf.activeWepR = r.ReadLine
             playerInf.charClass = r.ReadLine
             playerInf.level = r.ReadLine
+            playerInf.exp = r.ReadLine
             playerInf.moneyAmount = r.ReadLine
             playerInf.charX = r.ReadLine
             playerInf.charY = r.ReadLine

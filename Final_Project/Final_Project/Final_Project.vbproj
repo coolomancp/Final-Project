@@ -240,6 +240,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\goblinDeath.gif" />
+    <None Include="Resources\rogueBaseAttack.gif" />
+    <None Include="Resources\RogueAttack.gif" />
+    <None Include="Resources\rogHitR.png" />
+    <None Include="Resources\goblinAttack.gif" />
+    <None Include="Resources\goblinBattleIdle.gif" />
+    <None Include="Resources\mageBattleStance.gif" />
+    <None Include="Resources\rogueBattleStance.gif" />
+    <None Include="Resources\warriorBattleStance.gif" />
+    <None Include="Resources\basicDaggerL.png" />
+    <None Include="Resources\basicDaggerR.png" />
     <None Include="Resources\grasslandDungeonBG.jpg" />
     <None Include="Resources\gobDeathR4.png" />
     <None Include="Resources\gobDeathR3.png" />

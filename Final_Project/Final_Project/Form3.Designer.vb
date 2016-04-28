@@ -25,6 +25,7 @@ Partial Class frmMainScr
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMainScr))
         Me.pnlMenu = New System.Windows.Forms.Panel()
+        Me.lblTest2 = New System.Windows.Forms.Label()
         Me.lblTest = New System.Windows.Forms.Label()
         Me.btnExit = New System.Windows.Forms.Button()
         Me.btnCharI = New System.Windows.Forms.Button()
@@ -46,10 +47,10 @@ Partial Class frmMainScr
         Me.pcbPlayer1 = New System.Windows.Forms.PictureBox()
         Me.picMainScr = New System.Windows.Forms.PictureBox()
         Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
-        Me.bgWrkrMonstMove = New System.ComponentModel.BackgroundWorker()
         Me.tmrMonst1Anim = New System.Windows.Forms.Timer(Me.components)
         Me.tmrMonst2Anim = New System.Windows.Forms.Timer(Me.components)
-        Me.lblTest2 = New System.Windows.Forms.Label()
+        Me.lblLevelUp = New System.Windows.Forms.Label()
+        Me.tmrLvlUpInvis = New System.Windows.Forms.Timer(Me.components)
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
         CType(Me.pcbMonster23, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,6 +82,15 @@ Partial Class frmMainScr
         Me.pnlMenu.Name = "pnlMenu"
         Me.pnlMenu.Size = New System.Drawing.Size(700, 100)
         Me.pnlMenu.TabIndex = 0
+        '
+        'lblTest2
+        '
+        Me.lblTest2.AutoSize = True
+        Me.lblTest2.Location = New System.Drawing.Point(20, 44)
+        Me.lblTest2.Name = "lblTest2"
+        Me.lblTest2.Size = New System.Drawing.Size(39, 13)
+        Me.lblTest2.TabIndex = 6
+        Me.lblTest2.Text = "Label1"
         '
         'lblTest
         '
@@ -134,6 +144,7 @@ Partial Class frmMainScr
         '
         'pnlMain
         '
+        Me.pnlMain.Controls.Add(Me.lblLevelUp)
         Me.pnlMain.Controls.Add(Me.pcbMonster23)
         Me.pnlMain.Controls.Add(Me.pcbMonster24)
         Me.pnlMain.Controls.Add(Me.pcbMonster22)
@@ -341,14 +352,22 @@ Partial Class frmMainScr
         'tmrMonst2Anim
         '
         '
-        'lblTest2
+        'lblLevelUp
         '
-        Me.lblTest2.AutoSize = True
-        Me.lblTest2.Location = New System.Drawing.Point(20, 44)
-        Me.lblTest2.Name = "lblTest2"
-        Me.lblTest2.Size = New System.Drawing.Size(39, 13)
-        Me.lblTest2.TabIndex = 6
-        Me.lblTest2.Text = "Label1"
+        Me.lblLevelUp.AutoSize = True
+        Me.lblLevelUp.BackColor = System.Drawing.Color.Transparent
+        Me.lblLevelUp.Font = New System.Drawing.Font("Monotxt", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLevelUp.ForeColor = System.Drawing.Color.Gold
+        Me.lblLevelUp.Location = New System.Drawing.Point(206, 66)
+        Me.lblLevelUp.Name = "lblLevelUp"
+        Me.lblLevelUp.Size = New System.Drawing.Size(272, 47)
+        Me.lblLevelUp.TabIndex = 58
+        Me.lblLevelUp.Text = "LEVEL UP!"
+        Me.lblLevelUp.Visible = False
+        '
+        'tmrLvlUpInvis
+        '
+        Me.tmrLvlUpInvis.Interval = 3000
         '
         'frmMainScr
         '
@@ -405,7 +424,6 @@ Partial Class frmMainScr
     Friend WithEvents lblTest As Label
     Friend WithEvents wmpMusic As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents wmpAmbient As AxWMPLib.AxWindowsMediaPlayer
-    Friend WithEvents bgWrkrMonstMove As System.ComponentModel.BackgroundWorker
     Friend WithEvents pcbMonster13 As PictureBox
     Friend WithEvents pcbMonster14 As PictureBox
     Friend WithEvents pcbMonster12 As PictureBox
@@ -417,4 +435,6 @@ Partial Class frmMainScr
     Friend WithEvents tmrMonst1Anim As Timer
     Friend WithEvents tmrMonst2Anim As System.Windows.Forms.Timer
     Friend WithEvents lblTest2 As System.Windows.Forms.Label
+    Friend WithEvents lblLevelUp As System.Windows.Forms.Label
+    Friend WithEvents tmrLvlUpInvis As System.Windows.Forms.Timer
 End Class

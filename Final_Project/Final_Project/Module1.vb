@@ -1,11 +1,24 @@
 ﻿Module Module1
+    Structure strucItems
+        Dim ID As Integer ' Item ID
+        Dim name As String ' Item name
+        Dim strength As Integer ' Item's strength addition
+        Dim agility As Integer ' Item's agility addition
+        Dim intelligence As Integer ' Item's intelligence addition
+        Dim dmg As Double ' Item's damage
+        Dim armor As Integer ' Item's armor received
+        Dim image As Image ' Item's corresponding image
+        Dim imageVar As Image ' Special variable for if an item has a varient (e.g Warrior and Rogue share helm, but they should look different)
+        Dim imageVar2 As Image ' Same as above but allows another varient if shared by all 3 classes
+    End Structure
+    Public items(13) As strucItems
     Public loadScr As New frmLoadScr ' Loading screen
     Public mainScr As New frmMainScr ' Main Screen player used
-    Public inventoryScr As New frmInventory ' Inventory screen is loaded
     Public charInfoScr As New frmCharScreen ' Character Info screen is loaded
     Public exitWarning As New frmExitWarning ' Warns player to save before exiting
     Public creation As New frmCharCreate ' Character creation screen
     Public battleScr As New frmBattle ' Screen used for battle
+    Public inventoryScr As New frmInventory ' Inventory screen is loaded
     Public Structure playerInfo ' Stores all of the player's information
         Public HP As Integer ' Player's current health
         Public HPM As Integer ' Player's max health
@@ -186,19 +199,6 @@
     Public Function itemIndex(ByVal itemID) As String
         Return items(itemID).name
     End Function
-    Structure strucItems
-        Dim ID As Integer ' Item ID
-        Dim name As String ' Item name
-        Dim strength As Integer ' Item's strength addition
-        Dim agility As Integer ' Item's agility addition
-        Dim intelligence As Integer ' Item's intelligence addition
-        Dim dmg As Double ' Item's damage
-        Dim armor As Integer ' Item's armor received
-        Dim image As Image ' Item's corresponding image
-        Dim imageVar As Image ' Special variable for if an item has a varient (e.g Warrior and Rogue share helm, but they should look different)
-        Dim imageVar2 As Image ' Same as above but allows another varient if shared by all 3 classes
-    End Structure
-    Public items(13) As strucItems
     ' Reverse Item Index, takes in a name, spits out an ID
     Public Function revItemIndex(ByVal itemName) As Integer
         For i As Integer = 0 To items.Length - 1

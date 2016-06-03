@@ -1,5 +1,7 @@
 ﻿Public Class frmInventory
-    Dim changeDetect As Integer
+    Dim scrollValArr(1) As Double
+    Dim pnlOrigTopArr(playerInf.inventory.Length - 1) As Integer
+    Dim lblOrigTopArr(playerInf.inventory.Length - 1) As Integer
     Private Sub frmInventory_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         RefreshInv() ' Update the form
     End Sub
@@ -16,27 +18,33 @@
             If CType(pnlInv.Controls("lblSlot" & i.ToString), Label).Text <> "Empty" Then
                 CType(pnlInv.Controls("lblSlot" & i.ToString), Label).Left = CType(pnlInv.Controls("lblSlot" & i.ToString), Label).Left - ((CType(pnlInv.Controls("lblSlot" & i.ToString), Label).Text.Length) / 1.5)
             End If
-            lblSlot1.Text = lblSlot1.Top.ToString
+        Next
+        ReDim Preserve pnlOrigTopArr(playerInf.inventory.Length - 1)
+        ReDim Preserve lblOrigTopArr(playerInf.inventory.Length - 1)
+        For i As Integer = 0 To playerInf.inventory.Length - 1
+            pnlOrigTopArr(i) = CType(pnlInv.Controls("pnlSlot" & i + 1.ToString()), Panel).Top
+            lblOrigTopArr(i) = CType(pnlInv.Controls("lblSlot" & i + 1.ToString()), Label).Top
         Next
     End Sub
 
     Private Sub VInvScrollBar_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles VInvScrollBar.Scroll
         ' Scrolls the inventory slots with the scroll bar by taking the object and moving it in relation to the scroll bar
-        Dim counter As Integer
+        scrollValArr(0) = VInvScrollBar.Value
         For i As Integer = 1 To playerInf.inventory.Length
-            If VInvScrollBar.Value < changeDetect Then
-                CType(pnlInv.Controls("pnlSlot" & i.ToString()), Panel).Top = CType(pnlInv.Controls("pnlSlot" & i.ToString()), Panel).Top - VInvScrollBar.Value * 0.5
-                CType(pnlInv.Controls("lblSlot" & i.ToString()), Label).Top = CType(pnlInv.Controls("lblSlot" & i.ToString()), Label).Top - VInvScrollBar.Value * 0.5
+            If scrollValArr(0) > scrollValArr(1) Then
+                CType(pnlInv.Controls("pnlSlot" & i.ToString()), Panel).Top = pnlOrigTopArr(i - 1) - VInvScrollBar.Value * 0.1
+                CType(pnlInv.Controls("lblSlot" & i.ToString()), Label).Top = lblOrigTopArr(i - 1) - VInvScrollBar.Value * 0.1
+                lblmonAmount.Text = "Increase! " & VInvScrollBar.Value.ToString
             Else
-                CType(pnlInv.Controls("pnlSlot" & i.ToString()), Panel).Top = CType(pnlInv.Controls("pnlSlot" & i.ToString()), Panel).Top + VInvScrollBar.Value * 0.5
-                CType(pnlInv.Controls("lblSlot" & i.ToString()), Label).Top = CType(pnlInv.Controls("lblSlot" & i.ToString()), Label).Top + VInvScrollBar.Value * 0.5
+                CType(pnlInv.Controls("pnlSlot" & i.ToString()), Panel).Top = pnlOrigTopArr(i - 1) - VInvScrollBar.Value * 0.1
+                CType(pnlInv.Controls("lblSlot" & i.ToString()), Label).Top = lblOrigTopArr(i - 1) - VInvScrollBar.Value * 0.1
+                lblmonAmount.Text = "Decrease! " & VInvScrollBar.Value.ToString
             End If
         Next
+        scrollValArr(1) = VInvScrollBar.Value
     End Sub
 
-    Private Sub VInvScrollBar_ValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles VInvScrollBar.ValueChanged
-        changeDetect = VInvScrollBar.Value
-    End Sub
+
     ' Pre: Takes in the picturebox object as picBox and the index of the inventory slot
     ' Post: Outputs the corresponding image to the picturbox
     Sub setInventorySlots(ByRef picBox As PictureBox, ByVal index As Integer)
@@ -62,4 +70,5 @@
     Sub setInventoryLabel(ByRef label As Label, ByVal index As Integer)
         label.Text = itemIndex(playerInf.inventory(index))
     End Sub
+    Dim counter
 End Class

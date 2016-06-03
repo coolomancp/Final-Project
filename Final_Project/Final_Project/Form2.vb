@@ -1,12 +1,12 @@
 ﻿Public Class frmInventory
-    Dim scrollValArr(1) As Double
-    Dim pnlOrigTopArr(playerInf.inventory.Length - 1) As Integer
-    Dim lblOrigTopArr(playerInf.inventory.Length - 1) As Integer
+    Dim scrollValArr(1) As Double ' Scroll bar value array (0, previous, 1, current)
+    Dim pnlOrigTopArr() As Integer ' Panel's original Y-Coord
+    Dim lblOrigTopArr() As Integer ' Label's original Y-Coord
     Private Sub frmInventory_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
         RefreshInv() ' Update the form
     End Sub
 
-    ' This procedure updates the information on the form to reflect new changes
+    '' This procedure updates the information on the form to reflect new changes
     Sub RefreshInv()
         lblmonAmount.Text = playerInf.moneyAmount ' Updates money
         For i As Integer = 1 To playerInf.inventory.Length
@@ -19,8 +19,10 @@
                 CType(pnlInv.Controls("lblSlot" & i.ToString), Label).Left = CType(pnlInv.Controls("lblSlot" & i.ToString), Label).Left - ((CType(pnlInv.Controls("lblSlot" & i.ToString), Label).Text.Length) / 1.5)
             End If
         Next
+        ' Define amount of panels and labels for length of arrays
         ReDim Preserve pnlOrigTopArr(playerInf.inventory.Length - 1)
         ReDim Preserve lblOrigTopArr(playerInf.inventory.Length - 1)
+        ' Set arrays to store the original position of the panels and lables
         For i As Integer = 0 To playerInf.inventory.Length - 1
             pnlOrigTopArr(i) = CType(pnlInv.Controls("pnlSlot" & i + 1.ToString()), Panel).Top
             lblOrigTopArr(i) = CType(pnlInv.Controls("lblSlot" & i + 1.ToString()), Label).Top
@@ -29,19 +31,17 @@
 
     Private Sub VInvScrollBar_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles VInvScrollBar.Scroll
         ' Scrolls the inventory slots with the scroll bar by taking the object and moving it in relation to the scroll bar
-        scrollValArr(0) = VInvScrollBar.Value
+        scrollValArr(0) = VInvScrollBar.Value ' Scroll bar value before moving
         For i As Integer = 1 To playerInf.inventory.Length
             If scrollValArr(0) > scrollValArr(1) Then
-                CType(pnlInv.Controls("pnlSlot" & i.ToString()), Panel).Top = pnlOrigTopArr(i - 1) - VInvScrollBar.Value * 0.1
-                CType(pnlInv.Controls("lblSlot" & i.ToString()), Label).Top = lblOrigTopArr(i - 1) - VInvScrollBar.Value * 0.1
-                lblmonAmount.Text = "Increase! " & VInvScrollBar.Value.ToString
+                CType(pnlInv.Controls("pnlSlot" & i.ToString()), Panel).Top = pnlOrigTopArr(i - 1) - VInvScrollBar.Value * 1.3 + (1.3 * playerInf.inventory.Length - 12)
+                CType(pnlInv.Controls("lblSlot" & i.ToString()), Label).Top = lblOrigTopArr(i - 1) - VInvScrollBar.Value * 1.3 + (1.3 * playerInf.inventory.Length - 12)
             Else
-                CType(pnlInv.Controls("pnlSlot" & i.ToString()), Panel).Top = pnlOrigTopArr(i - 1) - VInvScrollBar.Value * 0.1
-                CType(pnlInv.Controls("lblSlot" & i.ToString()), Label).Top = lblOrigTopArr(i - 1) - VInvScrollBar.Value * 0.1
-                lblmonAmount.Text = "Decrease! " & VInvScrollBar.Value.ToString
+                CType(pnlInv.Controls("pnlSlot" & i.ToString()), Panel).Top = pnlOrigTopArr(i - 1) - VInvScrollBar.Value * 1.3 + (1.3 * playerInf.inventory.Length - 12)
+                CType(pnlInv.Controls("lblSlot" & i.ToString()), Label).Top = lblOrigTopArr(i - 1) - VInvScrollBar.Value * 1.3 + (1.3 * playerInf.inventory.Length - 12)
             End If
         Next
-        scrollValArr(1) = VInvScrollBar.Value
+        scrollValArr(1) = VInvScrollBar.Value ' Scroll bar value after moving
     End Sub
 
 
@@ -70,5 +70,4 @@
     Sub setInventoryLabel(ByRef label As Label, ByVal index As Integer)
         label.Text = itemIndex(playerInf.inventory(index))
     End Sub
-    Dim counter
 End Class

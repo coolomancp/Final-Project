@@ -6,9 +6,9 @@ Public Class frmLoadScr
     Private Sub frmLoadScr_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Checks saves file for save files
         For Each foundFile As String In
-        My.Computer.FileSystem.GetFiles(resPath & "Saves\")
+        My.Computer.FileSystem.GetFiles(resPath & "\Saves\")
             ' Removes path and ".txt" from file names and shows them in the list box
-            file2 = Replace(foundFile, resPath & "Saves\", "")
+            file2 = Replace(foundFile, resPath & "\Saves\", "")
             lstSaves.Items.Add(Replace(file2, ".txt", ""))
         Next
     End Sub
@@ -24,7 +24,7 @@ Public Class frmLoadScr
 
     Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btnLoad.Click
         ' Opens save file
-        Using r As StreamReader = New StreamReader(resPath & "Saves\" & usrSelection & ".txt")
+        Using r As StreamReader = New StreamReader(resPath & "\Saves\" & usrSelection & ".txt")
             ' Sets player's variables from save file
             playerInf.name = r.ReadLine
             playerInf.HP = r.ReadLine
@@ -49,6 +49,45 @@ Public Class frmLoadScr
             playerInf.charY = r.ReadLine
             playerInf.dungeonID = r.ReadLine
             playerInf.dungeonRM = r.ReadLine
+            ReDim playerInf.inventory(r.ReadLine)
+        End Using
+        ' Opens inventory file
+        Dim run As Boolean = False
+        Using r As StreamReader = New StreamReader(resPath & "\Saves\Inventorys\" & usrSelection & "Inv" & ".txt")
+            Dim count As Integer
+            For i As Integer = 0 To playerInf.inventory.Length - 1
+                playerInf.inventory(i) = Val(r.ReadLine)
+                If playerInf.inventory(i) >= 1 And playerInf.inventory(i) <= 3 Then ' Weapon index
+                    If playerInf.inventory(i) = 1 Then ' If the player is equipping daggers
+                        If count = 0 Then
+                            charInfoScr.cboRHand.Items.Add(itemIndex(playerInf.inventory(i)))
+                            count = 1
+                        ElseIf count = 1 Then
+                            charInfoScr.cboLHand.Items.Add(itemIndex(playerInf.inventory(i)))
+                            count = 0
+                        End If
+                    Else
+                        If count = 0 Then
+                            charInfoScr.cboRHand.Items.Add(itemIndex(playerInf.inventory(i)))
+                            count = 1
+                        ElseIf count = 1 Then
+                            charInfoScr.cboLHand.Items.Add(itemIndex(playerInf.inventory(i)))
+                            count = 0
+                        End If
+                    End If
+                ElseIf playerInf.inventory(i) >= 4 And playerInf.inventory(i) <= 5 Then ' Head item index
+                    charInfoScr.cboHead.Items.Add(itemIndex(playerInf.inventory(i)))
+                ElseIf playerInf.inventory(i) >= 6 And playerInf.inventory(i) <= 6 Then ' Glove index
+                    charInfoScr.cboGloves.Items.Add(itemIndex(playerInf.inventory(i)))
+                ElseIf playerInf.inventory(i) >= 7 And playerInf.inventory(i) <= 9 Then ' Leg item index
+                    charInfoScr.cboLegs.Items.Add(itemIndex(playerInf.inventory(i)))
+                ElseIf playerInf.inventory(i) >= 10 And playerInf.inventory(i) <= 12 Then ' Chest item index
+                    charInfoScr.cboChest.Items.Add(itemIndex(playerInf.inventory(i)))
+                ElseIf playerInf.inventory(i) >= 13 And playerInf.inventory(i) <= 13 Then ' Bracer index
+                    charInfoScr.cboBracer.Items.Add(itemIndex(playerInf.inventory(i)))
+                End If
+                mainScr.lblTest2.Text += playerInf.inventory(i).ToString
+            Next
         End Using
         ' Launches main window and hides load screen
         mainScr.Refresh()

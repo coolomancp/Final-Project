@@ -20,6 +20,16 @@ Public Class frmMainScr
             ' Places character information screen on the left side of the main screen
             charInfoScr.Left = Location.X \ 4 + 7
             charInfoScr.Top = Location.Y + Location.Y \ 3
+            ' Refreshes character information
+            charInfoScr.lblLvl.Text = playerInf.level
+            charInfoScr.lblHPVal.Text = "(" & Convert.ToString(playerInf.HP) & "/" & Convert.ToString(playerInf.HPM) & ")"
+            charInfoScr.proBarHealthVal.Value = playerInf.HP \ playerInf.HPM
+            charInfoScr.lblManaVal.Text = "(" & Convert.ToString(playerInf.MP) & "/" & Convert.ToString(playerInf.MPM) & ")"
+            charInfoScr.proBarManaVal.Value = playerInf.MP \ playerInf.MPM
+            charInfoScr.lblAgiVal.Text = playerInf.agility
+            charInfoScr.lblStrVal.Text = playerInf.strength
+            charInfoScr.lblIntelVal.Text = playerInf.intelligence
+            ' Add armor and DPS calculation
             charInfoScr.Show() ' Opens the character info screen
             infStat = True ' Character info screen status is set as open
         ElseIf infStat = True Then ' Checks if the character info screen is open
@@ -35,6 +45,7 @@ Public Class frmMainScr
             ' Places inventory screen on the right side of the main screen
             inventoryScr.Left = Location.X * 2 - Location.X \ 2 + inventoryScr.Size.Width - 21
             inventoryScr.Top = Location.Y + Location.Y \ 3
+            inventoryScr.RefreshInv() ' Refreshes screen
             inventoryScr.Show() ' Opens the inventory screen
             invStat = True ' Inventory screen status is set as open
         ElseIf invStat = True Then ' Checks if the inventory screen is open
@@ -44,15 +55,6 @@ Public Class frmMainScr
     End Sub
 
     Private Sub frmMainScr_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
-        ' TEMP CODE : ADD DAGGERS TO IMAGE
-        playerInf.activeWepL = "basicDaggerL"
-        playerInf.activeWepR = "basicDaggerR"
-        If playerInf.activeWepL = "basicDaggerL" Then
-            charInfoScr.pcbHandL.Image = rogBasDagL
-        End If
-        If playerInf.activeWepR = "basicDaggerR" Then
-            charInfoScr.pcbHandR.Image = rogBasDagR
-        End If
         monstmulti.level = 1 ' Sets level of monsters
         dungeon.monstertype = "Goblin" ' Dungeon monster type set as Goblins
         dungeon.monstNum = 2 ' Number of monsters
@@ -168,12 +170,12 @@ Public Class frmMainScr
         lblLevelUp.Parent = picMainScr
         lblLevelUp.Visible = False
         ' Sets background music UNDO COMMENTS!***************************************************************************************
-        'wmpMusic.URL = resPath + "bgmusicGreen.wav"
-        'wmpMusic.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
+        wmpMusic.URL = resPath + "bgmusicGreen.wav"
+        wmpMusic.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
         ' Sets ambient sounds and sets ambient sound volume low
-        'wmpAmbient.URL = resPath + "waterfallAmbient.wav"
-        'wmpAmbient.settings.volume = 10
-        'wmpAmbient.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
+        wmpAmbient.URL = resPath + "waterfallAmbient.wav"
+        wmpAmbient.settings.volume = 10
+        wmpAmbient.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
     End Sub
     Private Sub timeanim_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles tmrAnim.Tick
         ' Animates the player's character by turning one frame on as the previous frame is turned off
@@ -204,6 +206,7 @@ Public Class frmMainScr
                     pcbPlayer3.Image = warWalkL3
                     pcbPlayer4.Image = warWalkL4
                     battleTrigger() ' Triggers battle if player is close to a monster
+                    nxtRoom() ' Checks if player is far enough to the right to enter the next room / floor
                     charY = 340
                 ElseIf playerInf.charClass = "Rogue" Then
                     pcbPlayer1.Image = rogWalkL1
@@ -212,12 +215,14 @@ Public Class frmMainScr
                     charY = 350
                     pcbPlayer4.Image = rogWalkL4
                     battleTrigger() ' Triggers battle if player is close to a monster
+                    nxtRoom() ' Checks if player is far enough to the right to enter the next room / floor
                 ElseIf playerInf.charClass = "Mage" Then
                     pcbPlayer1.Image = magFlyL1
                     pcbPlayer2.Image = magFlyL2
                     pcbPlayer3.Image = magFlyL3
                     pcbPlayer4.Image = magFlyL4
                     battleTrigger() ' Triggers battle if player is close to a monster
+                    nxtRoom() ' Checks if player is far enough to the right to enter the next room / floor
                 End If
                 ' Resets player Y
                 pcbPlayer1.Location = New Point(charX, charY)
@@ -240,6 +245,7 @@ Public Class frmMainScr
                     pcbPlayer3.Image = warWalkR3
                     pcbPlayer4.Image = warWalkR4
                     battleTrigger() ' Triggers battle if player is close to a monster
+                    nxtRoom() ' Checks if player is far enough to the right to enter the next room / floor
                     charY = 340
                 ElseIf playerInf.charClass = "Rogue" Then
                     pcbPlayer1.Image = rogWalkR1
@@ -248,12 +254,14 @@ Public Class frmMainScr
                     pcbPlayer4.Image = rogWalkR4
                     charY = 350
                     battleTrigger() ' Triggers battle if player is close to a monster
+                    nxtRoom() ' Checks if player is far enough to the right to enter the next room / floor
                 ElseIf playerInf.charClass = "Mage" Then
                     pcbPlayer1.Image = magFlyR1
                     pcbPlayer2.Image = magFlyR2
                     pcbPlayer3.Image = magFlyR3
                     pcbPlayer4.Image = magFlyR4
                     battleTrigger() ' Triggers battle if player is close to a monster
+                    nxtRoom() ' Checks if player is far enough to the right to enter the next room / floor
                 End If
                 ' Resets player Y
                 pcbPlayer1.Location = New Point(charX, charY)
@@ -460,6 +468,7 @@ Public Class frmMainScr
     End Sub
 
     Private Sub tmrMonst1Anim_Tick(ByVal sender As Object, ByVal e As EventArgs)
+        ' Animations monster movement
         If pcbMonster11.Visible = True Then
             pcbMonster11.Visible = False
             pcbMonster12.Visible = True
@@ -476,6 +485,7 @@ Public Class frmMainScr
     End Sub
 
     Private Sub tmrMonst2Anim_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles tmrMonst2Anim.Tick
+        ' Animators second monster's movement
         If pcbMonster21.Visible = True Then
             pcbMonster21.Visible = False
             pcbMonster22.Visible = True
@@ -492,7 +502,35 @@ Public Class frmMainScr
     End Sub
 
     Private Sub tmrLvlUpInvis_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrLvlUpInvis.Tick
+        ' Makes level up message go away
         lblLevelUp.Visible = False
         tmrLvlUpInvis.Enabled = False
+    End Sub
+
+    Sub nxtRoom()
+        ' Checks for the next room collision
+        If pcbPlayer1.Right >= 640 Then
+            tmrNxtRoom.Enabled = True
+        End If
+    End Sub
+
+    Private Sub tmrNxtRoom_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrNxtRoom.Tick
+        If playerInf.charClass = "Rogue" Then
+            ' Next Room
+            charX = 0 ' Reset character position
+            pcbPlayer1.Location = New Point(charX, charY)
+            pcbPlayer2.Location = New Point(charX, charY)
+            pcbPlayer3.Location = New Point(charX, charY)
+            pcbPlayer4.Location = New Point(charX, charY)
+            pcbMonster11.Location = New Point(330, 358)
+            monst1Dead = False
+            pcbMonster21.Location = New Point(370, 358)
+            monst2Dead = False
+            If dungeon.type = "Grasslands" Then
+                picMainScr.Image = Nothing
+                picMainScr.Image = grasslandRoomBG
+            End If
+            tmrNxtRoom.Enabled = False
+        End If
     End Sub
 End Class

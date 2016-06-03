@@ -23,12 +23,23 @@ Public Class frmCharCreate
             wasValid = False
         End If
         If wasValid = True Then
+            ' If the name is valid, the user may progress to the game start
+            If rdbWarrior.Checked = True Then
+                frmCharScreen.cboRHand.Items.Add("Basic Axe RH")
+                frmCharScreen.cboLHand.Items.Add("Basic Axe LH")
+            ElseIf rdbRogue.Checked = True Then
+                frmCharScreen.cboRHand.Items.Add("Basic Dagger")
+                frmCharScreen.cboLHand.Items.Add("Basic Dagger")
+            ElseIf rdbMage.Checked = True Then
+                frmCharScreen.cboRHand.Items.Add("Old Wand")
+            End If
             Me.Hide()
             mainScr.Show()
         End If
     End Sub
 
-    Private Sub rdbWarrior_CheckedChanged(sender As Object, e As EventArgs) Handles rdbWarrior.CheckedChanged
+    Private Sub rdbWarrior_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rdbWarrior.CheckedChanged
+        ' Sets variables to reflect the warrior class
         pcbCharPrev.Image = My.Resources.warIdleR
         playerInf.charClass = "Warrior"
         playerInf.HP = 100
@@ -40,20 +51,24 @@ Public Class frmCharCreate
         playerInf.agility = 3
         playerInf.level = 1
         playerInf.exp = 0
-        playerInf.activeBracers = "(none)"
-        playerInf.activeChest = "(none)"
-        playerInf.activeGloves = "(none)"
-        playerInf.activeHelm = "(none)"
-        playerInf.activeLegs = "(none)"
-        playerInf.activeWepL = "(none)"
-        playerInf.activeWepR = "(none)"
+        playerInf.activeBracers = "wornBracers"
+        playerInf.activeChest = "wornChestplate"
+        playerInf.activeGloves = "wornGloves"
+        playerInf.activeHelm = "wornHelm"
+        playerInf.activeLegs = "wornLegPlate"
+        playerInf.activeWepL = "basicAxe"
+        playerInf.activeWepR = "basicAxe"
         playerInf.moneyAmount = 0
+        playerInf.dungeonID = 1
+        playerInf.dungeonRM = 1
+        ReDim playerInf.inventory(11)
         lblStr.Text = playerInf.strength
         lblInt.Text = playerInf.intelligence
         lblAgi.Text = playerInf.agility
     End Sub
 
-    Private Sub rdbMage_CheckedChanged(sender As Object, e As EventArgs) Handles rdbMage.CheckedChanged
+    Private Sub rdbMage_CheckedChanged(ByVal sender As Object, ByVal e As EventArgs) Handles rdbMage.CheckedChanged
+        ' Sets variables to reflect the mage class
         pcbCharPrev.Image = My.Resources.magFlyL1
         playerInf.charClass = "Mage"
         playerInf.HP = 75
@@ -64,20 +79,24 @@ Public Class frmCharCreate
         playerInf.intelligence = 5
         playerInf.agility = 3
         playerInf.level = 1
-        playerInf.activeBracers = "(none)"
-        playerInf.activeChest = "(none)"
-        playerInf.activeGloves = "(none)"
-        playerInf.activeHelm = "(none)"
-        playerInf.activeLegs = "(none)"
+        playerInf.activeBracers = "wornBracers"
+        playerInf.activeChest = "wornDress"
+        playerInf.activeGloves = "wornGloves"
+        playerInf.activeHelm = "wornHat"
+        playerInf.activeLegs = "wornPants"
         playerInf.activeWepL = "(none)"
-        playerInf.activeWepR = "(none)"
+        playerInf.activeWepR = "oldWand"
         playerInf.moneyAmount = 0
+        playerInf.dungeonID = 1
+        playerInf.dungeonRM = 1
+        ReDim playerInf.inventory(11)
         lblStr.Text = playerInf.strength
         lblInt.Text = playerInf.intelligence
         lblAgi.Text = playerInf.agility
     End Sub
 
     Private Sub rdbRogue_CheckedChanged(sender As Object, e As EventArgs) Handles rdbRogue.CheckedChanged
+        ' Sets variables to reflect the rogue class
         pcbCharPrev.Image = My.Resources.rogIdleR
         playerInf.charClass = "Rogue"
         playerInf.HP = 75
@@ -88,20 +107,37 @@ Public Class frmCharCreate
         playerInf.intelligence = 2
         playerInf.agility = 5
         playerInf.level = 1
-        playerInf.activeBracers = "(none)"
-        playerInf.activeChest = "(none)"
-        playerInf.activeGloves = "(none)"
-        playerInf.activeHelm = "(none)"
-        playerInf.activeLegs = "(none)"
-        playerInf.activeWepL = "(none)"
-        playerInf.activeWepR = "(none)"
+        playerInf.activeBracers = 13
+        playerInf.activeChest = 12
+        playerInf.activeGloves = 6
+        playerInf.activeHelm = 4
+        playerInf.activeLegs = 9
+        playerInf.activeWepL = 1
+        playerInf.activeWepR = 1
         playerInf.moneyAmount = 0
+        playerInf.dungeonID = 1
+        playerInf.dungeonRM = 1
+        ReDim playerInf.inventory(11)
+        playerInf.inventory(0) = 1
+        playerInf.inventory(1) = 1
+        playerInf.inventory(2) = 4
+        playerInf.inventory(3) = 12
+        playerInf.inventory(4) = 9
+        playerInf.inventory(5) = 13
+        playerInf.inventory(6) = 6
         lblStr.Text = playerInf.strength
         lblInt.Text = playerInf.intelligence
         lblAgi.Text = playerInf.agility
+        charInfoScr.pcbHandL.Image = rogBasDagL
+        charInfoScr.pcbHandR.Image = rogBasDagR
+        charInfoScr.cboLHand.Items.Add("Basic Dagger")
+        charInfoScr.cboLHand.Text = "Basic Dagger"
+        charInfoScr.cboRHand.Items.Add("Basic Dagger")
+        charInfoScr.cboRHand.Text = "Basic Dagger"
     End Sub
 
     Private Sub btnBack_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBack.Click
+        ' Switches back to the launch screen
         Me.Hide()
         frmLaunchScr.Show()
     End Sub

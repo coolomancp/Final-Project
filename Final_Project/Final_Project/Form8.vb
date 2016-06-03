@@ -8,15 +8,12 @@
         ' If the flee chance is 50+, the player flees
         If fleeChance >= 50 Then
             If monst1Battle = True Then
-                mainScr.pcbMonster11.Enabled = False
-                mainScr.pcbMonster11.Visible = False
                 mainScr.pcbMonster11.Left = -100
                 monst1Dead = True
                 monst1Battle = False
             End If
             If monst2Battle = True Then
-                mainScr.pcbMonster21.Enabled = False
-                mainScr.pcbMonster21.Visible = False
+
                 mainScr.pcbMonster21.Left = -100
                 monst2Dead = True
                 monst2Battle = False
@@ -66,6 +63,12 @@
         proBarManaVal.Value = (playerInf.MP / playerInf.MPM) * 100
         lblHPVal.Text = "(" & playerInf.HP & "/" & playerInf.HPM & ")"
         lblManaVal.Text = "(" & playerInf.MP & "/" & playerInf.MPM & ")"
+        ' Checks health and sets color reflecting how much is left
+        If proBarHealthVal.Value <= 50 And proBarHealthVal.Value > 30 Then
+            proBarHealthVal.ForeColor = Color.Yellow
+        ElseIf proBarHealthVal.Value <= 30 Then
+            proBarHealthVal.ForeColor = Color.Red
+        End If
     End Sub
 
     Sub monstAttack()
@@ -137,7 +140,7 @@
         pcbBattlePlayer.Size = New Size(180, 166)
         pcbBattlePlayer.Location = New Point(13, 203)
         If counter = 0 Then
-            monstInf.HP = monstInf.HP - (20 - monstInf.armor) ' Monster loses 20 HP
+            monstInf.HP = monstInf.HP - ((20 + playerInf.level) - monstInf.armor) ' Monster loses 20 HP
             lblEnemyHP.Text = "(" & monstInf.HP & "/" & monstInf.HPM & ")"
         End If
         If monstInf.HP <= 0 Then ' Checks if the enemy has died
@@ -147,9 +150,11 @@
         End If
         proBarEnemyHP.Value = (monstInf.HP / monstInf.HPM) * 100 ' Updates enemy's health bar
         If counter = 1 Then
-            pcbBattlePlayer.Image = rogBattS ' Rogue returns to battle stance
-            pcbBattlePlayer.Size = New Size(133, 123)
-            pcbBattlePlayer.Location = New Point(13, 246)
+            If playerInf.charClass = "Rogue" Then
+                pcbBattlePlayer.Image = rogBattS ' Rogue returns to battle stance
+                pcbBattlePlayer.Size = New Size(133, 123)
+                pcbBattlePlayer.Location = New Point(13, 246)
+            End If
             counter = 0 ' Counter reset
             playerAttAnim.Enabled = False ' Attack animation finished
             If monstInf.HP > 0 Then
@@ -190,15 +195,11 @@
                 playerInf.exp = playerInf.exp + 20
             End If
             If monst1Battle = True Then
-                mainScr.pcbMonster11.Enabled = False
-                mainScr.pcbMonster11.Visible = False
                 mainScr.pcbMonster11.Left = -100
                 monst1Dead = True
                 monst1Battle = False
             End If
             If monst2Battle = True Then
-                mainScr.pcbMonster21.Enabled = False
-                mainScr.pcbMonster21.Visible = False
                 mainScr.pcbMonster21.Left = -100
                 monst2Dead = True
                 monst2Battle = False

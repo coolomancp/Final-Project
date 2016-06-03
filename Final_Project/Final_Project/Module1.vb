@@ -30,6 +30,7 @@
         Public charY As Integer ' Player's Y coord
         Public dungeonID As Integer ' What dungeon the player is in
         Public dungeonRM As Integer ' What room in the dungeon the player is in
+        Public inventory() As Integer ' Player's inventory
     End Structure
     Public charDir As Integer = 2 ' Player's direction
     Public charX As Integer ' Player's starting x coord
@@ -83,6 +84,7 @@
     ' Rogue Items
     Public rogBasDagL As Image = My.Resources.basicDaggerL
     Public rogBasDagR As Image = My.Resources.basicDaggerR
+    Public rogBasHelm As Image = My.Resources.rogueBaseHelm
     ' Mage
     Public magIdleR As Image = My.Resources.magIdleR ' Character idle facing the left (mage)
     Public magIdleL As Image = My.Resources.magIdleL ' Character idle facing the left (mage)
@@ -103,8 +105,14 @@
     Public magAttL3 As Image = My.Resources.magAttL3 ' Third frame of mage class attacking to the left
     Public magAttL4 As Image = My.Resources.magAttL4 ' Fourth frame of mage class attacking to the left
     Public magBattS As Image = My.Resources.mageBattleStance ' Mage's battle stance
+    ' Mage Items
+
+    ' Empty inventory slot
+    Public eInvSlot As Image = My.Resources.emptyInventorySlot_copy
+    ' Placeholder image
+    Public phImg As Image = My.Resources.placeholder
     ' Path to the resource files to allow use in any directory
-    Public resPath As String = Replace(My.Application.Info.DirectoryPath, "\bin\Debug", "\Resources\")
+    Public resPath As String = My.Application.Info.DirectoryPath
     ' Dungeon Monsters (Non-Boss)
     ' Monster Stats
     Structure monstStat
@@ -119,7 +127,6 @@
     Public Structure monstermultiply
         Dim level As Integer ' Used to define the level / difficulty of the area
     End Structure
-
     Public monstmulti As monstermultiply
     ' Goblin
     Public goblinDmg As Integer = 5 * monstmulti.level ' Goblin's damage
@@ -157,6 +164,7 @@
     Public gobBattS As Image = My.Resources.goblinBattleIdle ' Goblin's idle animation in battle
     ' Dungeon Backgrounds
     Public grasslandBG As Image = My.Resources.grasslandDungeonBG ' Corresponds to any fighting grounds within a grassland
+    Public grasslandRoomBG As Image = My.Resources.shstagewaterfall084slow1 ' Background for the room (when player is exploring)
     ' Dungeon Information
     Public monst1Dead As Boolean ' Status of monst1
     Public monst2Dead As Boolean ' Status of monst2
@@ -174,4 +182,41 @@
     End Structure
     Public dungeon As dungeonInfo
     Public fleeMod As Integer ' Modifies the chance of fleeing (making it harder or easier)
+    ' Item index, intakes an itemID and returns the string name of the item
+    Public Function itemIndex(ByVal itemID) As String
+        Return items(itemID).name
+    End Function
+    Structure strucItems
+        Dim ID As Integer ' Item ID
+        Dim name As String ' Item name
+        Dim strength As Integer ' Item's strength addition
+        Dim agility As Integer ' Item's agility addition
+        Dim intelligence As Integer ' Item's intelligence addition
+        Dim dmg As Double ' Item's damage
+        Dim armor As Integer ' Item's armor received
+        Dim image As Image ' Item's corresponding image
+        Dim imageVar As Image ' Special variable for if an item has a varient (e.g Warrior and Rogue share helm, but they should look different)
+        Dim imageVar2 As Image ' Same as above but allows another varient if shared by all 3 classes
+    End Structure
+    Public items(13) As strucItems
+    ' Reverse Item Index, takes in a name, spits out an ID
+    Public Function revItemIndex(ByVal itemName) As Integer
+        For i As Integer = 0 To items.Length - 1
+            ' Once a match is found, return it's ID
+            If items(i).name = itemName Then
+                Return items(i).ID
+            End If
+        Next
+        Return -1 ' Null
+    End Function
+    ' Weapon stats
+    Structure weaponStats
+        Dim str As Integer
+        Dim agi As Integer
+        Dim int As Integer
+        Dim damage As Integer
+    End Structure
+    Public wepStats As weaponStats
+    ' Debug tools
+    Public debugImg As Image = My.Resources.debug
 End Module

@@ -31,6 +31,7 @@ Partial Class frmMainScr
         Me.btnCharI = New System.Windows.Forms.Button()
         Me.btnInv = New System.Windows.Forms.Button()
         Me.pnlMain = New System.Windows.Forms.Panel()
+        Me.lblLevelUp = New System.Windows.Forms.Label()
         Me.pcbMonster23 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster24 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster22 = New System.Windows.Forms.PictureBox()
@@ -40,8 +41,6 @@ Partial Class frmMainScr
         Me.pcbMonster12 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster11 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer3 = New System.Windows.Forms.PictureBox()
-        Me.wmpAmbient = New AxWMPLib.AxWindowsMediaPlayer()
-        Me.wmpMusic = New AxWMPLib.AxWindowsMediaPlayer()
         Me.pcbPlayer2 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer4 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer1 = New System.Windows.Forms.PictureBox()
@@ -49,8 +48,10 @@ Partial Class frmMainScr
         Me.tmrAnim = New System.Windows.Forms.Timer(Me.components)
         Me.tmrMonst1Anim = New System.Windows.Forms.Timer(Me.components)
         Me.tmrMonst2Anim = New System.Windows.Forms.Timer(Me.components)
-        Me.lblLevelUp = New System.Windows.Forms.Label()
         Me.tmrLvlUpInvis = New System.Windows.Forms.Timer(Me.components)
+        Me.wmpAmbient = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.wmpMusic = New AxWMPLib.AxWindowsMediaPlayer()
+        Me.tmrNxtRoom = New System.Windows.Forms.Timer(Me.components)
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
         CType(Me.pcbMonster23, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -62,12 +63,12 @@ Partial Class frmMainScr
         CType(Me.pcbMonster12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbMonster11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picMainScr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlMenu
@@ -164,6 +165,19 @@ Partial Class frmMainScr
         Me.pnlMain.Name = "pnlMain"
         Me.pnlMain.Size = New System.Drawing.Size(699, 415)
         Me.pnlMain.TabIndex = 3
+        '
+        'lblLevelUp
+        '
+        Me.lblLevelUp.AutoSize = True
+        Me.lblLevelUp.BackColor = System.Drawing.Color.Transparent
+        Me.lblLevelUp.Font = New System.Drawing.Font("Monotxt", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLevelUp.ForeColor = System.Drawing.Color.Gold
+        Me.lblLevelUp.Location = New System.Drawing.Point(206, 66)
+        Me.lblLevelUp.Name = "lblLevelUp"
+        Me.lblLevelUp.Size = New System.Drawing.Size(272, 47)
+        Me.lblLevelUp.TabIndex = 58
+        Me.lblLevelUp.Text = "LEVEL UP!"
+        Me.lblLevelUp.Visible = False
         '
         'pcbMonster23
         '
@@ -272,26 +286,6 @@ Partial Class frmMainScr
         Me.pcbPlayer3.TabStop = False
         Me.pcbPlayer3.Visible = False
         '
-        'wmpAmbient
-        '
-        Me.wmpAmbient.Enabled = True
-        Me.wmpAmbient.Location = New System.Drawing.Point(323, 139)
-        Me.wmpAmbient.Name = "wmpAmbient"
-        Me.wmpAmbient.OcxState = CType(resources.GetObject("wmpAmbient.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.wmpAmbient.Size = New System.Drawing.Size(75, 23)
-        Me.wmpAmbient.TabIndex = 6
-        Me.wmpAmbient.Visible = False
-        '
-        'wmpMusic
-        '
-        Me.wmpMusic.Enabled = True
-        Me.wmpMusic.Location = New System.Drawing.Point(323, 224)
-        Me.wmpMusic.Name = "wmpMusic"
-        Me.wmpMusic.OcxState = CType(resources.GetObject("wmpMusic.OcxState"), System.Windows.Forms.AxHost.State)
-        Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
-        Me.wmpMusic.TabIndex = 4
-        Me.wmpMusic.Visible = False
-        '
         'pcbPlayer2
         '
         Me.pcbPlayer2.BackColor = System.Drawing.Color.Transparent
@@ -352,22 +346,33 @@ Partial Class frmMainScr
         'tmrMonst2Anim
         '
         '
-        'lblLevelUp
-        '
-        Me.lblLevelUp.AutoSize = True
-        Me.lblLevelUp.BackColor = System.Drawing.Color.Transparent
-        Me.lblLevelUp.Font = New System.Drawing.Font("Monotxt", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLevelUp.ForeColor = System.Drawing.Color.Gold
-        Me.lblLevelUp.Location = New System.Drawing.Point(206, 66)
-        Me.lblLevelUp.Name = "lblLevelUp"
-        Me.lblLevelUp.Size = New System.Drawing.Size(272, 47)
-        Me.lblLevelUp.TabIndex = 58
-        Me.lblLevelUp.Text = "LEVEL UP!"
-        Me.lblLevelUp.Visible = False
-        '
         'tmrLvlUpInvis
         '
         Me.tmrLvlUpInvis.Interval = 3000
+        '
+        'wmpAmbient
+        '
+        Me.wmpAmbient.Enabled = True
+        Me.wmpAmbient.Location = New System.Drawing.Point(323, 139)
+        Me.wmpAmbient.Name = "wmpAmbient"
+        Me.wmpAmbient.OcxState = CType(resources.GetObject("wmpAmbient.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.wmpAmbient.Size = New System.Drawing.Size(75, 23)
+        Me.wmpAmbient.TabIndex = 6
+        Me.wmpAmbient.Visible = False
+        '
+        'wmpMusic
+        '
+        Me.wmpMusic.Enabled = True
+        Me.wmpMusic.Location = New System.Drawing.Point(323, 224)
+        Me.wmpMusic.Name = "wmpMusic"
+        Me.wmpMusic.OcxState = CType(resources.GetObject("wmpMusic.OcxState"), System.Windows.Forms.AxHost.State)
+        Me.wmpMusic.Size = New System.Drawing.Size(75, 23)
+        Me.wmpMusic.TabIndex = 4
+        Me.wmpMusic.Visible = False
+        '
+        'tmrNxtRoom
+        '
+        Me.tmrNxtRoom.Interval = 300
         '
         'frmMainScr
         '
@@ -401,12 +406,12 @@ Partial Class frmMainScr
         CType(Me.pcbMonster12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbMonster11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picMainScr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.wmpAmbient, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.wmpMusic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -437,4 +442,5 @@ Partial Class frmMainScr
     Friend WithEvents lblTest2 As System.Windows.Forms.Label
     Friend WithEvents lblLevelUp As System.Windows.Forms.Label
     Friend WithEvents tmrLvlUpInvis As System.Windows.Forms.Timer
+    Friend WithEvents tmrNxtRoom As System.Windows.Forms.Timer
 End Class

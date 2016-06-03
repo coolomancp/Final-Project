@@ -27,6 +27,7 @@ Partial Class frmLaunchScr
         Me.btnLoad = New System.Windows.Forms.Button()
         Me.picLogo = New System.Windows.Forms.PictureBox()
         Me.picBackground = New System.Windows.Forms.PictureBox()
+        Me.lblDEBUG = New System.Windows.Forms.Label()
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picBackground, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -78,11 +79,22 @@ Partial Class frmLaunchScr
         Me.picBackground.TabIndex = 0
         Me.picBackground.TabStop = False
         '
+        'lblDEBUG
+        '
+        Me.lblDEBUG.AutoSize = True
+        Me.lblDEBUG.Location = New System.Drawing.Point(294, 344)
+        Me.lblDEBUG.Name = "lblDEBUG"
+        Me.lblDEBUG.Size = New System.Drawing.Size(39, 13)
+        Me.lblDEBUG.TabIndex = 4
+        Me.lblDEBUG.Text = "Label1"
+        Me.lblDEBUG.Visible = False
+        '
         'frmLaunchScr
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(999, 529)
+        Me.ClientSize = New System.Drawing.Size(999, 530)
+        Me.Controls.Add(Me.lblDEBUG)
         Me.Controls.Add(Me.picLogo)
         Me.Controls.Add(Me.btnLoad)
         Me.Controls.Add(Me.btnNew)
@@ -98,6 +110,7 @@ Partial Class frmLaunchScr
         CType(Me.picLogo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picBackground, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -105,4 +118,5 @@ Partial Class frmLaunchScr
     Friend WithEvents btnNew As Button
     Friend WithEvents btnLoad As Button
     Friend WithEvents picLogo As PictureBox
+    Friend WithEvents lblDEBUG As System.Windows.Forms.Label
 End Class

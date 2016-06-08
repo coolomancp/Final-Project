@@ -90,8 +90,7 @@ Public Class frmLoadScr
             Next
         End Using
         ' Launches main window and hides load screen
-        mainScr.Refresh()
-        mainScr.Show()
+        mapScr.Show()
         Me.Hide()
     End Sub
 End Class

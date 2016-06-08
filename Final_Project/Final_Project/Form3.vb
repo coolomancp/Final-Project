@@ -47,75 +47,7 @@ Public Class frmMainScr
     End Sub
 
     Private Sub frmMainScr_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
-        monstmulti.level = 1 ' Sets level of monsters
-        dungeon.monstertype = "Goblin" ' Dungeon monster type set as Goblins
-        dungeon.monstNum = 2 ' Number of monsters
-        dungeon.type = "grasslands"
-        monst1Dead = False ' Monster 1 is alive
-        monst2Dead = False ' Monster 2 is alive
-        If dungeon.monstertype = "Goblin" Then
-            If dungeon.monstNum = 1 Then
-                pcbMonster11.Image = gobWalkL1
-                pcbMonster12.Image = gobWalkL2
-                pcbMonster13.Image = gobWalkL3
-                pcbMonster14.Image = gobWalkL4
-                monst1X = 400
-                pcbMonster11.Location = New Point(monst1X, 358)
-                pcbMonster12.Location = New Point(monst1X, 358)
-                pcbMonster13.Location = New Point(monst1X, 358)
-                pcbMonster14.Location = New Point(monst1X, 358)
-                tmrMonst1Anim.Enabled = True
-            ElseIf dungeon.monstNum = 2 Then
-                pcbMonster11.Image = gobWalkL1
-                pcbMonster12.Image = gobWalkL2
-                pcbMonster13.Image = gobWalkL3
-                pcbMonster14.Image = gobWalkL4
-                pcbMonster21.Image = gobWalkL1
-                pcbMonster22.Image = gobWalkL2
-                pcbMonster23.Image = gobWalkL3
-                pcbMonster24.Image = gobWalkL4
-                monst1X = 400
-                monst2X = 430
-                pcbMonster11.Location = New Point(monst1X, 358)
-                pcbMonster12.Location = New Point(monst1X, 358)
-                pcbMonster13.Location = New Point(monst1X, 358)
-                pcbMonster14.Location = New Point(monst1X, 358)
-                pcbMonster21.Location = New Point(monst2X, 358)
-                pcbMonster22.Location = New Point(monst2X, 358)
-                pcbMonster23.Location = New Point(monst2X, 358)
-                pcbMonster24.Location = New Point(monst2X, 358)
-            ElseIf dungeon.monstNum = 3 Then
-                pcbMonster11.Image = gobWalkL1
-                pcbMonster12.Image = gobWalkL2
-                pcbMonster13.Image = gobWalkL3
-                pcbMonster14.Image = gobWalkL4
-                pcbMonster21.Image = gobWalkL1
-                pcbMonster22.Image = gobWalkL2
-                pcbMonster23.Image = gobWalkL3
-                pcbMonster24.Image = gobWalkL4
-                'pcbMonster31.Image = gobWalkL1
-                'pcbMonster32.Image = gobWalkL2
-                'pcbMonster33.Image = gobWalkL3
-                'pcbMonster34.Image = gobWalkL4
-            ElseIf dungeon.monstNum = 4 Then
-                pcbMonster11.Image = gobWalkL1
-                pcbMonster12.Image = gobWalkL2
-                pcbMonster13.Image = gobWalkL3
-                pcbMonster14.Image = gobWalkL4
-                pcbMonster21.Image = gobWalkL1
-                pcbMonster22.Image = gobWalkL2
-                pcbMonster23.Image = gobWalkL3
-                pcbMonster24.Image = gobWalkL4
-                'pcbMonster31.Image = gobWalkL1
-                'pcbMonster32.Image = gobWalkL2
-                'pcbMonster33.Image = gobWalkL3
-                'pcbMonster34.Image = gobWalkL4
-                'pcbMonster41.Image = gobWalkL1
-                'pcbMonster42.Image = gobWalkL2
-                'pcbMonster43.Image = gobWalkL3
-                'pcbMonster44.Image = gobWalkL4
-            End If
-        End If
+        DungeonCreate()
         If playerInf.charClass = "Warrior" Then
             charY = 340
             charMovSpd = 5
@@ -146,22 +78,22 @@ Public Class frmMainScr
         lblTest.Text = Convert.ToString(pcbPlayer1.Location)
         KeyPreview = True ' Form accepts indirect keyboard input
         ' Sets each frame's parent to the background to allow transparency
-        pcbPlayer1.Parent = picMainScr
-        pcbPlayer2.Parent = picMainScr
-        pcbPlayer3.Parent = picMainScr
-        pcbPlayer4.Parent = picMainScr
-        pcbMonster11.Parent = picMainScr
-        pcbMonster12.Parent = picMainScr
-        pcbMonster13.Parent = picMainScr
-        pcbMonster14.Parent = picMainScr
-        pcbMonster21.Parent = picMainScr
-        pcbMonster22.Parent = picMainScr
-        pcbMonster23.Parent = picMainScr
-        pcbMonster24.Parent = picMainScr
+        pcbPlayer1.Parent = pcbMainScr
+        pcbPlayer2.Parent = pcbMainScr
+        pcbPlayer3.Parent = pcbMainScr
+        pcbPlayer4.Parent = pcbMainScr
+        pcbMonster11.Parent = pcbMainScr
+        pcbMonster12.Parent = pcbMainScr
+        pcbMonster13.Parent = pcbMainScr
+        pcbMonster14.Parent = pcbMainScr
+        pcbMonster21.Parent = pcbMainScr
+        pcbMonster22.Parent = pcbMainScr
+        pcbMonster23.Parent = pcbMainScr
+        pcbMonster24.Parent = pcbMainScr
         ' Sets lvl up label for transparency
-        lblLevelUp.Parent = picMainScr
+        lblLevelUp.Parent = pcbMainScr
         lblLevelUp.Visible = False
-        ' Sets background music UNDO COMMENTS!***************************************************************************************
+        ' Sets background music **No sound..?
         wmpMusic.URL = resPath + "bgmusicGreen.wav"
         wmpMusic.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
         ' Sets ambient sounds and sets ambient sound volume low
@@ -505,24 +437,73 @@ Public Class frmMainScr
             tmrNxtRoom.Enabled = True
         End If
     End Sub
-
+    Dim count As Integer = 0
     Private Sub tmrNxtRoom_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrNxtRoom.Tick
         If playerInf.charClass = "Rogue" Then
             ' Next Room
             charX = 0 ' Reset character position
-            pcbPlayer1.Location = New Point(charX, charY)
-            pcbPlayer2.Location = New Point(charX, charY)
-            pcbPlayer3.Location = New Point(charX, charY)
-            pcbPlayer4.Location = New Point(charX, charY)
-            pcbMonster11.Location = New Point(330, 358)
-            monst1Dead = False
-            pcbMonster21.Location = New Point(370, 358)
-            monst2Dead = False
-            If dungeon.type = "Grasslands" Then
-                picMainScr.Image = Nothing
-                picMainScr.Image = grasslandRoomBG
-            End If
             tmrNxtRoom.Enabled = False
+        End If
+        If count = 0 Then
+            DungeonCreate()
+            count = 1
+        Else
+            count = 0
+        End If
+    End Sub
+
+    ' Dungeon creation procedure
+    Sub DungeonCreate()
+        ' Background
+        If dungeon.type = "grasslands" Then
+            pcbMainScr.Image = grasslandRoomBG
+        End If
+        ' Monster placement !!!*** Issue with placement and replacement ***!!!
+        If dungeon.numOfRms = playerInf.dungeonRM Then
+            ' Dungeon boss setup
+        Else
+            If dungeon.monstertype = "Goblin" Then
+                If dungeon.monstNum >= 1 Then
+                    pcbMonster11.Image = gobWalkL1
+                    pcbMonster12.Image = gobWalkL2
+                    pcbMonster13.Image = gobWalkL3
+                    pcbMonster14.Image = gobWalkL4
+                    monst1X = 400
+                    pcbMonster11.Location = New Point(monst1X, 358)
+                    pcbMonster12.Location = New Point(monst1X, 358)
+                    pcbMonster13.Location = New Point(monst1X, 358)
+                    pcbMonster14.Location = New Point(monst1X, 358)
+                    monst1Dead = False
+                End If
+                If dungeon.monstNum >= 2 Then
+                    pcbMonster21.Image = gobWalkL1
+                    pcbMonster22.Image = gobWalkL2
+                    pcbMonster23.Image = gobWalkL3
+                    pcbMonster24.Image = gobWalkL4
+                    monst2X = 430
+                    pcbMonster21.Location = New Point(monst2X, 358)
+                    pcbMonster22.Location = New Point(monst2X, 358)
+                    pcbMonster23.Location = New Point(monst2X, 358)
+                    pcbMonster24.Location = New Point(monst2X, 358)
+                    monst2Dead = False
+                End If
+                If dungeon.monstNum >= 3 Then
+                    'pcbMonster31.Image = gobWalkL1
+                    'pcbMonster32.Image = gobWalkL2
+                    'pcbMonster33.Image = gobWalkL3
+                    'pcbMonster34.Image = gobWalkL4
+                End If
+                If dungeon.monstNum = 4 Then
+                    'pcbMonster31.Image = gobWalkL1
+                    'pcbMonster32.Image = gobWalkL2
+                    'pcbMonster33.Image = gobWalkL3
+                    'pcbMonster34.Image = gobWalkL4
+                    'pcbMonster41.Image = gobWalkL1
+                    'pcbMonster42.Image = gobWalkL2
+                    'pcbMonster43.Image = gobWalkL3
+                    'pcbMonster44.Image = gobWalkL4
+                End If
+            End If
         End If
     End Sub
 End Class

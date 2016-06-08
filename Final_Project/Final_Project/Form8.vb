@@ -195,12 +195,12 @@
                 playerInf.exp = playerInf.exp + 20
             End If
             If monst1Battle = True Then
-                mainScr.pcbMonster11.Left = -100
+                mainScr.pcbMonster11.Left = -200
                 monst1Dead = True
                 monst1Battle = False
             End If
             If monst2Battle = True Then
-                mainScr.pcbMonster21.Left = -100
+                mainScr.pcbMonster21.Left = -200
                 monst2Dead = True
                 monst2Battle = False
             End If

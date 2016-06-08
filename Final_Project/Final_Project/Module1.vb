@@ -1,4 +1,12 @@
 ﻿Module Module1
+    Public loadScr As New frmLoadScr ' Loading screen
+    Public mainScr As New frmMainScr ' Main Screen player used
+    Public charInfoScr As New frmCharScreen ' Character Info screen is loaded
+    Public exitWarning As New frmExitWarning ' Warns player to save before exiting
+    Public creation As New frmCharCreate ' Character creation screen
+    Public battleScr As New frmBattle ' Screen used for battle
+    Public inventoryScr As New frmInventory ' Inventory screen is loaded
+    Public mapScr As New frmMap ' Map screen used for selecting dungeon locations
     Structure strucItems
         Dim ID As Integer ' Item ID
         Dim name As String ' Item name
@@ -12,13 +20,6 @@
         Dim imageVar2 As Image ' Same as above but allows another varient if shared by all 3 classes
     End Structure
     Public items(20) As strucItems
-    Public loadScr As New frmLoadScr ' Loading screen
-    Public mainScr As New frmMainScr ' Main Screen player used
-    Public charInfoScr As New frmCharScreen ' Character Info screen is loaded
-    Public exitWarning As New frmExitWarning ' Warns player to save before exiting
-    Public creation As New frmCharCreate ' Character creation screen
-    Public battleScr As New frmBattle ' Screen used for battle
-    Public inventoryScr As New frmInventory ' Inventory screen is loaded
     Public Structure playerInfo ' Stores all of the player's information
         Public HP As Integer ' Player's current health
         Public HPM As Integer ' Player's max health
@@ -192,6 +193,7 @@
         Dim monstNum As Integer ' Determines how many monsters there are per stage
         Dim difficulty As Integer ' Determines the strength of the monsters
         Dim type As String ' Defines what type of dungeon
+        Dim numOfRms As Integer ' Number of rooms in the dungeon
     End Structure
     Public dungeon As dungeonInfo
     Public fleeMod As Integer ' Modifies the chance of fleeing (making it harder or easier)

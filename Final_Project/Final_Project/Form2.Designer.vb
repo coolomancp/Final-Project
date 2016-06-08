@@ -95,6 +95,7 @@ Partial Class frmInventory
         'lblMoney
         '
         Me.lblMoney.AutoSize = True
+        Me.lblMoney.BackColor = System.Drawing.Color.Transparent
         Me.lblMoney.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblMoney.ForeColor = System.Drawing.SystemColors.Control
         Me.lblMoney.Location = New System.Drawing.Point(13, 416)
@@ -106,6 +107,7 @@ Partial Class frmInventory
         'lblmonAmount
         '
         Me.lblmonAmount.AutoSize = True
+        Me.lblmonAmount.BackColor = System.Drawing.Color.Transparent
         Me.lblmonAmount.ForeColor = System.Drawing.SystemColors.Control
         Me.lblmonAmount.Location = New System.Drawing.Point(69, 419)
         Me.lblmonAmount.Name = "lblmonAmount"
@@ -150,7 +152,8 @@ Partial Class frmInventory
         'lblSlot12
         '
         Me.lblSlot12.AutoSize = True
-        Me.lblSlot12.BackColor = System.Drawing.SystemColors.Control
+        Me.lblSlot12.BackColor = System.Drawing.Color.Transparent
+        Me.lblSlot12.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot12.Location = New System.Drawing.Point(318, 462)
         Me.lblSlot12.Name = "lblSlot12"
         Me.lblSlot12.Size = New System.Drawing.Size(39, 13)
@@ -160,7 +163,8 @@ Partial Class frmInventory
         'lblSlot11
         '
         Me.lblSlot11.AutoSize = True
-        Me.lblSlot11.BackColor = System.Drawing.SystemColors.Control
+        Me.lblSlot11.BackColor = System.Drawing.Color.Transparent
+        Me.lblSlot11.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot11.Location = New System.Drawing.Point(177, 462)
         Me.lblSlot11.Name = "lblSlot11"
         Me.lblSlot11.Size = New System.Drawing.Size(39, 13)
@@ -170,7 +174,8 @@ Partial Class frmInventory
         'lblSlot10
         '
         Me.lblSlot10.AutoSize = True
-        Me.lblSlot10.BackColor = System.Drawing.SystemColors.Control
+        Me.lblSlot10.BackColor = System.Drawing.Color.Transparent
+        Me.lblSlot10.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot10.Location = New System.Drawing.Point(38, 462)
         Me.lblSlot10.Name = "lblSlot10"
         Me.lblSlot10.Size = New System.Drawing.Size(39, 13)

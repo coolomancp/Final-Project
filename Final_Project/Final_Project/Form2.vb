@@ -27,6 +27,16 @@
             pnlOrigTopArr(i) = CType(pnlInv.Controls("pnlSlot" & i + 1.ToString()), Panel).Top
             lblOrigTopArr(i) = CType(pnlInv.Controls("lblSlot" & i + 1.ToString()), Label).Top
         Next
+        ' Sets tooltips for info on all of the player's items
+        For i As Integer = 1 To playerInf.inventory.Length
+            Dim info As String
+            If itemIndex(playerInf.inventory(i - 1)) <> "Empty" Then
+                info = "Dmg: " & items(playerInf.inventory(i - 1)).dmg & " Str: " & items(playerInf.inventory(i - 1)).strength & " Agi: " & items(playerInf.inventory(i - 1)).agility & " Int: " & items(playerInf.inventory(i - 1)).intelligence & " Arm: " & items(playerInf.inventory(i - 1)).armor
+            Else
+                info = "Empty"
+            End If
+            ttInvInfo.SetToolTip(CType(CType(pnlInv.Controls("pnlSlot" & i.ToString), Panel).Controls("pcbSlot" & i.ToString()), PictureBox), info)
+        Next
     End Sub
 
     Private Sub VInvScrollBar_Scroll(ByVal sender As System.Object, ByVal e As System.Windows.Forms.ScrollEventArgs) Handles VInvScrollBar.Scroll
@@ -69,5 +79,12 @@
     ' Post: Updates label to reflect the item in the slot
     Sub setInventoryLabel(ByRef label As Label, ByVal index As Integer)
         label.Text = itemIndex(playerInf.inventory(index))
+    End Sub
+
+    Private Sub frmInventory_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles pnlInv.MouseDoubleClick
+        lblmonAmount.Text = MousePosition.X & " , " & MousePosition.Y & " Compared to " & pcbSlot1.Top & " , " & pcbSlot1.Bottom
+        If MousePosition.Y < pcbSlot1.Top And MousePosition.Y > pcbSlot1.Bottom Then
+            lblmonAmount.Text = "Worked!"
+        End If
     End Sub
 End Class

@@ -21,14 +21,7 @@ Public Class frmMainScr
             charInfoScr.Left = Location.X \ 4 + 7
             charInfoScr.Top = Location.Y + Location.Y \ 3
             ' Refreshes character information
-            charInfoScr.lblLvl.Text = playerInf.level
-            charInfoScr.lblHPVal.Text = "(" & Convert.ToString(playerInf.HP) & "/" & Convert.ToString(playerInf.HPM) & ")"
-            charInfoScr.proBarHealthVal.Value = playerInf.HP \ playerInf.HPM
-            charInfoScr.lblManaVal.Text = "(" & Convert.ToString(playerInf.MP) & "/" & Convert.ToString(playerInf.MPM) & ")"
-            charInfoScr.proBarManaVal.Value = playerInf.MP \ playerInf.MPM
-            charInfoScr.lblAgiVal.Text = playerInf.agility
-            charInfoScr.lblStrVal.Text = playerInf.strength
-            charInfoScr.lblIntelVal.Text = playerInf.intelligence
+            charInfoScr.RefreshCharInf()
             ' Add armor and DPS calculation
             charInfoScr.Show() ' Opens the character info screen
             infStat = True ' Character info screen status is set as open
@@ -36,7 +29,6 @@ Public Class frmMainScr
             charInfoScr.Hide() ' Closes the character info screen
             infStat = False ' Character info screen status is set to closed
         End If
-        frmCharScreen.Refresh()
     End Sub
 
     Private Sub btnInv_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnInv.Click

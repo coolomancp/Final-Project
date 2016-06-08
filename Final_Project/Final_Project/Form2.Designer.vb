@@ -22,6 +22,7 @@ Partial Class frmInventory
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmInventory))
         Me.lblMoney = New System.Windows.Forms.Label()
         Me.lblmonAmount = New System.Windows.Forms.Label()
@@ -63,6 +64,7 @@ Partial Class frmInventory
         Me.pnlSlot1 = New System.Windows.Forms.Panel()
         Me.pcbSlot1 = New System.Windows.Forms.PictureBox()
         Me.VInvScrollBar = New System.Windows.Forms.VScrollBar()
+        Me.ttInvInfo = New System.Windows.Forms.ToolTip(Me.components)
         Me.pnlInv.SuspendLayout()
         Me.pnlSlot12.SuspendLayout()
         CType(Me.pcbSlot12, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -94,6 +96,7 @@ Partial Class frmInventory
         '
         Me.lblMoney.AutoSize = True
         Me.lblMoney.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMoney.ForeColor = System.Drawing.SystemColors.Control
         Me.lblMoney.Location = New System.Drawing.Point(13, 416)
         Me.lblMoney.Name = "lblMoney"
         Me.lblMoney.Size = New System.Drawing.Size(58, 16)
@@ -103,6 +106,7 @@ Partial Class frmInventory
         'lblmonAmount
         '
         Me.lblmonAmount.AutoSize = True
+        Me.lblmonAmount.ForeColor = System.Drawing.SystemColors.Control
         Me.lblmonAmount.Location = New System.Drawing.Point(69, 419)
         Me.lblmonAmount.Name = "lblmonAmount"
         Me.lblmonAmount.Size = New System.Drawing.Size(13, 13)
@@ -111,7 +115,7 @@ Partial Class frmInventory
         '
         'pnlInv
         '
-        Me.pnlInv.BackColor = System.Drawing.SystemColors.Control
+        Me.pnlInv.BackColor = System.Drawing.Color.Transparent
         Me.pnlInv.Controls.Add(Me.lblSlot12)
         Me.pnlInv.Controls.Add(Me.lblSlot11)
         Me.pnlInv.Controls.Add(Me.lblSlot10)
@@ -137,6 +141,7 @@ Partial Class frmInventory
         Me.pnlInv.Controls.Add(Me.pnlSlot3)
         Me.pnlInv.Controls.Add(Me.pnlSlot1)
         Me.pnlInv.Controls.Add(Me.VInvScrollBar)
+        Me.pnlInv.ForeColor = System.Drawing.Color.Transparent
         Me.pnlInv.Location = New System.Drawing.Point(16, 49)
         Me.pnlInv.Name = "pnlInv"
         Me.pnlInv.Size = New System.Drawing.Size(410, 367)
@@ -145,6 +150,7 @@ Partial Class frmInventory
         'lblSlot12
         '
         Me.lblSlot12.AutoSize = True
+        Me.lblSlot12.BackColor = System.Drawing.SystemColors.Control
         Me.lblSlot12.Location = New System.Drawing.Point(318, 462)
         Me.lblSlot12.Name = "lblSlot12"
         Me.lblSlot12.Size = New System.Drawing.Size(39, 13)
@@ -154,6 +160,7 @@ Partial Class frmInventory
         'lblSlot11
         '
         Me.lblSlot11.AutoSize = True
+        Me.lblSlot11.BackColor = System.Drawing.SystemColors.Control
         Me.lblSlot11.Location = New System.Drawing.Point(177, 462)
         Me.lblSlot11.Name = "lblSlot11"
         Me.lblSlot11.Size = New System.Drawing.Size(39, 13)
@@ -163,6 +170,7 @@ Partial Class frmInventory
         'lblSlot10
         '
         Me.lblSlot10.AutoSize = True
+        Me.lblSlot10.BackColor = System.Drawing.SystemColors.Control
         Me.lblSlot10.Location = New System.Drawing.Point(38, 462)
         Me.lblSlot10.Name = "lblSlot10"
         Me.lblSlot10.Size = New System.Drawing.Size(39, 13)
@@ -172,6 +180,7 @@ Partial Class frmInventory
         'lblSlot9
         '
         Me.lblSlot9.AutoSize = True
+        Me.lblSlot9.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot9.Location = New System.Drawing.Point(318, 341)
         Me.lblSlot9.Name = "lblSlot9"
         Me.lblSlot9.Size = New System.Drawing.Size(39, 13)
@@ -181,6 +190,7 @@ Partial Class frmInventory
         'lblSlot8
         '
         Me.lblSlot8.AutoSize = True
+        Me.lblSlot8.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot8.Location = New System.Drawing.Point(177, 341)
         Me.lblSlot8.Name = "lblSlot8"
         Me.lblSlot8.Size = New System.Drawing.Size(39, 13)
@@ -190,6 +200,7 @@ Partial Class frmInventory
         'lblSlot7
         '
         Me.lblSlot7.AutoSize = True
+        Me.lblSlot7.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot7.Location = New System.Drawing.Point(36, 341)
         Me.lblSlot7.Name = "lblSlot7"
         Me.lblSlot7.Size = New System.Drawing.Size(39, 13)
@@ -199,6 +210,7 @@ Partial Class frmInventory
         'lblSlot6
         '
         Me.lblSlot6.AutoSize = True
+        Me.lblSlot6.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot6.Location = New System.Drawing.Point(318, 220)
         Me.lblSlot6.Name = "lblSlot6"
         Me.lblSlot6.Size = New System.Drawing.Size(39, 13)
@@ -208,6 +220,7 @@ Partial Class frmInventory
         'lblSlot5
         '
         Me.lblSlot5.AutoSize = True
+        Me.lblSlot5.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot5.Location = New System.Drawing.Point(177, 220)
         Me.lblSlot5.Name = "lblSlot5"
         Me.lblSlot5.Size = New System.Drawing.Size(39, 13)
@@ -217,6 +230,7 @@ Partial Class frmInventory
         'lblSlot4
         '
         Me.lblSlot4.AutoSize = True
+        Me.lblSlot4.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot4.Location = New System.Drawing.Point(36, 220)
         Me.lblSlot4.Name = "lblSlot4"
         Me.lblSlot4.Size = New System.Drawing.Size(39, 13)
@@ -226,6 +240,7 @@ Partial Class frmInventory
         'lblSlot3
         '
         Me.lblSlot3.AutoSize = True
+        Me.lblSlot3.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot3.Location = New System.Drawing.Point(318, 99)
         Me.lblSlot3.Name = "lblSlot3"
         Me.lblSlot3.Size = New System.Drawing.Size(39, 13)
@@ -235,6 +250,7 @@ Partial Class frmInventory
         'lblSlot2
         '
         Me.lblSlot2.AutoSize = True
+        Me.lblSlot2.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot2.Location = New System.Drawing.Point(177, 99)
         Me.lblSlot2.Name = "lblSlot2"
         Me.lblSlot2.Size = New System.Drawing.Size(39, 13)
@@ -244,6 +260,7 @@ Partial Class frmInventory
         'lblSlot1
         '
         Me.lblSlot1.AutoSize = True
+        Me.lblSlot1.ForeColor = System.Drawing.SystemColors.Control
         Me.lblSlot1.Location = New System.Drawing.Point(36, 99)
         Me.lblSlot1.Name = "lblSlot1"
         Me.lblSlot1.Size = New System.Drawing.Size(39, 13)
@@ -477,7 +494,8 @@ Partial Class frmInventory
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(435, 441)
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.rockyMenuBG
+        Me.ClientSize = New System.Drawing.Size(435, 442)
         Me.ControlBox = False
         Me.Controls.Add(Me.pnlInv)
         Me.Controls.Add(Me.lblmonAmount)
@@ -561,4 +579,5 @@ Partial Class frmInventory
     Friend WithEvents lblSlot1 As System.Windows.Forms.Label
     Friend WithEvents lblSlot12 As System.Windows.Forms.Label
     Friend WithEvents lblSlot11 As System.Windows.Forms.Label
+    Friend WithEvents ttInvInfo As System.Windows.Forms.ToolTip
 End Class

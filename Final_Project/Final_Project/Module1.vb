@@ -11,7 +11,7 @@
         Dim imageVar As Image ' Special variable for if an item has a varient (e.g Warrior and Rogue share helm, but they should look different)
         Dim imageVar2 As Image ' Same as above but allows another varient if shared by all 3 classes
     End Structure
-    Public items(13) As strucItems
+    Public items(20) As strucItems
     Public loadScr As New frmLoadScr ' Loading screen
     Public mainScr As New frmMainScr ' Main Screen player used
     Public charInfoScr As New frmCharScreen ' Character Info screen is loaded

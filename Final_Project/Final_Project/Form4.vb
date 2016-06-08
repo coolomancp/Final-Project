@@ -7,7 +7,7 @@ Public Class frmLaunchScr
 
     Private Sub frmLaunchScr_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         'lblDEBUG.Text = resPath ' Debug label
-        'lblDEBUG.Visible = 
+        'lblDEBUG.Visible = True
         picLogo.Parent = picBackground ' Allows transparency for title
         ' Sets all the information for items
         ' Empty
@@ -132,6 +132,15 @@ Public Class frmLaunchScr
         items(13).intelligence = 1
         items(13).armor = 1
         'items(13).image = wornBracers
+        ' Debug Item
+        items(20).ID = 20
+        items(20).name = "Debug"
+        items(20).dmg = 500
+        items(20).agility = 500
+        items(20).strength = 500
+        items(20).intelligence = 500
+        items(20).armor = 500
+        items(20).image = debugImg
     End Sub
 
     Private Sub btnLoad_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnLoad.Click

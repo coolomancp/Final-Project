@@ -269,6 +269,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\rockyMenuBG.png" />
     <None Include="Resources\placeholder.png" />
     <None Include="Resources\emptyInventorySlot copy.png" />
     <None Include="Resources\debug.png" />

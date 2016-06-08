@@ -23,6 +23,7 @@ Partial Class frmBattle
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBattle))
         Me.pnlBattleMenu = New System.Windows.Forms.Panel()
         Me.btnMelee = New System.Windows.Forms.Button()
         Me.btnAbilities = New System.Windows.Forms.Button()
@@ -304,6 +305,7 @@ Partial Class frmBattle
         Me.Controls.Add(Me.pcbBattlePlayer)
         Me.Controls.Add(Me.pcbBattleBG)
         Me.Controls.Add(Me.pnlBattleMenu)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(740, 584)
         Me.MinimizeBox = False

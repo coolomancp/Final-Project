@@ -46,7 +46,7 @@ Partial Class frmCharScreen
         Me.cboHead = New System.Windows.Forms.ComboBox()
         Me.cboGloves = New System.Windows.Forms.ComboBox()
         Me.cboRHand = New System.Windows.Forms.ComboBox()
-        Me.btnSav = New System.Windows.Forms.Button()
+        Me.btnUpd = New System.Windows.Forms.Button()
         Me.lblStats = New System.Windows.Forms.Label()
         Me.lblDPS = New System.Windows.Forms.Label()
         Me.lblArmor = New System.Windows.Forms.Label()
@@ -213,7 +213,9 @@ Partial Class frmCharScreen
         'lblCIHP
         '
         Me.lblCIHP.AutoSize = True
+        Me.lblCIHP.BackColor = System.Drawing.Color.Transparent
         Me.lblCIHP.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCIHP.ForeColor = System.Drawing.SystemColors.Control
         Me.lblCIHP.Location = New System.Drawing.Point(12, 9)
         Me.lblCIHP.Name = "lblCIHP"
         Me.lblCIHP.Size = New System.Drawing.Size(69, 24)
@@ -225,6 +227,7 @@ Partial Class frmCharScreen
         Me.lblHPVal.AutoSize = True
         Me.lblHPVal.BackColor = System.Drawing.Color.Transparent
         Me.lblHPVal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHPVal.ForeColor = System.Drawing.SystemColors.Control
         Me.lblHPVal.Location = New System.Drawing.Point(26, 28)
         Me.lblHPVal.Name = "lblHPVal"
         Me.lblHPVal.Size = New System.Drawing.Size(34, 16)
@@ -308,15 +311,18 @@ Partial Class frmCharScreen
         Me.cboRHand.Size = New System.Drawing.Size(56, 21)
         Me.cboRHand.TabIndex = 19
         '
-        'btnSav
+        'btnUpd
         '
-        Me.btnSav.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSav.Location = New System.Drawing.Point(354, 406)
-        Me.btnSav.Name = "btnSav"
-        Me.btnSav.Size = New System.Drawing.Size(79, 26)
-        Me.btnSav.TabIndex = 20
-        Me.btnSav.Text = "Save"
-        Me.btnSav.UseVisualStyleBackColor = True
+        Me.btnUpd.BackColor = System.Drawing.Color.Transparent
+        Me.btnUpd.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnDefault
+        Me.btnUpd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnUpd.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpd.Location = New System.Drawing.Point(354, 406)
+        Me.btnUpd.Name = "btnUpd"
+        Me.btnUpd.Size = New System.Drawing.Size(79, 26)
+        Me.btnUpd.TabIndex = 20
+        Me.btnUpd.Text = "Update"
+        Me.btnUpd.UseVisualStyleBackColor = False
         '
         'lblStats
         '
@@ -381,7 +387,9 @@ Partial Class frmCharScreen
         'lblMana
         '
         Me.lblMana.AutoSize = True
+        Me.lblMana.BackColor = System.Drawing.Color.Transparent
         Me.lblMana.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblMana.ForeColor = System.Drawing.SystemColors.Control
         Me.lblMana.Location = New System.Drawing.Point(19, 54)
         Me.lblMana.Name = "lblMana"
         Me.lblMana.Size = New System.Drawing.Size(62, 24)
@@ -440,7 +448,7 @@ Partial Class frmCharScreen
         '
         'pnlStats
         '
-        Me.pnlStats.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.pnlStats.BackColor = System.Drawing.Color.DarkKhaki
         Me.pnlStats.Controls.Add(Me.lblAgiVal)
         Me.pnlStats.Controls.Add(Me.lblStrVal)
         Me.pnlStats.Controls.Add(Me.lblStats)
@@ -462,6 +470,7 @@ Partial Class frmCharScreen
         Me.lblManaVal.AutoSize = True
         Me.lblManaVal.BackColor = System.Drawing.Color.Transparent
         Me.lblManaVal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblManaVal.ForeColor = System.Drawing.SystemColors.Control
         Me.lblManaVal.Location = New System.Drawing.Point(32, 73)
         Me.lblManaVal.Name = "lblManaVal"
         Me.lblManaVal.Size = New System.Drawing.Size(34, 16)
@@ -471,7 +480,9 @@ Partial Class frmCharScreen
         'lblCharName
         '
         Me.lblCharName.AutoSize = True
+        Me.lblCharName.BackColor = System.Drawing.Color.Transparent
         Me.lblCharName.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCharName.ForeColor = System.Drawing.SystemColors.Control
         Me.lblCharName.Location = New System.Drawing.Point(163, 366)
         Me.lblCharName.Name = "lblCharName"
         Me.lblCharName.Size = New System.Drawing.Size(49, 15)
@@ -481,7 +492,9 @@ Partial Class frmCharScreen
         'lblCNVal
         '
         Me.lblCNVal.AutoSize = True
+        Me.lblCNVal.BackColor = System.Drawing.Color.Transparent
         Me.lblCNVal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCNVal.ForeColor = System.Drawing.SystemColors.Control
         Me.lblCNVal.Location = New System.Drawing.Point(213, 366)
         Me.lblCNVal.Name = "lblCNVal"
         Me.lblCNVal.Size = New System.Drawing.Size(70, 15)
@@ -515,7 +528,9 @@ Partial Class frmCharScreen
         'lblLevel
         '
         Me.lblLevel.AutoSize = True
+        Me.lblLevel.BackColor = System.Drawing.Color.Transparent
         Me.lblLevel.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLevel.ForeColor = System.Drawing.SystemColors.Control
         Me.lblLevel.Location = New System.Drawing.Point(167, 400)
         Me.lblLevel.Name = "lblLevel"
         Me.lblLevel.Size = New System.Drawing.Size(45, 15)
@@ -525,6 +540,8 @@ Partial Class frmCharScreen
         'lblLvl
         '
         Me.lblLvl.AutoSize = True
+        Me.lblLvl.BackColor = System.Drawing.Color.Transparent
+        Me.lblLvl.ForeColor = System.Drawing.SystemColors.Control
         Me.lblLvl.Location = New System.Drawing.Point(213, 402)
         Me.lblLvl.Name = "lblLvl"
         Me.lblLvl.Size = New System.Drawing.Size(13, 13)
@@ -613,6 +630,7 @@ Partial Class frmCharScreen
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoValidate = System.Windows.Forms.AutoValidate.Disable
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.rockyMenuBG
         Me.ClientSize = New System.Drawing.Size(445, 452)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblLvl)
@@ -624,7 +642,7 @@ Partial Class frmCharScreen
         Me.Controls.Add(Me.lblManaVal)
         Me.Controls.Add(Me.pnlStats)
         Me.Controls.Add(Me.lblMana)
-        Me.Controls.Add(Me.btnSav)
+        Me.Controls.Add(Me.btnUpd)
         Me.Controls.Add(Me.cboRHand)
         Me.Controls.Add(Me.cboGloves)
         Me.Controls.Add(Me.cboHead)
@@ -701,7 +719,7 @@ Partial Class frmCharScreen
     Friend WithEvents cboHead As ComboBox
     Friend WithEvents cboGloves As ComboBox
     Friend WithEvents cboRHand As ComboBox
-    Friend WithEvents btnSav As Button
+    Friend WithEvents btnUpd As Button
     Friend WithEvents lblStats As Label
     Friend WithEvents lblDPS As Label
     Friend WithEvents lblArmor As Label

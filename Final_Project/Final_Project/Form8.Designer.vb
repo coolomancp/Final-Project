@@ -311,6 +311,7 @@ Partial Class frmBattle
         Me.MinimizeBox = False
         Me.MinimumSize = New System.Drawing.Size(740, 584)
         Me.Name = "frmBattle"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Battle"
         Me.pnlBattleMenu.ResumeLayout(False)
         Me.pnlBattleMenu.PerformLayout()

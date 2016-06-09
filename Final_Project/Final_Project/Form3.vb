@@ -24,6 +24,7 @@ Public Class frmMainScr
             charInfoScr.RefreshCharInf()
             ' Add armor and DPS calculation
             charInfoScr.Show() ' Opens the character info screen
+            charInfoScr.WindowState = FormWindowState.Normal
             infStat = True ' Character info screen status is set as open
         ElseIf infStat = True Then ' Checks if the character info screen is open
             charInfoScr.Hide() ' Closes the character info screen
@@ -39,6 +40,7 @@ Public Class frmMainScr
             inventoryScr.Top = Location.Y + Location.Y \ 3
             inventoryScr.RefreshInv() ' Refreshes screen
             inventoryScr.Show() ' Opens the inventory screen
+            inventoryScr.WindowState = FormWindowState.Normal
             invStat = True ' Inventory screen status is set as open
         ElseIf invStat = True Then ' Checks if the inventory screen is open
             inventoryScr.Hide() ' Closes the inventory screen
@@ -76,6 +78,7 @@ Public Class frmMainScr
         pcbPlayer3.Location = New Point(charX, charY)
         pcbPlayer4.Location = New Point(charX, charY)
         lblTest.Text = Convert.ToString(pcbPlayer1.Location)
+        lblTest2.Text = "{ " & pcbMonster11.Left & " / " & pcbMonster21.Left & " }"
         KeyPreview = True ' Form accepts indirect keyboard input
         ' Sets each frame's parent to the background to allow transparency
         pcbPlayer1.Parent = pcbMainScr
@@ -121,6 +124,7 @@ Public Class frmMainScr
 
     Private Sub frmMainScr_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyDown
         lblTest.Text = Convert.ToString(pcbPlayer1.Location)
+        lblTest2.Text = "{ " & pcbMonster11.Left & " / " & pcbMonster21.Left & " }"
         Select Case e.KeyCode
             Case Keys.A And charX > -5 ' Moves player to the left if they are pressing "A" and are not already the maximum amount left
                 ' Sets the picture boxes up for frames 1-4 of the player walking left
@@ -266,8 +270,9 @@ Public Class frmMainScr
             monst1Battle = True
             battleScr.refreshForm() ' Refreshes screen for updates
             battleScr.Show() ' Battle screen appears
+            battleScr.WindowState = FormWindowState.Normal
         Else
-            lblTest2.Text = "{ " & playerInf.exp & " }"
+            ' ---
         End If
         If pcbPlayer1.Right > pcbMonster21.Left - (pcbMonster21.Width - 20) And monst2Dead = False Then
             Hide()
@@ -277,13 +282,15 @@ Public Class frmMainScr
             monst2Battle = True
             battleScr.refreshForm()
             battleScr.Show()
+            battleScr.WindowState = FormWindowState.Normal
         Else
-            lblTest2.Text = "{ " & playerInf.exp & " }"
+            ' ---
         End If
     End Sub
     Private Sub frmMainScr_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyUp
         tmrAnim.Enabled = False ' Stops animation
         lblTest.Text = Convert.ToString(pcbPlayer1.Location)
+        lblTest2.Text = "{ " & pcbMonster11.Left & " / " & pcbMonster21.Left & " }"
         ' Sets whatever frame is currently visible to the idle image in respect to the direction the player is facing
         If playerInf.charClass = "Warrior" Then
             If charDir = 1 And pcbPlayer1.Visible = True Then
@@ -389,6 +396,7 @@ Public Class frmMainScr
 
     Private Sub btnExit_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnExit.Click
         exitWarning.Show() ' Shows exit screen
+        exitWarning.WindowState = FormWindowState.Normal
     End Sub
 
     Private Sub tmrMonst1Anim_Tick(ByVal sender As Object, ByVal e As EventArgs)
@@ -437,19 +445,24 @@ Public Class frmMainScr
             tmrNxtRoom.Enabled = True
         End If
     End Sub
-    Dim count As Integer = 0
+    Dim count As Integer = 0 ' Keeps track of number of times through tmr so it only runs DungeonCreate once
     Private Sub tmrNxtRoom_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrNxtRoom.Tick
         If playerInf.charClass = "Rogue" Then
             ' Next Room
             charX = 0 ' Reset character position
+            pcbPlayer1.Location = New Point(charX, charY)
+            pcbPlayer2.Location = New Point(charX, charY)
+            pcbPlayer3.Location = New Point(charX, charY)
+            pcbPlayer4.Location = New Point(charX, charY)
             tmrNxtRoom.Enabled = False
         End If
-        If count = 0 Then
-            DungeonCreate()
-            count = 1
-        Else
-            count = 0
-        End If
+        'If count = 0 Then
+        DungeonCreate()
+        'count = 1
+        playerInf.dungeonRM = playerInf.dungeonRM + 1
+        'Else
+        count = 0
+        'End If
     End Sub
 
     ' Dungeon creation procedure
@@ -462,13 +475,14 @@ Public Class frmMainScr
         If dungeon.numOfRms = playerInf.dungeonRM Then
             ' Dungeon boss setup
         Else
+            Randomize()
             If dungeon.monstertype = "Goblin" Then
                 If dungeon.monstNum >= 1 Then
                     pcbMonster11.Image = gobWalkL1
                     pcbMonster12.Image = gobWalkL2
                     pcbMonster13.Image = gobWalkL3
                     pcbMonster14.Image = gobWalkL4
-                    monst1X = 400
+                    monst1X = Int((500 - 300 + 1) * Rnd() + 300)
                     pcbMonster11.Location = New Point(monst1X, 358)
                     pcbMonster12.Location = New Point(monst1X, 358)
                     pcbMonster13.Location = New Point(monst1X, 358)
@@ -480,30 +494,39 @@ Public Class frmMainScr
                     pcbMonster22.Image = gobWalkL2
                     pcbMonster23.Image = gobWalkL3
                     pcbMonster24.Image = gobWalkL4
-                    monst2X = 430
+                    While True
+                        monst2X = Int((500 - 300 + 1) * Rnd() + 300)
+                        If monst2X > monst1X + 50 Or monst2X < monst2X - 50 Then
+                            Exit While
+                        End If
+                        count = count + 1
+                        If count = 500 Then ' Prevents freezing and aborts enemy placement
+                            Exit While
+                        End If
+                    End While
                     pcbMonster21.Location = New Point(monst2X, 358)
                     pcbMonster22.Location = New Point(monst2X, 358)
                     pcbMonster23.Location = New Point(monst2X, 358)
                     pcbMonster24.Location = New Point(monst2X, 358)
                     monst2Dead = False
                 End If
-                If dungeon.monstNum >= 3 Then
-                    'pcbMonster31.Image = gobWalkL1
-                    'pcbMonster32.Image = gobWalkL2
-                    'pcbMonster33.Image = gobWalkL3
-                    'pcbMonster34.Image = gobWalkL4
-                End If
-                If dungeon.monstNum = 4 Then
-                    'pcbMonster31.Image = gobWalkL1
-                    'pcbMonster32.Image = gobWalkL2
-                    'pcbMonster33.Image = gobWalkL3
-                    'pcbMonster34.Image = gobWalkL4
-                    'pcbMonster41.Image = gobWalkL1
-                    'pcbMonster42.Image = gobWalkL2
-                    'pcbMonster43.Image = gobWalkL3
-                    'pcbMonster44.Image = gobWalkL4
+                    If dungeon.monstNum >= 3 Then
+                        'pcbMonster31.Image = gobWalkL1
+                        'pcbMonster32.Image = gobWalkL2
+                        'pcbMonster33.Image = gobWalkL3
+                        'pcbMonster34.Image = gobWalkL4
+                    End If
+                    If dungeon.monstNum = 4 Then
+                        'pcbMonster31.Image = gobWalkL1
+                        'pcbMonster32.Image = gobWalkL2
+                        'pcbMonster33.Image = gobWalkL3
+                        'pcbMonster34.Image = gobWalkL4
+                        'pcbMonster41.Image = gobWalkL1
+                        'pcbMonster42.Image = gobWalkL2
+                        'pcbMonster43.Image = gobWalkL3
+                        'pcbMonster44.Image = gobWalkL4
+                    End If
                 End If
             End If
-        End If
     End Sub
 End Class

@@ -77,9 +77,14 @@ Public Class frmCharScreen
         cboLegs.Text = playerInf.activeLegs
         cboLHand.Text = playerInf.activeWepL
         cboRHand.Text = playerInf.activeWepR
+        playerInf.HPM = (playerInf.strength * playerInf.level) + 100
+        playerInf.MPM = (playerInf.intelligence * playerInf.level) + 50
         ' Updates all of the player's stats
-        lblDPSVal.Text = items(playerInf.activeWepL).dmg + items(playerInf.activeWepR).dmg + (20 + playerInf.level)
-        lblArmorVal.Text = items(playerInf.activeBracers).armor + items(playerInf.activeChest).armor + items(playerInf.activeGloves).armor + items(playerInf.activeHelm).armor + items(playerInf.activeLegs).armor
+        lblDPSVal.Text = playerInf.dmg
+        lblArmorVal.Text = playerInf.armor
+        playerInf.strength = items(playerInf.activeBracers).strength + items(playerInf.activeChest).strength + items(playerInf.activeGloves).strength + items(playerInf.activeHelm).strength + items(playerInf.activeLegs).strength + items(playerInf.activeWepL).strength + items(playerInf.activeWepR).strength
+        playerInf.intelligence = items(playerInf.activeBracers).intelligence + items(playerInf.activeChest).intelligence + items(playerInf.activeGloves).intelligence + items(playerInf.activeHelm).intelligence + items(playerInf.activeLegs).intelligence + items(playerInf.activeWepL).intelligence + items(playerInf.activeWepR).intelligence
+        playerInf.agility = items(playerInf.activeBracers).agility + items(playerInf.activeChest).agility + items(playerInf.activeGloves).agility + items(playerInf.activeHelm).agility + items(playerInf.activeLegs).agility + items(playerInf.activeWepL).agility + items(playerInf.activeWepR).agility
         lblStrVal.Text = Convert.ToString(playerInf.strength)
         lblIntelVal.Text = Convert.ToString(playerInf.intelligence)
         lblAgiVal.Text = Convert.ToString(playerInf.agility)
@@ -98,5 +103,8 @@ Public Class frmCharScreen
         cboLegs.Text = itemIndex(playerInf.activeLegs)
         cboGloves.Text = itemIndex(playerInf.activeGloves)
         cboBracer.Text = itemIndex(playerInf.activeBracers)
+        ' Updates player's damage and armor
+        playerInf.dmg = items(playerInf.activeWepL).dmg + items(playerInf.activeWepR).dmg + (20 + playerInf.level) + (playerInf.agility * 2)
+        playerInf.armor = items(playerInf.activeBracers).armor + items(playerInf.activeChest).armor + items(playerInf.activeGloves).armor + items(playerInf.activeHelm).armor + items(playerInf.activeLegs).armor
     End Sub
 End Class

@@ -89,6 +89,10 @@ Public Class frmLoadScr
                 mainScr.lblTest2.Text += playerInf.inventory(i).ToString
             Next
         End Using
+        ' Calculates and stores damage
+        playerInf.dmg = items(playerInf.activeWepL).dmg + items(playerInf.activeWepR).dmg + (20 + playerInf.level)
+        ' Calculates and stores armor
+        playerInf.armor = items(playerInf.activeBracers).armor + items(playerInf.activeChest).armor + items(playerInf.activeGloves).armor + items(playerInf.activeHelm).armor + items(playerInf.activeLegs).armor
         ' Launches main window and hides load screen
         mapScr.Show()
         Me.Hide()

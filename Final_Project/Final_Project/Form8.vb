@@ -1,5 +1,6 @@
 ﻿Public Class frmBattle
     Dim counter As Integer = 0
+    Dim damage As Integer ' Holds the value of damage done to the player
     Private Sub btnFlee_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFlee.Click
         Dim fleeChance As Integer
         Randomize()
@@ -25,6 +26,7 @@
             mainScr.pcbPlayer3.Location = New Point(charX, charY)
             mainScr.pcbPlayer4.Location = New Point(charX, charY)
             mainScr.Show() ' Shows the main screen
+            mainScr.WindowState = FormWindowState.Normal
         ElseIf fleeChance < 50 Then
             monstAttack()
         End If
@@ -93,7 +95,9 @@
         pcbBattlePlayer.Image = rogHitR
         ' Player is damaged
         If counter = 0 Then
-            playerInf.HP = playerInf.HP - 5
+            If dungeon.monstertype = "Goblin" Then
+                playerInf.HP = playerInf.HP - dmgToPlayer(5 * dungeon.difficulty)
+            End If
         End If
         If playerInf.HP <= 0 Then
             playerInf.HP = 0
@@ -140,7 +144,7 @@
         pcbBattlePlayer.Size = New Size(180, 166)
         pcbBattlePlayer.Location = New Point(13, 203)
         If counter = 0 Then
-            monstInf.HP = monstInf.HP - ((20 + playerInf.level) - monstInf.armor) ' Monster loses 20 HP
+            monstInf.HP = monstInf.HP - (playerInf.dmg - monstInf.armor) ' Damage to monster calculated
             lblEnemyHP.Text = "(" & monstInf.HP & "/" & monstInf.HPM & ")"
         End If
         If monstInf.HP <= 0 Then ' Checks if the enemy has died
@@ -270,6 +274,16 @@
             mainScr.tmrLvlUpInvis.Enabled = True
         End If
         mainScr.Show()
+        mainScr.WindowState = FormWindowState.Normal
         tmrTimeToHide.Enabled = False
     End Sub
+
+    Function dmgToPlayer(ByVal dmg) As Integer
+            If dmg + playerInf.armor >= 0 Then
+                Return 0
+            Else
+                Return dmg
+            End If
+        Return -1
+    End Function
 End Class

@@ -45,6 +45,8 @@
         Public dungeonID As Integer ' What dungeon the player is in
         Public dungeonRM As Integer ' What room in the dungeon the player is in
         Public inventory() As Integer ' Player's inventory
+        Public dmg As Integer ' Player's total damage
+        Public armor As Integer ' Player's total armor
     End Structure
     Public charDir As Integer = 2 ' Player's direction
     Public charX As Integer ' Player's starting x coord
@@ -209,6 +211,9 @@
                 Return items(i).ID
             End If
         Next
+        If itemName = "(none)" Then
+            Return items(0).ID
+        End If
         Return -1 ' Null
     End Function
     ' Weapon stats

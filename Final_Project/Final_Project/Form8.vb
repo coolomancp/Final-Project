@@ -33,6 +33,10 @@
     End Sub
 
     Private Sub frmBattle_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        refreshForm()
+    End Sub
+    ' Refreshes the form by re-running the load code with some additions, refreshing the default state of some objects
+    Sub refreshForm()
         ' Sets background depending on dungeon type
         If dungeon.type = "grasslands" Then
             pcbBattleBG.Image = grasslandBG
@@ -54,6 +58,14 @@
             monstInf.MPM = 50
             monstInf.armor = 0
         End If
+        If dungeon.monstertype = "grasslandsBoss" Then
+            pcbBattleEnemy.Image = grassBossIdle
+            monstInf.HP = 150
+            monstInf.HPM = 150
+            monstInf.MP = 75
+            monstInf.MPM = 75
+            monstInf.armor = 2
+        End If
         ' Parents images and labels to allow transparency
         pcbBattlePlayer.Parent = pcbBattleBG
         pcbBattleEnemy.Parent = pcbBattleBG
@@ -71,21 +83,42 @@
         ElseIf proBarHealthVal.Value <= 30 Then
             proBarHealthVal.ForeColor = Color.Red
         End If
+        ' Sets enemy's initial health
+        proBarEnemyHP.Value = (monstInf.HP / monstInf.HPM) * 100
+        lblEnemyHP.Text = "(" & monstInf.HP & "/" & monstInf.HPM & ")"
+        ' Resets objects to default state
+        lblEnemyDefeat.Visible = False
+        lblExpAmount.Visible = False
+        proBarEnemyHP.Visible = True
+        lblEnemyHP.Visible = True
     End Sub
-
     Sub monstAttack()
         ' Monster's attack and animation are decided and played
-        pcbBattleEnemy.Image = gobAttL ' Goblin attacks
-        pcbBattleEnemy.Location = New Point(576, 197)
-        pcbBattleEnemy.Size = New Size(175, 175)
+        Select Case dungeon.monstertype
+            Case Is = "Goblin"
+                pcbBattleEnemy.Image = gobAttL ' Goblin attacks
+                pcbBattleEnemy.Location = New Point(576, 197)
+                pcbBattleEnemy.Size = New Size(175, 175)
+            Case Is = "grasslandsBoss"
+                pcbBattleEnemy.Image = grassBossAtt
+                pcbBattleEnemy.Location = New Point(576, 197)
+                pcbBattleEnemy.Size = New Size(123, 123)
+        End Select
         attackAnim.Enabled = True
     End Sub
 
     Private Sub attackAnim_tick(ByVal sender As Object, ByVal e As System.EventArgs) Handles attackAnim.Tick
         ' Resets the enemy back to their idle animation
-        pcbBattleEnemy.Image = gobIdleL
-        pcbBattleEnemy.Location = New Point(576, 246)
-        pcbBattleEnemy.Size = New Size(123, 123)
+        Select Case dungeon.monstertype
+            Case Is = "Goblin"
+                pcbBattleEnemy.Image = gobIdleL
+                pcbBattleEnemy.Location = New Point(576, 246)
+                pcbBattleEnemy.Size = New Size(123, 123)
+            Case Is = "grasslandsBoss"
+                pcbBattleEnemy.Image = grassBossIdle
+                pcbBattleEnemy.Location = New Point(576, 246)
+                pcbBattleEnemy.Size = New Size(123, 123)
+        End Select
         attackAnim.Enabled = False
         playerHit.Enabled = True
     End Sub
@@ -95,9 +128,12 @@
         pcbBattlePlayer.Image = rogHitR
         ' Player is damaged
         If counter = 0 Then
-            If dungeon.monstertype = "Goblin" Then
-                playerInf.HP = playerInf.HP - dmgToPlayer(5 * dungeon.difficulty)
-            End If
+            Select Case dungeon.monstertype
+                Case Is = "Goblin"
+                    playerInf.HP = playerInf.HP - dmgToPlayer(5 * dungeon.difficulty)
+                Case Is = "grasslandsBoss"
+                    playerInf.HP = playerInf.HP - dmgToPlayer(10 * dungeon.difficulty)
+            End Select
         End If
         If playerInf.HP <= 0 Then
             playerInf.HP = 0
@@ -195,6 +231,10 @@
             deathAnim.Enabled = False
             If dungeon.monstertype = "Goblin" Then
                 lblEnemyDefeat.Text = "Goblin Defeated!"
+                lblExpAmount.Text = "5 EXP"
+                playerInf.exp = playerInf.exp + 5
+            ElseIf dungeon.monstertype = "grasslandsBoss" Then
+                lblEnemyDefeat.Text = "Boss Defeated!"
                 lblExpAmount.Text = "20 EXP"
                 playerInf.exp = playerInf.exp + 20
             End If
@@ -218,50 +258,6 @@
         End If
     End Sub
 
-    ' Refreshes the form by re-running the load code with some additions, refreshing the default state of some objects
-    Sub refreshForm()
-        ' Sets background depending on dungeon type
-        If dungeon.type = "grasslands" Then
-            pcbBattleBG.Image = grasslandBG
-        End If
-        ' Determines what class is fighting and displays them
-        If playerInf.charClass = "Warrior" Then
-            pcbBattlePlayer.Image = warBattS
-        ElseIf playerInf.charClass = "Rogue" Then
-            pcbBattlePlayer.Image = rogBattS
-        ElseIf playerInf.charClass = "Mage" Then
-            pcbBattlePlayer.Image = magBattS
-        End If
-        ' Determines what monster is fighting and displays them
-        If dungeon.monstertype = "Goblin" Then
-            pcbBattleEnemy.Image = gobBattS
-            monstInf.HP = 100
-            monstInf.HPM = 100
-            monstInf.MP = 50
-            monstInf.MPM = 50
-            monstInf.armor = 0
-        End If
-        ' Parents images and labels to allow transparency
-        pcbBattlePlayer.Parent = pcbBattleBG
-        pcbBattleEnemy.Parent = pcbBattleBG
-        lblEnemyHP.Parent = pcbBattleBG
-        lblEnemyDefeat.Parent = pcbBattleBG
-        lblExpAmount.Parent = pcbBattleBG
-        ' Sets player's initial health and mana
-        proBarHealthVal.Value = (playerInf.HP / playerInf.HPM) * 100
-        proBarManaVal.Value = (playerInf.MP / playerInf.MPM) * 100
-        lblHPVal.Text = "(" & playerInf.HP & "/" & playerInf.HPM & ")"
-        lblManaVal.Text = "(" & playerInf.MP & "/" & playerInf.MPM & ")"
-        ' Sets enemy's initial health
-        proBarEnemyHP.Value = (monstInf.HP / monstInf.HPM) * 100
-        lblEnemyHP.Text = "(" & monstInf.HP & "/" & monstInf.HPM & ")"
-        ' Resets objects to default state
-        lblEnemyDefeat.Visible = False
-        lblExpAmount.Visible = False
-        proBarEnemyHP.Visible = True
-        lblEnemyHP.Visible = True
-    End Sub
-
     Private Sub tmrTimeToHide_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrTimeToHide.Tick
         ' Hides screen and returns to the main screen after a 3 second wait
         Hide()
@@ -273,17 +269,29 @@
             playerInf.level = playerInf.level + 1
             mainScr.tmrLvlUpInvis.Enabled = True
         End If
-        mainScr.Show()
-        mainScr.WindowState = FormWindowState.Normal
+        If dungeon.monstertype = "grasslandsBoss" Then
+            If mapProg = 1 Then
+                grassldDunge = True
+            ElseIf mapProg = 2 Then
+                gondorDunge = True
+            End If
+            If grassldDunge Or gondorDunge = False Then
+                mapProg = mapProg + 1
+                playerInf.dungeonID = mapProg
+            End If
+            mapScr.Show()
+        Else
+            mainScr.Show()
+        End If
         tmrTimeToHide.Enabled = False
     End Sub
 
+    ' Calculates if player's armor nullifies damage. Outputs 0 if it does, outputs the damage if it doesn't
     Function dmgToPlayer(ByVal dmg) As Integer
-            If dmg + playerInf.armor >= 0 Then
-                Return 0
-            Else
-                Return dmg
-            End If
-        Return -1
+        If dmg + playerInf.armor >= 0 Then ' Damage nullified?
+            Return 0 ' 0 damage
+        Else
+            Return dmg ' Full damage fed back
+        End If
     End Function
 End Class

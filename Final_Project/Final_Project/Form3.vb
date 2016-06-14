@@ -14,6 +14,7 @@ Public Class frmMainScr
     Dim monst2X As Integer ' Second monster's X coord
     Dim monst3X As Integer ' Third monster's X coord
     Dim monst4X As Integer ' Fourth monster's X coord
+    Dim count As Integer ' Stores a count, used in preventing lagging out
 
     Private Sub btnCharI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCharI.Click
         If infStat = False Then ' Checks if the character info screen is closed
@@ -266,6 +267,8 @@ Public Class frmMainScr
             Hide()
             If dungeon.monstertype = "Goblin" Then
                 fleeMod = 30 ' 30% more likely to flee
+            ElseIf dungeon.monstertype = "grasslandsBoss" Then
+                fleeMod = -100 ' 100% less likely to flee
             End If
             monst1Battle = True
             battleScr.refreshForm() ' Refreshes screen for updates
@@ -278,6 +281,8 @@ Public Class frmMainScr
             Hide()
             If dungeon.monstertype = "Goblin" Then
                 fleeMod = 30 ' 30% more likely to flee
+            ElseIf dungeon.monstertype = "grasslandsBoss" Then
+                fleeMod = -100 ' 100% less likely to flee
             End If
             monst2Battle = True
             battleScr.refreshForm()
@@ -445,7 +450,7 @@ Public Class frmMainScr
             tmrNxtRoom.Enabled = True
         End If
     End Sub
-    Dim count As Integer = 0 ' Keeps track of number of times through tmr so it only runs DungeonCreate once
+
     Private Sub tmrNxtRoom_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrNxtRoom.Tick
         If playerInf.charClass = "Rogue" Then
             ' Next Room
@@ -456,13 +461,8 @@ Public Class frmMainScr
             pcbPlayer4.Location = New Point(charX, charY)
             tmrNxtRoom.Enabled = False
         End If
-        'If count = 0 Then
         DungeonCreate()
-        'count = 1
         playerInf.dungeonRM = playerInf.dungeonRM + 1
-        'Else
-        count = 0
-        'End If
     End Sub
 
     ' Dungeon creation procedure
@@ -471,9 +471,14 @@ Public Class frmMainScr
         If dungeon.type = "grasslands" Then
             pcbMainScr.Image = grasslandRoomBG
         End If
-        ' Monster placement !!!*** Issue with placement and replacement ***!!!
+        ' Monster placement
         If dungeon.numOfRms = playerInf.dungeonRM Then
-            ' Dungeon boss setup
+            If dungeon.type = "grasslands" Then
+                dungeon.monstertype = "grasslandsBoss"
+                pcbMonster11.Image = grassBossIdle
+                pcbMonster11.Location = New Point(500, 340)
+                monst1Dead = False
+            End If
         Else
             Randomize()
             If dungeon.monstertype = "Goblin" Then

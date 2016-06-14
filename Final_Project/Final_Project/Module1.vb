@@ -7,6 +7,21 @@
     Public battleScr As New frmBattle ' Screen used for battle
     Public inventoryScr As New frmInventory ' Inventory screen is loaded
     Public mapScr As New frmMap ' Map screen used for selecting dungeon locations
+    Public mapProg As Integer
+    ' Dungeon Progress booleans
+    Public grassldDunge As Boolean
+    Public northShireVisit As Boolean
+    Public gondorDunge As Boolean
+    Public oldtownDunge As Boolean
+    Public lionheartVisit As Boolean
+    Public mountainDunge As Boolean
+    Public vikingDunge As Boolean
+    Public battlePlainDunge As Boolean
+    Public yggVisit As Boolean
+    Public darkForestDunge As Boolean
+    Public mountDeathDunge As Boolean
+    Public darkTower As Boolean
+    ' Item information structure
     Structure strucItems
         Dim ID As Integer ' Item ID
         Dim name As String ' Item name
@@ -19,7 +34,7 @@
         Dim imageVar As Image ' Special variable for if an item has a varient (e.g Warrior and Rogue share helm, but they should look different)
         Dim imageVar2 As Image ' Same as above but allows another varient if shared by all 3 classes
     End Structure
-    Public items(20) As strucItems
+    Public items(20) As strucItems ' Array of item information
     Public Structure playerInfo ' Stores all of the player's information
         Public HP As Integer ' Player's current health
         Public HPM As Integer ' Player's max health
@@ -178,6 +193,9 @@
     Public gobDeathR4 As Image = My.Resources.gobDeathR4 ' Fourth frame of goblin turning to ash facing to the right
     Public gobDeath As Image = My.Resources.goblinDeath ' Goblin's death (animated GIF)
     Public gobBattS As Image = My.Resources.goblinBattleIdle ' Goblin's idle animation in battle
+    ' Grasslands Dungeon Boss
+    Public grassBossIdle As Image = My.Resources.grasslandBossIdle
+    Public grassBossAtt As Image = My.Resources.grasslandBossAttack
     ' Dungeon Backgrounds
     Public grasslandBG As Image = My.Resources.grasslandDungeonBG ' Corresponds to any fighting grounds within a grassland
     Public grasslandRoomBG As Image = My.Resources.shstagewaterfall084slow1 ' Background for the room (when player is exploring)

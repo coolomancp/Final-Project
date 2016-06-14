@@ -27,27 +27,27 @@ Partial Class frmBattle
         Me.pnlBattleMenu = New System.Windows.Forms.Panel()
         Me.btnMelee = New System.Windows.Forms.Button()
         Me.btnAbilities = New System.Windows.Forms.Button()
-        Me.btnAttack = New System.Windows.Forms.Button()
-        Me.btnItems = New System.Windows.Forms.Button()
         Me.proBarManaVal = New System.Windows.Forms.ProgressBar()
         Me.proBarHealthVal = New System.Windows.Forms.ProgressBar()
         Me.lblManaVal = New System.Windows.Forms.Label()
         Me.lblMana = New System.Windows.Forms.Label()
         Me.lblHPVal = New System.Windows.Forms.Label()
         Me.lblCIHP = New System.Windows.Forms.Label()
-        Me.btnFlee = New System.Windows.Forms.Button()
         Me.attackAnim = New System.Windows.Forms.Timer(Me.components)
         Me.playerHit = New System.Windows.Forms.Timer(Me.components)
         Me.proBarEnemyHP = New System.Windows.Forms.ProgressBar()
         Me.playerAttAnim = New System.Windows.Forms.Timer(Me.components)
         Me.deathAnim = New System.Windows.Forms.Timer(Me.components)
-        Me.pcbBattleEnemy = New System.Windows.Forms.PictureBox()
-        Me.pcbBattlePlayer = New System.Windows.Forms.PictureBox()
-        Me.pcbBattleBG = New System.Windows.Forms.PictureBox()
         Me.lblEnemyHP = New System.Windows.Forms.Label()
         Me.lblEnemyDefeat = New System.Windows.Forms.Label()
         Me.lblExpAmount = New System.Windows.Forms.Label()
         Me.tmrTimeToHide = New System.Windows.Forms.Timer(Me.components)
+        Me.pcbBattleEnemy = New System.Windows.Forms.PictureBox()
+        Me.pcbBattlePlayer = New System.Windows.Forms.PictureBox()
+        Me.pcbBattleBG = New System.Windows.Forms.PictureBox()
+        Me.btnAttack = New System.Windows.Forms.Button()
+        Me.btnItems = New System.Windows.Forms.Button()
+        Me.btnFlee = New System.Windows.Forms.Button()
         Me.pnlBattleMenu.SuspendLayout()
         CType(Me.pcbBattleEnemy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbBattlePlayer, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,29 +95,6 @@ Partial Class frmBattle
         Me.btnAbilities.UseVisualStyleBackColor = False
         Me.btnAbilities.Visible = False
         '
-        'btnAttack
-        '
-        Me.btnAttack.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnAttack.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnChaIn
-        Me.btnAttack.Image = Global.WindowsApplication1.My.Resources.Resources.btnChaIn
-        Me.btnAttack.Location = New System.Drawing.Point(595, 34)
-        Me.btnAttack.Name = "btnAttack"
-        Me.btnAttack.Size = New System.Drawing.Size(101, 35)
-        Me.btnAttack.TabIndex = 51
-        Me.btnAttack.Text = "Attack"
-        Me.btnAttack.UseVisualStyleBackColor = False
-        '
-        'btnItems
-        '
-        Me.btnItems.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnInv
-        Me.btnItems.Image = Global.WindowsApplication1.My.Resources.Resources.btnInv
-        Me.btnItems.Location = New System.Drawing.Point(595, 75)
-        Me.btnItems.Name = "btnItems"
-        Me.btnItems.Size = New System.Drawing.Size(101, 35)
-        Me.btnItems.TabIndex = 50
-        Me.btnItems.Text = "Items"
-        Me.btnItems.UseVisualStyleBackColor = True
-        '
         'proBarManaVal
         '
         Me.proBarManaVal.BackColor = System.Drawing.SystemColors.ControlDarkDark
@@ -147,7 +124,7 @@ Partial Class frmBattle
         Me.lblManaVal.AutoSize = True
         Me.lblManaVal.BackColor = System.Drawing.Color.Transparent
         Me.lblManaVal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblManaVal.Location = New System.Drawing.Point(24, 79)
+        Me.lblManaVal.Location = New System.Drawing.Point(24, 86)
         Me.lblManaVal.Name = "lblManaVal"
         Me.lblManaVal.Size = New System.Drawing.Size(34, 16)
         Me.lblManaVal.TabIndex = 47
@@ -168,7 +145,7 @@ Partial Class frmBattle
         Me.lblHPVal.AutoSize = True
         Me.lblHPVal.BackColor = System.Drawing.Color.Transparent
         Me.lblHPVal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHPVal.Location = New System.Drawing.Point(18, 34)
+        Me.lblHPVal.Location = New System.Drawing.Point(18, 42)
         Me.lblHPVal.Name = "lblHPVal"
         Me.lblHPVal.Size = New System.Drawing.Size(34, 16)
         Me.lblHPVal.TabIndex = 45
@@ -183,17 +160,6 @@ Partial Class frmBattle
         Me.lblCIHP.Size = New System.Drawing.Size(69, 24)
         Me.lblCIHP.TabIndex = 44
         Me.lblCIHP.Text = "Health:"
-        '
-        'btnFlee
-        '
-        Me.btnFlee.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnDefault
-        Me.btnFlee.Image = Global.WindowsApplication1.My.Resources.Resources.btnDefault
-        Me.btnFlee.Location = New System.Drawing.Point(595, 133)
-        Me.btnFlee.Name = "btnFlee"
-        Me.btnFlee.Size = New System.Drawing.Size(101, 23)
-        Me.btnFlee.TabIndex = 0
-        Me.btnFlee.Text = "Flee"
-        Me.btnFlee.UseVisualStyleBackColor = True
         '
         'attackAnim
         '
@@ -222,36 +188,6 @@ Partial Class frmBattle
         'deathAnim
         '
         Me.deathAnim.Interval = 200
-        '
-        'pcbBattleEnemy
-        '
-        Me.pcbBattleEnemy.Image = Global.WindowsApplication1.My.Resources.Resources.gobIdleL
-        Me.pcbBattleEnemy.Location = New System.Drawing.Point(576, 246)
-        Me.pcbBattleEnemy.Name = "pcbBattleEnemy"
-        Me.pcbBattleEnemy.Size = New System.Drawing.Size(123, 123)
-        Me.pcbBattleEnemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcbBattleEnemy.TabIndex = 4
-        Me.pcbBattleEnemy.TabStop = False
-        '
-        'pcbBattlePlayer
-        '
-        Me.pcbBattlePlayer.Image = Global.WindowsApplication1.My.Resources.Resources.rogueBaseAttack
-        Me.pcbBattlePlayer.Location = New System.Drawing.Point(13, 246)
-        Me.pcbBattlePlayer.Name = "pcbBattlePlayer"
-        Me.pcbBattlePlayer.Size = New System.Drawing.Size(133, 123)
-        Me.pcbBattlePlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcbBattlePlayer.TabIndex = 3
-        Me.pcbBattlePlayer.TabStop = False
-        '
-        'pcbBattleBG
-        '
-        Me.pcbBattleBG.BackColor = System.Drawing.Color.Transparent
-        Me.pcbBattleBG.Location = New System.Drawing.Point(13, 12)
-        Me.pcbBattleBG.Name = "pcbBattleBG"
-        Me.pcbBattleBG.Size = New System.Drawing.Size(699, 357)
-        Me.pcbBattleBG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pcbBattleBG.TabIndex = 2
-        Me.pcbBattleBG.TabStop = False
         '
         'lblEnemyHP
         '
@@ -290,6 +226,70 @@ Partial Class frmBattle
         'tmrTimeToHide
         '
         Me.tmrTimeToHide.Interval = 3000
+        '
+        'pcbBattleEnemy
+        '
+        Me.pcbBattleEnemy.Image = Global.WindowsApplication1.My.Resources.Resources.grasslandBossAttack
+        Me.pcbBattleEnemy.Location = New System.Drawing.Point(576, 246)
+        Me.pcbBattleEnemy.Name = "pcbBattleEnemy"
+        Me.pcbBattleEnemy.Size = New System.Drawing.Size(123, 123)
+        Me.pcbBattleEnemy.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbBattleEnemy.TabIndex = 4
+        Me.pcbBattleEnemy.TabStop = False
+        '
+        'pcbBattlePlayer
+        '
+        Me.pcbBattlePlayer.Image = Global.WindowsApplication1.My.Resources.Resources.rogueBaseAttack
+        Me.pcbBattlePlayer.Location = New System.Drawing.Point(13, 246)
+        Me.pcbBattlePlayer.Name = "pcbBattlePlayer"
+        Me.pcbBattlePlayer.Size = New System.Drawing.Size(133, 123)
+        Me.pcbBattlePlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbBattlePlayer.TabIndex = 3
+        Me.pcbBattlePlayer.TabStop = False
+        '
+        'pcbBattleBG
+        '
+        Me.pcbBattleBG.BackColor = System.Drawing.Color.Transparent
+        Me.pcbBattleBG.Location = New System.Drawing.Point(13, 12)
+        Me.pcbBattleBG.Name = "pcbBattleBG"
+        Me.pcbBattleBG.Size = New System.Drawing.Size(699, 357)
+        Me.pcbBattleBG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.pcbBattleBG.TabIndex = 2
+        Me.pcbBattleBG.TabStop = False
+        '
+        'btnAttack
+        '
+        Me.btnAttack.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.btnAttack.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnChaIn
+        Me.btnAttack.Image = Global.WindowsApplication1.My.Resources.Resources.btnChaIn
+        Me.btnAttack.Location = New System.Drawing.Point(595, 34)
+        Me.btnAttack.Name = "btnAttack"
+        Me.btnAttack.Size = New System.Drawing.Size(101, 35)
+        Me.btnAttack.TabIndex = 51
+        Me.btnAttack.Text = "Attack"
+        Me.btnAttack.UseVisualStyleBackColor = False
+        '
+        'btnItems
+        '
+        Me.btnItems.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnInv
+        Me.btnItems.Image = Global.WindowsApplication1.My.Resources.Resources.btnInv
+        Me.btnItems.Location = New System.Drawing.Point(595, 75)
+        Me.btnItems.Name = "btnItems"
+        Me.btnItems.Size = New System.Drawing.Size(101, 35)
+        Me.btnItems.TabIndex = 50
+        Me.btnItems.Text = "Items"
+        Me.btnItems.UseVisualStyleBackColor = True
+        '
+        'btnFlee
+        '
+        Me.btnFlee.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnDefault
+        Me.btnFlee.Image = Global.WindowsApplication1.My.Resources.Resources.btnDefault
+        Me.btnFlee.Location = New System.Drawing.Point(595, 133)
+        Me.btnFlee.Name = "btnFlee"
+        Me.btnFlee.Size = New System.Drawing.Size(101, 23)
+        Me.btnFlee.TabIndex = 0
+        Me.btnFlee.Text = "Flee"
+        Me.btnFlee.UseVisualStyleBackColor = True
         '
         'frmBattle
         '

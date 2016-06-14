@@ -278,6 +278,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\grasslandBossIdle.gif" />
+    <None Include="Resources\grasslandBossAttack.gif" />
     <None Include="Resources\map.jpg" />
     <None Include="Resources\rockyMenuBG.png" />
     <None Include="Resources\placeholder.png" />

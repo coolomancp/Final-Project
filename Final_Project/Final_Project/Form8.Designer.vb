@@ -48,6 +48,7 @@ Partial Class frmBattle
         Me.btnAttack = New System.Windows.Forms.Button()
         Me.btnItems = New System.Windows.Forms.Button()
         Me.btnFlee = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.pnlBattleMenu.SuspendLayout()
         CType(Me.pcbBattleEnemy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbBattlePlayer, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,6 +58,7 @@ Partial Class frmBattle
         'pnlBattleMenu
         '
         Me.pnlBattleMenu.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.pnlBattleMenu.Controls.Add(Me.ComboBox1)
         Me.pnlBattleMenu.Controls.Add(Me.btnMelee)
         Me.pnlBattleMenu.Controls.Add(Me.btnAbilities)
         Me.pnlBattleMenu.Controls.Add(Me.btnAttack)
@@ -91,7 +93,7 @@ Partial Class frmBattle
         Me.btnAbilities.Name = "btnAbilities"
         Me.btnAbilities.Size = New System.Drawing.Size(91, 29)
         Me.btnAbilities.TabIndex = 52
-        Me.btnAbilities.Text = "Abilities"
+        Me.btnAbilities.Text = "Power (50 MP)"
         Me.btnAbilities.UseVisualStyleBackColor = False
         Me.btnAbilities.Visible = False
         '
@@ -202,11 +204,11 @@ Partial Class frmBattle
         'lblEnemyDefeat
         '
         Me.lblEnemyDefeat.AutoSize = True
-        Me.lblEnemyDefeat.Font = New System.Drawing.Font("Monotxt", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEnemyDefeat.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblEnemyDefeat.ForeColor = System.Drawing.Color.Red
         Me.lblEnemyDefeat.Location = New System.Drawing.Point(117, 28)
         Me.lblEnemyDefeat.Name = "lblEnemyDefeat"
-        Me.lblEnemyDefeat.Size = New System.Drawing.Size(496, 47)
+        Me.lblEnemyDefeat.Size = New System.Drawing.Size(343, 42)
         Me.lblEnemyDefeat.TabIndex = 56
         Me.lblEnemyDefeat.Text = "[Enemy] Defeated!"
         Me.lblEnemyDefeat.Visible = False
@@ -214,11 +216,11 @@ Partial Class frmBattle
         'lblExpAmount
         '
         Me.lblExpAmount.AutoSize = True
-        Me.lblExpAmount.Font = New System.Drawing.Font("Monotxt", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblExpAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblExpAmount.ForeColor = System.Drawing.Color.Gold
         Me.lblExpAmount.Location = New System.Drawing.Point(259, 95)
         Me.lblExpAmount.Name = "lblExpAmount"
-        Me.lblExpAmount.Size = New System.Drawing.Size(188, 47)
+        Me.lblExpAmount.Size = New System.Drawing.Size(133, 42)
         Me.lblExpAmount.TabIndex = 57
         Me.lblExpAmount.Text = "-- EXP"
         Me.lblExpAmount.Visible = False
@@ -291,11 +293,21 @@ Partial Class frmBattle
         Me.btnFlee.Text = "Flee"
         Me.btnFlee.UseVisualStyleBackColor = True
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.Enabled = False
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(597, 110)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(99, 21)
+        Me.ComboBox1.TabIndex = 54
+        Me.ComboBox1.Visible = False
+        '
         'frmBattle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(724, 546)
+        Me.ClientSize = New System.Drawing.Size(724, 545)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblExpAmount)
         Me.Controls.Add(Me.lblEnemyDefeat)
@@ -346,4 +358,5 @@ Partial Class frmBattle
     Friend WithEvents lblEnemyDefeat As System.Windows.Forms.Label
     Friend WithEvents lblExpAmount As System.Windows.Forms.Label
     Friend WithEvents tmrTimeToHide As System.Windows.Forms.Timer
+    Friend WithEvents ComboBox1 As ComboBox
 End Class

@@ -33,11 +33,11 @@ Partial Class frmMainScr
         Me.pnlMain = New System.Windows.Forms.Panel()
         Me.lblLevelUp = New System.Windows.Forms.Label()
         Me.pcbMonster23 = New System.Windows.Forms.PictureBox()
-        Me.pcbMonster24 = New System.Windows.Forms.PictureBox()
+        Me.pcbMonster41 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster22 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster21 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster13 = New System.Windows.Forms.PictureBox()
-        Me.pcbMonster14 = New System.Windows.Forms.PictureBox()
+        Me.pcbMonster31 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster12 = New System.Windows.Forms.PictureBox()
         Me.pcbMonster11 = New System.Windows.Forms.PictureBox()
         Me.pcbPlayer3 = New System.Windows.Forms.PictureBox()
@@ -55,11 +55,11 @@ Partial Class frmMainScr
         Me.pnlMenu.SuspendLayout()
         Me.pnlMain.SuspendLayout()
         CType(Me.pcbMonster23, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMonster24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbMonster41, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbMonster22, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbMonster21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbMonster13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pcbMonster14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pcbMonster31, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbMonster12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbMonster11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbPlayer3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -150,11 +150,11 @@ Partial Class frmMainScr
         Me.pnlMain.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.pnlMain.Controls.Add(Me.lblLevelUp)
         Me.pnlMain.Controls.Add(Me.pcbMonster23)
-        Me.pnlMain.Controls.Add(Me.pcbMonster24)
+        Me.pnlMain.Controls.Add(Me.pcbMonster41)
         Me.pnlMain.Controls.Add(Me.pcbMonster22)
         Me.pnlMain.Controls.Add(Me.pcbMonster21)
         Me.pnlMain.Controls.Add(Me.pcbMonster13)
-        Me.pnlMain.Controls.Add(Me.pcbMonster14)
+        Me.pnlMain.Controls.Add(Me.pcbMonster31)
         Me.pnlMain.Controls.Add(Me.pcbMonster12)
         Me.pnlMain.Controls.Add(Me.pcbMonster11)
         Me.pnlMain.Controls.Add(Me.pcbPlayer3)
@@ -194,17 +194,17 @@ Partial Class frmMainScr
         Me.pcbMonster23.TabStop = False
         Me.pcbMonster23.Visible = False
         '
-        'pcbMonster24
+        'pcbMonster41
         '
-        Me.pcbMonster24.BackColor = System.Drawing.Color.Transparent
-        Me.pcbMonster24.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR4
-        Me.pcbMonster24.Location = New System.Drawing.Point(522, 24)
-        Me.pcbMonster24.Name = "pcbMonster24"
-        Me.pcbMonster24.Size = New System.Drawing.Size(43, 40)
-        Me.pcbMonster24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pcbMonster24.TabIndex = 13
-        Me.pcbMonster24.TabStop = False
-        Me.pcbMonster24.Visible = False
+        Me.pcbMonster41.BackColor = System.Drawing.Color.Transparent
+        Me.pcbMonster41.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR4
+        Me.pcbMonster41.Location = New System.Drawing.Point(522, 24)
+        Me.pcbMonster41.Name = "pcbMonster41"
+        Me.pcbMonster41.Size = New System.Drawing.Size(43, 40)
+        Me.pcbMonster41.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pcbMonster41.TabIndex = 13
+        Me.pcbMonster41.TabStop = False
+        Me.pcbMonster41.Visible = False
         '
         'pcbMonster22
         '
@@ -241,17 +241,17 @@ Partial Class frmMainScr
         Me.pcbMonster13.TabStop = False
         Me.pcbMonster13.Visible = False
         '
-        'pcbMonster14
+        'pcbMonster31
         '
-        Me.pcbMonster14.BackColor = System.Drawing.Color.Transparent
-        Me.pcbMonster14.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR4
-        Me.pcbMonster14.Location = New System.Drawing.Point(567, 149)
-        Me.pcbMonster14.Name = "pcbMonster14"
-        Me.pcbMonster14.Size = New System.Drawing.Size(43, 40)
-        Me.pcbMonster14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pcbMonster14.TabIndex = 9
-        Me.pcbMonster14.TabStop = False
-        Me.pcbMonster14.Visible = False
+        Me.pcbMonster31.BackColor = System.Drawing.Color.Transparent
+        Me.pcbMonster31.Image = Global.WindowsApplication1.My.Resources.Resources.gobWalkR4
+        Me.pcbMonster31.Location = New System.Drawing.Point(567, 149)
+        Me.pcbMonster31.Name = "pcbMonster31"
+        Me.pcbMonster31.Size = New System.Drawing.Size(43, 40)
+        Me.pcbMonster31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.pcbMonster31.TabIndex = 9
+        Me.pcbMonster31.TabStop = False
+        Me.pcbMonster31.Visible = False
         '
         'pcbMonster12
         '
@@ -402,11 +402,11 @@ Partial Class frmMainScr
         Me.pnlMain.ResumeLayout(False)
         Me.pnlMain.PerformLayout()
         CType(Me.pcbMonster23, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMonster24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbMonster41, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbMonster22, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbMonster21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbMonster13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pcbMonster14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pcbMonster31, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbMonster12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbMonster11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pcbPlayer3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -434,11 +434,11 @@ Partial Class frmMainScr
     Friend WithEvents wmpMusic As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents wmpAmbient As AxWMPLib.AxWindowsMediaPlayer
     Friend WithEvents pcbMonster13 As PictureBox
-    Friend WithEvents pcbMonster14 As PictureBox
+    Friend WithEvents pcbMonster31 As PictureBox
     Friend WithEvents pcbMonster12 As PictureBox
     Friend WithEvents pcbMonster11 As PictureBox
     Friend WithEvents pcbMonster23 As PictureBox
-    Friend WithEvents pcbMonster24 As PictureBox
+    Friend WithEvents pcbMonster41 As PictureBox
     Friend WithEvents pcbMonster22 As PictureBox
     Friend WithEvents pcbMonster21 As PictureBox
     Friend WithEvents tmrMonst1Anim As Timer

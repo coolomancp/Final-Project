@@ -93,7 +93,9 @@ Public Class frmLoadScr
         playerInf.dmg = items(playerInf.activeWepL).dmg + items(playerInf.activeWepR).dmg + (20 + playerInf.level)
         ' Calculates and stores armor
         playerInf.armor = items(playerInf.activeBracers).armor + items(playerInf.activeChest).armor + items(playerInf.activeGloves).armor + items(playerInf.activeHelm).armor + items(playerInf.activeLegs).armor
-        ' Launches main window and hides load screen
+        ' Launches map and hides load screen
+        mapProg = playerInf.dungeonID
+        mapScr.refreshProg()
         mapScr.Show()
         Me.Hide()
     End Sub

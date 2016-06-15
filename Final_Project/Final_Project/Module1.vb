@@ -7,6 +7,7 @@
     Public battleScr As New frmBattle ' Screen used for battle
     Public inventoryScr As New frmInventory ' Inventory screen is loaded
     Public mapScr As New frmMap ' Map screen used for selecting dungeon locations
+    Public shopScr As New frmShop ' Shop screen for the player to buy items / buffs
     Public mapProg As Integer
     ' Dungeon Progress booleans
     Public grassldDunge As Boolean

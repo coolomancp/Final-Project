@@ -12,8 +12,6 @@ Public Class frmMainScr
     Dim monstY As Integer ' Monster's Y coord
     Dim monst1X As Integer ' First monster's X coord
     Dim monst2X As Integer ' Second monster's X coord
-    Dim monst3X As Integer ' Third monster's X coord
-    Dim monst4X As Integer ' Fourth monster's X coord
     Dim count As Integer ' Stores a count, used in preventing lagging out
 
     Private Sub btnCharI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCharI.Click
@@ -89,11 +87,11 @@ Public Class frmMainScr
         pcbMonster11.Parent = pcbMainScr
         pcbMonster12.Parent = pcbMainScr
         pcbMonster13.Parent = pcbMainScr
-        pcbMonster14.Parent = pcbMainScr
+        pcbMonster31.Parent = pcbMainScr
         pcbMonster21.Parent = pcbMainScr
         pcbMonster22.Parent = pcbMainScr
         pcbMonster23.Parent = pcbMainScr
-        pcbMonster24.Parent = pcbMainScr
+        pcbMonster41.Parent = pcbMainScr
         ' Sets lvl up label for transparency
         lblLevelUp.Parent = pcbMainScr
         lblLevelUp.Visible = False
@@ -261,14 +259,14 @@ Public Class frmMainScr
                 tmrAnim.Enabled = True ' Starts animation
         End Select
     End Sub
-    ' ADD PROCEDURE DOC
+    ' Compares player's location with the enemies. If the player is close enough, battle will begin
     Sub battleTrigger()
         If pcbPlayer1.Right > pcbMonster11.Left - (pcbMonster11.Width - 20) And monst1Dead = False Then
             Hide()
             If dungeon.monstertype = "Goblin" Then
                 fleeMod = 30 ' 30% more likely to flee
             ElseIf dungeon.monstertype = "grasslandsBoss" Then
-                fleeMod = -100 ' 100% less likely to flee
+                fleeMod = -100 ' 100% less likely to flee (no chance to flee)
             End If
             monst1Battle = True
             battleScr.refreshForm() ' Refreshes screen for updates
@@ -295,7 +293,7 @@ Public Class frmMainScr
     Private Sub frmMainScr_KeyUp(ByVal sender As Object, ByVal e As KeyEventArgs) Handles Me.KeyUp
         tmrAnim.Enabled = False ' Stops animation
         lblTest.Text = Convert.ToString(pcbPlayer1.Location)
-        lblTest2.Text = "{ " & pcbMonster11.Left & " / " & pcbMonster21.Left & " }"
+        lblTest2.Text = "{ " & pcbMonster31.Location.ToString & " / " & pcbMonster41.Location.ToString & " }"
         ' Sets whatever frame is currently visible to the idle image in respect to the direction the player is facing
         If playerInf.charClass = "Warrior" Then
             If charDir = 1 And pcbPlayer1.Visible = True Then
@@ -414,9 +412,9 @@ Public Class frmMainScr
             pcbMonster13.Visible = True
         ElseIf pcbMonster13.Visible = True Then
             pcbMonster13.Visible = False
-            pcbMonster14.Visible = True
-        ElseIf pcbMonster14.Visible = True Then
-            pcbMonster14.Visible = False
+            pcbMonster31.Visible = True
+        ElseIf pcbMonster31.Visible = True Then
+            pcbMonster31.Visible = False
             pcbMonster11.Visible = True
         End If
     End Sub
@@ -431,9 +429,9 @@ Public Class frmMainScr
             pcbMonster23.Visible = True
         ElseIf pcbMonster13.Visible = True Then
             pcbMonster23.Visible = False
-            pcbMonster24.Visible = True
-        ElseIf pcbMonster24.Visible = True Then
-            pcbMonster24.Visible = False
+            pcbMonster41.Visible = True
+        ElseIf pcbMonster41.Visible = True Then
+            pcbMonster41.Visible = False
             pcbMonster21.Visible = True
         End If
     End Sub
@@ -473,65 +471,63 @@ Public Class frmMainScr
         End If
         ' Monster placement
         If dungeon.numOfRms = playerInf.dungeonRM Then
-            If dungeon.type = "grasslands" Then
+            If dungeon.type = "grasslands" And mapScr.rdbGreatPlains.Checked = True Then
                 dungeon.monstertype = "grasslandsBoss"
+                pcbMonster11.Image = grassBossIdle
+                pcbMonster11.Location = New Point(500, 340)
+                monst1Dead = False
+            ElseIf dungeon.type = "grasslands" And mapScr.rdbGondar.Checked = True Then
+                dungeon.monstertype = "grasslandsBoss2"
                 pcbMonster11.Image = grassBossIdle
                 pcbMonster11.Location = New Point(500, 340)
                 monst1Dead = False
             End If
         Else
             Randomize()
-            If dungeon.monstertype = "Goblin" Then
-                If dungeon.monstNum >= 1 Then
+            ' Random placement of enemies
+            If dungeon.monstNum >= 1 Then
+                If dungeon.monstertype = "Goblin" Then
                     pcbMonster11.Image = gobWalkL1
                     pcbMonster12.Image = gobWalkL2
                     pcbMonster13.Image = gobWalkL3
-                    pcbMonster14.Image = gobWalkL4
-                    monst1X = Int((500 - 300 + 1) * Rnd() + 300)
-                    pcbMonster11.Location = New Point(monst1X, 358)
-                    pcbMonster12.Location = New Point(monst1X, 358)
-                    pcbMonster13.Location = New Point(monst1X, 358)
-                    pcbMonster14.Location = New Point(monst1X, 358)
-                    monst1Dead = False
+                    pcbMonster31.Image = gobWalkL4
                 End If
-                If dungeon.monstNum >= 2 Then
+                monst1X = Int((500 - 300 + 1) * Rnd() + 300)
+                pcbMonster11.Location = New Point(monst1X, 358)
+                pcbMonster12.Location = New Point(monst1X, 358)
+                pcbMonster13.Location = New Point(monst1X, 358)
+                monst1Dead = False
+            End If
+            If dungeon.monstNum >= 2 Then
+                If dungeon.monstertype = "Goblin" Then
                     pcbMonster21.Image = gobWalkL1
                     pcbMonster22.Image = gobWalkL2
                     pcbMonster23.Image = gobWalkL3
-                    pcbMonster24.Image = gobWalkL4
-                    While True
-                        monst2X = Int((500 - 300 + 1) * Rnd() + 300)
-                        If monst2X > monst1X + 50 Or monst2X < monst2X - 50 Then
-                            Exit While
-                        End If
-                        count = count + 1
-                        If count = 500 Then ' Prevents freezing and aborts enemy placement
-                            Exit While
-                        End If
-                    End While
-                    pcbMonster21.Location = New Point(monst2X, 358)
-                    pcbMonster22.Location = New Point(monst2X, 358)
-                    pcbMonster23.Location = New Point(monst2X, 358)
-                    pcbMonster24.Location = New Point(monst2X, 358)
-                    monst2Dead = False
+                    pcbMonster41.Image = gobWalkL4
                 End If
-                    If dungeon.monstNum >= 3 Then
-                        'pcbMonster31.Image = gobWalkL1
-                        'pcbMonster32.Image = gobWalkL2
-                        'pcbMonster33.Image = gobWalkL3
-                        'pcbMonster34.Image = gobWalkL4
+                While True
+                    monst2X = Int((500 - 300 + 1) * Rnd() + 300)
+                    If monst2X > monst1X + 50 Or monst2X < monst1X - 50 Then
+                        Exit While
                     End If
-                    If dungeon.monstNum = 4 Then
-                        'pcbMonster31.Image = gobWalkL1
-                        'pcbMonster32.Image = gobWalkL2
-                        'pcbMonster33.Image = gobWalkL3
-                        'pcbMonster34.Image = gobWalkL4
-                        'pcbMonster41.Image = gobWalkL1
-                        'pcbMonster42.Image = gobWalkL2
-                        'pcbMonster43.Image = gobWalkL3
-                        'pcbMonster44.Image = gobWalkL4
+                    count = count + 1
+                    If count = 500 Then ' Prevents freezing and aborts enemy placement
+                        Exit While
                     End If
-                End If
+                End While
+                pcbMonster21.Location = New Point(monst2X, 358)
+                pcbMonster22.Location = New Point(monst2X, 358)
+                pcbMonster23.Location = New Point(monst2X, 358)
+                monst2Dead = False
             End If
+        End If
+    End Sub
+    ' Determines the player's flee chance based on what enemy the dungeon has
+    Sub setFleeMod()
+        If dungeon.monstertype = "Goblin" Then
+            fleeMod = 30 ' 30% more likely to flee
+        ElseIf dungeon.monstertype = "grasslandsBoss" Then
+            fleeMod = -100 ' 100% less likely to flee
+        End If
     End Sub
 End Class

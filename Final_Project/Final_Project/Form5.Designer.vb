@@ -27,6 +27,7 @@ Partial Class frmExitWarning
         Me.lblSaveWarn = New System.Windows.Forms.Label()
         Me.btnYes = New System.Windows.Forms.Button()
         Me.btnNo = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'lblWarning
@@ -35,7 +36,7 @@ Partial Class frmExitWarning
         Me.lblWarning.Font = New System.Drawing.Font("Myriad Web Pro", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWarning.Location = New System.Drawing.Point(99, 30)
         Me.lblWarning.Name = "lblWarning"
-        Me.lblWarning.Size = New System.Drawing.Size(164, 12)
+        Me.lblWarning.Size = New System.Drawing.Size(166, 14)
         Me.lblWarning.TabIndex = 0
         Me.lblWarning.Text = "Are you sure you want to exit?"
         '
@@ -45,7 +46,7 @@ Partial Class frmExitWarning
         Me.lblSaveWarn.Font = New System.Drawing.Font("Myriad Web Pro", 8.999999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblSaveWarn.Location = New System.Drawing.Point(64, 42)
         Me.lblSaveWarn.Name = "lblSaveWarn"
-        Me.lblSaveWarn.Size = New System.Drawing.Size(235, 12)
+        Me.lblSaveWarn.Size = New System.Drawing.Size(237, 14)
         Me.lblSaveWarn.TabIndex = 1
         Me.lblSaveWarn.Text = "(Your game data will be saved upon exiting)"
         '
@@ -69,12 +70,22 @@ Partial Class frmExitWarning
         Me.btnNo.Text = "No"
         Me.btnNo.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(99, 56)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(158, 14)
+        Me.Label1.TabIndex = 4
+        Me.Label1.Text = "[Room progress is not saved]"
+        '
         'frmExitWarning
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(363, 114)
+        Me.ClientSize = New System.Drawing.Size(373, 125)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnNo)
         Me.Controls.Add(Me.btnYes)
         Me.Controls.Add(Me.lblSaveWarn)
@@ -100,4 +111,5 @@ Partial Class frmExitWarning
     Friend WithEvents lblSaveWarn As Label
     Friend WithEvents btnYes As Button
     Friend WithEvents btnNo As Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class

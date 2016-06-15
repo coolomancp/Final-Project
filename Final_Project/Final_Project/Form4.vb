@@ -132,6 +132,42 @@ Public Class frmLaunchScr
         items(13).intelligence = 1
         items(13).armor = 1
         'items(13).image = wornBracers
+        ' Health Potion
+        items(14).ID = 14
+        items(14).name = "Health Potion"
+        items(14).dmg = 0
+        items(14).agility = 0
+        items(14).strength = 0
+        items(14).intelligence = 0
+        'items(14).image = hpPotion
+        ' Health Potion+
+        items(15).ID = 15
+        items(15).name = "Health Potion+"
+        items(15).dmg = 0
+        items(15).agility = 0
+        items(15).strength = 0
+        items(15).intelligence = 0
+        items(15).armor = 0
+        items(15).armor = 0
+        'items(15).image = hpPotionP
+        ' Mana Potion
+        items(16).ID = 16
+        items(16).name = "Mana Potion"
+        items(16).dmg = 0
+        items(16).agility = 0
+        items(16).strength = 0
+        items(16).intelligence = 0
+        items(16).armor = 0
+        'items(16).image = mpPotion
+        ' Mana Potion+
+        items(17).ID = 17
+        items(17).name = "Mana Potion+"
+        items(17).dmg = 0
+        items(17).agility = 0
+        items(17).strength = 0
+        items(17).intelligence = 0
+        items(17).armor = 0
+        'items(17).image = mpPotionP
         ' Debug Item
         items(20).ID = 20
         items(20).name = "Debug"

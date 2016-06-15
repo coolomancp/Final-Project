@@ -47,7 +47,7 @@ Partial Class frmMap
         'rdbGreatPlains
         '
         Me.rdbGreatPlains.AutoSize = True
-        Me.rdbGreatPlains.BackColor = System.Drawing.Color.Transparent
+        Me.rdbGreatPlains.BackColor = System.Drawing.Color.Gold
         Me.rdbGreatPlains.Location = New System.Drawing.Point(177, 166)
         Me.rdbGreatPlains.Name = "rdbGreatPlains"
         Me.rdbGreatPlains.Size = New System.Drawing.Size(14, 13)
@@ -58,7 +58,7 @@ Partial Class frmMap
         'rdbNSShop
         '
         Me.rdbNSShop.AutoSize = True
-        Me.rdbNSShop.BackColor = System.Drawing.Color.Transparent
+        Me.rdbNSShop.BackColor = System.Drawing.Color.Maroon
         Me.rdbNSShop.Enabled = False
         Me.rdbNSShop.Location = New System.Drawing.Point(215, 245)
         Me.rdbNSShop.Name = "rdbNSShop"
@@ -70,7 +70,7 @@ Partial Class frmMap
         'rdbGondar
         '
         Me.rdbGondar.AutoSize = True
-        Me.rdbGondar.BackColor = System.Drawing.Color.Transparent
+        Me.rdbGondar.BackColor = System.Drawing.Color.Maroon
         Me.rdbGondar.Enabled = False
         Me.rdbGondar.Location = New System.Drawing.Point(286, 335)
         Me.rdbGondar.Name = "rdbGondar"
@@ -82,7 +82,7 @@ Partial Class frmMap
         'rdbBadlands
         '
         Me.rdbBadlands.AutoSize = True
-        Me.rdbBadlands.BackColor = System.Drawing.Color.Transparent
+        Me.rdbBadlands.BackColor = System.Drawing.Color.Maroon
         Me.rdbBadlands.Location = New System.Drawing.Point(304, 425)
         Me.rdbBadlands.Name = "rdbBadlands"
         Me.rdbBadlands.Size = New System.Drawing.Size(14, 13)
@@ -93,7 +93,7 @@ Partial Class frmMap
         'rdbLionguard
         '
         Me.rdbLionguard.AutoSize = True
-        Me.rdbLionguard.BackColor = System.Drawing.Color.Transparent
+        Me.rdbLionguard.BackColor = System.Drawing.Color.Maroon
         Me.rdbLionguard.Enabled = False
         Me.rdbLionguard.Location = New System.Drawing.Point(435, 314)
         Me.rdbLionguard.Name = "rdbLionguard"
@@ -105,7 +105,7 @@ Partial Class frmMap
         'rdbOldtown
         '
         Me.rdbOldtown.AutoSize = True
-        Me.rdbOldtown.BackColor = System.Drawing.Color.Transparent
+        Me.rdbOldtown.BackColor = System.Drawing.Color.Maroon
         Me.rdbOldtown.Enabled = False
         Me.rdbOldtown.Location = New System.Drawing.Point(458, 412)
         Me.rdbOldtown.Name = "rdbOldtown"
@@ -117,7 +117,7 @@ Partial Class frmMap
         'rdbMountains
         '
         Me.rdbMountains.AutoSize = True
-        Me.rdbMountains.BackColor = System.Drawing.Color.Transparent
+        Me.rdbMountains.BackColor = System.Drawing.Color.Maroon
         Me.rdbMountains.Enabled = False
         Me.rdbMountains.Location = New System.Drawing.Point(430, 104)
         Me.rdbMountains.Name = "rdbMountains"
@@ -129,7 +129,7 @@ Partial Class frmMap
         'rdbVikinghelmPort
         '
         Me.rdbVikinghelmPort.AutoSize = True
-        Me.rdbVikinghelmPort.BackColor = System.Drawing.Color.Transparent
+        Me.rdbVikinghelmPort.BackColor = System.Drawing.Color.Maroon
         Me.rdbVikinghelmPort.Enabled = False
         Me.rdbVikinghelmPort.Location = New System.Drawing.Point(548, 84)
         Me.rdbVikinghelmPort.Name = "rdbVikinghelmPort"
@@ -141,7 +141,7 @@ Partial Class frmMap
         'rdbBattlePlain
         '
         Me.rdbBattlePlain.AutoSize = True
-        Me.rdbBattlePlain.BackColor = System.Drawing.Color.Transparent
+        Me.rdbBattlePlain.BackColor = System.Drawing.Color.Maroon
         Me.rdbBattlePlain.Enabled = False
         Me.rdbBattlePlain.Location = New System.Drawing.Point(680, 74)
         Me.rdbBattlePlain.Name = "rdbBattlePlain"
@@ -153,7 +153,7 @@ Partial Class frmMap
         'rdbYgg
         '
         Me.rdbYgg.AutoSize = True
-        Me.rdbYgg.BackColor = System.Drawing.Color.Transparent
+        Me.rdbYgg.BackColor = System.Drawing.Color.Maroon
         Me.rdbYgg.Enabled = False
         Me.rdbYgg.Location = New System.Drawing.Point(848, 74)
         Me.rdbYgg.Name = "rdbYgg"
@@ -165,7 +165,7 @@ Partial Class frmMap
         'rdbDarkForest
         '
         Me.rdbDarkForest.AutoSize = True
-        Me.rdbDarkForest.BackColor = System.Drawing.Color.Transparent
+        Me.rdbDarkForest.BackColor = System.Drawing.Color.Maroon
         Me.rdbDarkForest.Enabled = False
         Me.rdbDarkForest.Location = New System.Drawing.Point(824, 152)
         Me.rdbDarkForest.Name = "rdbDarkForest"
@@ -177,7 +177,7 @@ Partial Class frmMap
         'rdbMountDeath
         '
         Me.rdbMountDeath.AutoSize = True
-        Me.rdbMountDeath.BackColor = System.Drawing.Color.Transparent
+        Me.rdbMountDeath.BackColor = System.Drawing.Color.Maroon
         Me.rdbMountDeath.Enabled = False
         Me.rdbMountDeath.Location = New System.Drawing.Point(761, 245)
         Me.rdbMountDeath.Name = "rdbMountDeath"
@@ -189,7 +189,7 @@ Partial Class frmMap
         'rdbDarkTower
         '
         Me.rdbDarkTower.AutoSize = True
-        Me.rdbDarkTower.BackColor = System.Drawing.Color.Transparent
+        Me.rdbDarkTower.BackColor = System.Drawing.Color.Maroon
         Me.rdbDarkTower.Enabled = False
         Me.rdbDarkTower.Location = New System.Drawing.Point(665, 335)
         Me.rdbDarkTower.Name = "rdbDarkTower"
@@ -201,7 +201,7 @@ Partial Class frmMap
         'rdbRajashi
         '
         Me.rdbRajashi.AutoSize = True
-        Me.rdbRajashi.BackColor = System.Drawing.Color.Transparent
+        Me.rdbRajashi.BackColor = System.Drawing.Color.Maroon
         Me.rdbRajashi.Enabled = False
         Me.rdbRajashi.Location = New System.Drawing.Point(162, 464)
         Me.rdbRajashi.Name = "rdbRajashi"
@@ -213,7 +213,7 @@ Partial Class frmMap
         'rdbReach
         '
         Me.rdbReach.AutoSize = True
-        Me.rdbReach.BackColor = System.Drawing.Color.Transparent
+        Me.rdbReach.BackColor = System.Drawing.Color.Maroon
         Me.rdbReach.Enabled = False
         Me.rdbReach.Location = New System.Drawing.Point(39, 367)
         Me.rdbReach.Name = "rdbReach"
@@ -225,7 +225,7 @@ Partial Class frmMap
         'rdbDragon
         '
         Me.rdbDragon.AutoSize = True
-        Me.rdbDragon.BackColor = System.Drawing.Color.Transparent
+        Me.rdbDragon.BackColor = System.Drawing.Color.Maroon
         Me.rdbDragon.Enabled = False
         Me.rdbDragon.Location = New System.Drawing.Point(137, 298)
         Me.rdbDragon.Name = "rdbDragon"
@@ -294,6 +294,7 @@ Partial Class frmMap
         Me.Controls.Add(Me.rdbGreatPlains)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMap"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Map"
         Me.ResumeLayout(False)
         Me.PerformLayout()

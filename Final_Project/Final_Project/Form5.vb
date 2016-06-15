@@ -1,6 +1,8 @@
 ﻿Imports System.IO
 Public Class frmExitWarning
-    Private Sub btnYes_Click(sender As Object, e As EventArgs) Handles btnYes.Click
+    Private Sub btnYes_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnYes.Click
+        ' Defines player's dungeon unlocks
+        playerInf.dungeonID = mapProg
         ' Saves player information into a txt file in a saves folder
         File.WriteAllText(resPath & "\Saves\" & Convert.ToString(playerInf.name & ".txt"), "")
         Dim save() As String = {playerInf.name, playerInf.HP, playerInf.HPM, playerInf.MP, playerInf.MPM, playerInf.strength, playerInf.intelligence, playerInf.agility, playerInf.activeBracers, playerInf.activeChest, playerInf.activeGloves, playerInf.activeHelm, playerInf.activeLegs, playerInf.activeWepL, playerInf.activeWepR, playerInf.charClass, playerInf.level, playerInf.exp, playerInf.moneyAmount, playerInf.charX, playerInf.charY, playerInf.dungeonID, playerInf.dungeonRM, playerInf.inventory.Length - 1}

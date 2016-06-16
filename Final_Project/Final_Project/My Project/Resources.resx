@@ -487,4 +487,22 @@
   <data name="shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="healthPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\healthPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="healthPotionPlus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\healthPotionPlus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="manaPotion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manaPotion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="manaPotionPlus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\manaPotionPlus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MageAttackR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MageAttackR.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WarriorAttackR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WarriorAttackR.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

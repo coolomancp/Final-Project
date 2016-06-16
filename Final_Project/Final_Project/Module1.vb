@@ -91,6 +91,7 @@
     Public warAttR3 As Image = My.Resources.warAttR3 ' Third frame of warrior class attacking to the right
     Public warAttR4 As Image = My.Resources.warAttR4 ' Fourth frame of warrior class attacking to the right
     Public warBattS As Image = My.Resources.warriorBattleStance ' Warrior's battle stance
+    Public warAttR As Image = My.Resources.WarriorAttackR ' Warrior's attacking animation
     ' Rogue
     Public rogIdleR As Image = My.Resources.rogIdleR ' Character idle facing the left (rogue)
     Public rogIdleL As Image = My.Resources.rogIdleL ' Character idle facing the left (rogue)
@@ -137,8 +138,12 @@
     Public magAttL3 As Image = My.Resources.magAttL3 ' Third frame of mage class attacking to the left
     Public magAttL4 As Image = My.Resources.magAttL4 ' Fourth frame of mage class attacking to the left
     Public magBattS As Image = My.Resources.mageBattleStance ' Mage's battle stance
-    ' Mage Items
-
+    Public magAttR As Image = My.Resources.MageAttackR ' Mage's attacking animation
+    ' Global Items
+    Public hpPotion As Image = My.Resources.healthPotion
+    Public hpPotionP As Image = My.Resources.healthPotionPlus
+    Public mpPotion As Image = My.Resources.manaPotion
+    Public mpPotionP As Image = My.Resources.manaPotionPlus
     ' Empty inventory slot
     Public eInvSlot As Image = My.Resources.emptyInventorySlot_copy
     ' Placeholder image

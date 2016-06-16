@@ -273,6 +273,7 @@ Partial Class frmMap
         Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.map
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(884, 502)
+        Me.ControlBox = False
         Me.Controls.Add(Me.cboMultiplier)
         Me.Controls.Add(Me.lblDiffMulti)
         Me.Controls.Add(Me.btnGo)
@@ -293,6 +294,8 @@ Partial Class frmMap
         Me.Controls.Add(Me.rdbNSShop)
         Me.Controls.Add(Me.rdbGreatPlains)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "frmMap"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Map"

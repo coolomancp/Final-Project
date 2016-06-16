@@ -48,6 +48,7 @@ Public Class frmCharScreen
     ' Post: Changes the picture box's picture to match the current item selected, and updates player's active item to match
     Sub changeItem(ByVal item As String, ByRef pcb As PictureBox, ByRef active As String)
         If items(revItemIndex(item)).image Is Nothing Then ' Temp check for no asset to prevent crash
+            pcb.Image = phImg
         Else
             pcb.Image = items(revItemIndex(item)).image ' Changes picturebox to item's image
         End If
@@ -93,8 +94,14 @@ Public Class frmCharScreen
         lblCNVal.Text = playerInf.name
         lblLvl.Text = playerInf.level
         ' Updates progress bars to reflect the player's current HP and MP values
+        If playerInf.HP > playerInf.HPM Then
+            playerInf.HP = playerInf.HPM
+        End If
+        If playerInf.MP > playerInf.MPM Then
+            playerInf.MP = playerInf.MPM
+        End If
         proBarHealthVal.Value = (playerInf.HP / playerInf.HPM) * 100
-        proBarManaVal.Value = (playerInf.MP \ playerInf.MPM) * 100
+        proBarManaVal.Value = (playerInf.MP / playerInf.MPM) * 100
         ' Sets active weapons
         cboRHand.Text = itemIndex(playerInf.activeWepR)
         cboLHand.Text = itemIndex(playerInf.activeWepL)

@@ -287,6 +287,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Logo.ico" />
+    <None Include="Resources\WarriorAttackR.gif" />
+    <None Include="Resources\MageAttackR.gif" />
+    <None Include="Resources\manaPotionPlus.png" />
+    <None Include="Resources\manaPotion.png" />
+    <None Include="Resources\healthPotionPlus.png" />
+    <None Include="Resources\healthPotion.png" />
     <None Include="Resources\shop.png" />
     <None Include="Resources\grasslandBossIdle.gif" />
     <None Include="Resources\grasslandBossAttack.gif" />
@@ -410,6 +416,7 @@
       <Lcid>0</Lcid>
       <WrapperTool>aximp</WrapperTool>
       <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="WMPLib">
       <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
@@ -418,7 +425,7 @@
       <Lcid>0</Lcid>
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
   <ItemGroup>

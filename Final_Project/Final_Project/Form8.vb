@@ -1,6 +1,7 @@
 ﻿Public Class frmBattle
-    Dim counter As Integer = 0
+    Dim counter As Integer = 0 ' A counter used for running a certain piece of code once, per 2 runs
     Dim damage As Integer ' Holds the value of damage done to the player
+    Dim isPower As Boolean = False ' Determines if a power attack is being used
     Private Sub btnFlee_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFlee.Click
         Dim fleeChance As Integer
         Randomize()
@@ -91,6 +92,7 @@
             proBarHealthVal.ForeColor = Color.Red
         End If
         ' Sets enemy's initial health
+        monstInf.HP = monstInf.HPM
         proBarEnemyHP.Value = (monstInf.HP / monstInf.HPM) * 100
         lblEnemyHP.Text = "(" & monstInf.HP & "/" & monstInf.HPM & ")"
         ' Resets objects to default state
@@ -98,6 +100,12 @@
         lblExpAmount.Visible = False
         proBarEnemyHP.Visible = True
         lblEnemyHP.Visible = True
+        ' Adds useable items to the player's item use list
+        For i As Integer = 0 To playerInf.inventory.Length - 1
+            If playerInf.inventory(i) = 14 Or playerInf.inventory(i) = 15 Or playerInf.inventory(i) = 16 Or playerInf.inventory(i) = 17 Then
+                cboItems.Items.Add(itemIndex(playerInf.inventory(i)))
+            End If
+        Next
     End Sub
     Sub monstAttack()
         ' Monster's attack and animation are decided and played
@@ -132,14 +140,16 @@
 
     Private Sub playerHit_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles playerHit.Tick
         ' Plays animation for player getting hit
-        pcbBattlePlayer.Image = rogHitR
+        If playerInf.charClass = "Rogue" Then
+            pcbBattlePlayer.Image = rogHitR
+        End If
         ' Player is damaged
         If counter = 0 Then
             Select Case dungeon.monstertype
                 Case Is = "Goblin"
-                    playerInf.HP = playerInf.HP - dmgToPlayer(5 * dungeon.difficulty)
-                Case Is = "grasslandsBoss"
                     playerInf.HP = playerInf.HP - dmgToPlayer(10 * dungeon.difficulty)
+                Case Is = "grasslandsBoss"
+                    playerInf.HP = playerInf.HP - dmgToPlayer(18 * dungeon.difficulty)
             End Select
         End If
         If playerInf.HP <= 0 Then
@@ -156,25 +166,31 @@
         End If
         ' Return to battle stance after being hit
         If counter = 1 Then
-            pcbBattlePlayer.Image = rogBattS
+            If playerInf.charClass = "Rogue" Then
+                pcbBattlePlayer.Image = rogBattS
+            ElseIf playerInf.charClass = "Mage" Then
+                pcbBattlePlayer.Image = magBattS
+            ElseIf playerInf.charClass = "Warrior" Then
+                pcbBattlePlayer.Image = warBattS
+            End If
             counter = 0
-            playerHit.Enabled = False
-        Else
-            counter = 1
+                playerHit.Enabled = False
+            Else
+                counter = 1
         End If
     End Sub
 
     Private Sub btnAttack_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAttack.Click
-        btnAbilities.Visible = True
-        btnAbilities.Enabled = True
+        btnPwr.Visible = True
+        btnPwr.Enabled = True
         btnMelee.Visible = True
         btnMelee.Enabled = True
         btnAttack.Enabled = False
     End Sub
 
     Private Sub btnMelee_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMelee.Click
-        btnAbilities.Visible = False
-        btnAbilities.Enabled = False
+        btnPwr.Visible = False
+        btnPwr.Enabled = False
         btnMelee.Visible = False
         btnMelee.Enabled = False
         ' **** Attack Sequence ****
@@ -183,33 +199,48 @@
     End Sub
 
     Private Sub playerAttAnim_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles playerAttAnim.Tick
-        pcbBattlePlayer.Image = rogMeleeN ' Plays attack animation gif
-        pcbBattlePlayer.Size = New Size(180, 166)
-        pcbBattlePlayer.Location = New Point(13, 203)
+        If playerInf.charClass = "Rogue" Then
+            pcbBattlePlayer.Image = rogMeleeN ' Plays attack animation gif
+            pcbBattlePlayer.Size = New Size(180, 166)
+            pcbBattlePlayer.Location = New Point(13, 203)
+        ElseIf playerInf.charClass = "Mage" Then
+            pcbBattlePlayer.Image = magAttR
+        ElseIf playerInf.charClass = "Warrior" Then
+            pcbBattlePlayer.Image = warAttR
+        End If
         If counter = 0 Then
-            monstInf.HP = monstInf.HP - (playerInf.dmg - monstInf.armor) ' Damage to monster calculated
+            If isPower = False Then
+                monstInf.HP = monstInf.HP - (playerInf.dmg - monstInf.armor) ' Damage to monster calculated
+            Else
+                monstInf.HP = monstInf.HP - ((playerInf.dmg - monstInf.armor) * 2) ' Power damage to monster calculated
+            End If
             lblEnemyHP.Text = "(" & monstInf.HP & "/" & monstInf.HPM & ")"
         End If
-        If monstInf.HP <= 0 Then ' Checks if the enemy has died
-            monstInf.HP = 0
-            counter = 0
-            deathAnim.Enabled = True
-        End If
-        proBarEnemyHP.Value = (monstInf.HP / monstInf.HPM) * 100 ' Updates enemy's health bar
+            If monstInf.HP <= 0 Then ' Checks if the enemy has died
+                monstInf.HP = 0
+                counter = 0
+                deathAnim.Enabled = True
+            End If
+        proBarEnemyHP.Value = ((monstInf.HP / monstInf.HPM) * 100) \ 1 ' Updates enemy's health bar
         If counter = 1 Then
             If playerInf.charClass = "Rogue" Then
                 pcbBattlePlayer.Image = rogBattS ' Rogue returns to battle stance
                 pcbBattlePlayer.Size = New Size(133, 123)
                 pcbBattlePlayer.Location = New Point(13, 246)
+            ElseIf playerInf.charClass = "Mage" Then
+                pcbBattlePlayer.Image = magBattS
+            ElseIf playerInf.charClass = "Warrior" Then
+                pcbBattlePlayer.Image = warBattS
             End If
-            counter = 0 ' Counter reset
-            playerAttAnim.Enabled = False ' Attack animation finished
-            If monstInf.HP > 0 Then
-                monstAttack() ' Enemy attack begins
-            End If
-        Else
-            counter = 1
+                counter = 0 ' Counter reset
+                playerAttAnim.Enabled = False ' Attack animation finished
+                If monstInf.HP > 0 Then
+                    monstAttack() ' Enemy attack begins
+                End If
+            Else
+                counter = 1
         End If
+        isPower = False
     End Sub
 
     Private Sub deathAnim_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles deathAnim.Tick
@@ -243,6 +274,7 @@
                 playerInf.moneyAmount = playerInf.moneyAmount + 50
                 mapProg = 1
                 mapScr.refreshProg()
+                playerInf.HP = playerInf.HPM
             ElseIf dungeon.monstertype = "grasslandsBoss2" Then
                 lblEnemyDefeat.Text = "Boss Defeated!"
                 lblExpAmount.Text = "40 EXP!"
@@ -250,6 +282,8 @@
                 playerInf.moneyAmount = playerInf.moneyAmount + 100
                 mapProg = 2
                 mapScr.refreshProg()
+                playerInf.HP = playerInf.HPM
+                MsgBox("This is the end of the demo. Thanks for playing!")
             End If
             If monst1Battle = True Then
                 mainScr.pcbMonster11.Left = -200
@@ -304,4 +338,69 @@
             Return dmg ' Full damage fed back
         End If
     End Function
+
+    Private Sub btnPwr_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnPwr.Click
+        btnPwr.Visible = False
+        btnPwr.Enabled = False
+        btnMelee.Visible = False
+        btnMelee.Enabled = False
+        ' **** Attack Sequence ****
+        isPower = True
+        playerAttAnim.Enabled = True
+        btnAttack.Enabled = True
+    End Sub
+
+    Private Sub btnItems_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnItems.Click
+        If cboItems.Text = "Health Potion" Then
+            playerInf.HP = playerInf.HP + 25
+            For i As Integer = 0 To playerInf.inventory.Length - 1
+                If playerInf.inventory(i) = 14 Then
+                    playerInf.inventory(i) = 0
+                    Exit For
+                End If
+            Next
+            If playerInf.HP > playerInf.HPM Then
+                playerInf.HP = playerInf.HPM
+            End If
+            cboItems.Items.Remove("Health Potion")
+        ElseIf cboItems.Text = "Health Potion+" Then
+            playerInf.HP = playerInf.HP + 100
+            For i As Integer = 0 To playerInf.inventory.Length - 1
+                If playerInf.inventory(i) = 15 Then
+                    playerInf.inventory(i) = 0
+                    Exit For
+                End If
+            Next
+            If playerInf.HP > playerInf.HPM Then
+                playerInf.HP = playerInf.HPM
+            End If
+            cboItems.Items.Remove("Health Potion+")
+        ElseIf cboItems.Text = "Mana Potion" Then
+            playerInf.MP = playerInf.MP + 25
+            For i As Integer = 0 To playerInf.inventory.Length - 1
+                If playerInf.inventory(i) = 16 Then
+                    playerInf.inventory(i) = 0
+                    Exit For
+                End If
+            Next
+            If playerInf.MP > playerInf.MPM Then
+                playerInf.MP = playerInf.MPM
+            End If
+            cboItems.Items.Remove("Mana Potion")
+        ElseIf cboItems.Text = "Mana Potion+" Then
+            playerInf.MP = playerInf.MP + 75
+            For i As Integer = 0 To playerInf.inventory.Length - 1
+                If playerInf.inventory(i) = 17 Then
+                    playerInf.inventory(i) = 0
+                    Exit For
+                End If
+            Next
+            If playerInf.MP > playerInf.MPM Then
+                playerInf.MP = playerInf.MPM
+            End If
+            cboItems.Items.Remove("Mana Potion+")
+        End If
+        lblHPVal.Text = "(" & playerInf.HP & "/" & playerInf.HPM & ")"
+        lblManaVal.Text = "(" & playerInf.MP & "/" & playerInf.MPM & ")"
+    End Sub
 End Class

@@ -34,7 +34,7 @@ Public Class frmCharCreate
                 frmCharScreen.cboRHand.Items.Add("Old Wand")
             End If
             Me.Hide()
-            mainScr.Show()
+            mapScr.Show()
         End If
     End Sub
 
@@ -51,13 +51,13 @@ Public Class frmCharCreate
         playerInf.agility = 3
         playerInf.level = 1
         playerInf.exp = 0
-        playerInf.activeBracers = "wornBracers"
-        playerInf.activeChest = "wornChestplate"
-        playerInf.activeGloves = "wornGloves"
-        playerInf.activeHelm = "wornHelm"
-        playerInf.activeLegs = "wornLegPlate"
-        playerInf.activeWepL = "basicAxe"
-        playerInf.activeWepR = "basicAxe"
+        playerInf.activeBracers = 13
+        playerInf.activeChest = 11
+        playerInf.activeGloves = 6
+        playerInf.activeHelm = 4
+        playerInf.activeLegs = 7
+        playerInf.activeWepL = 2
+        playerInf.activeWepR = 2
         playerInf.moneyAmount = 0
         playerInf.dungeonID = 1
         playerInf.dungeonRM = 1
@@ -79,13 +79,13 @@ Public Class frmCharCreate
         playerInf.intelligence = 5
         playerInf.agility = 3
         playerInf.level = 1
-        playerInf.activeBracers = "wornBracers"
-        playerInf.activeChest = "wornDress"
-        playerInf.activeGloves = "wornGloves"
-        playerInf.activeHelm = "wornHat"
-        playerInf.activeLegs = "wornPants"
-        playerInf.activeWepL = "(none)"
-        playerInf.activeWepR = "oldWand"
+        playerInf.activeBracers = 13
+        playerInf.activeChest = 10
+        playerInf.activeGloves = 6
+        playerInf.activeHelm = 5
+        playerInf.activeLegs = 8
+        playerInf.activeWepL = 0
+        playerInf.activeWepR = 3
         playerInf.moneyAmount = 0
         playerInf.dungeonID = 1
         playerInf.dungeonRM = 1
@@ -130,10 +130,6 @@ Public Class frmCharCreate
         lblAgi.Text = playerInf.agility
         charInfoScr.pcbHandL.Image = rogBasDagL
         charInfoScr.pcbHandR.Image = rogBasDagR
-        charInfoScr.cboLHand.Items.Add("Basic Dagger")
-        charInfoScr.cboLHand.Text = "Basic Dagger"
-        charInfoScr.cboRHand.Items.Add("Basic Dagger")
-        charInfoScr.cboRHand.Text = "Basic Dagger"
     End Sub
 
     Private Sub btnBack_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBack.Click

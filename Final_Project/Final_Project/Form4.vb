@@ -8,7 +8,11 @@ Public Class frmLaunchScr
     Private Sub frmLaunchScr_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         'lblDEBUG.Text = resPath ' Debug label
         'lblDEBUG.Visible = True
+        lblDemoNotice.Parent = picBackground ' Allows transparency for label
         picLogo.Parent = picBackground ' Allows transparency for title
+        btnLoad.Parent = picBackground ' Allows load button to be translucent
+        btnNew.Parent = picBackground ' Allows new game button to be translucent
+        btnTutorial.Parent = picBackground ' Allows tutorial button to be translucent
         ' Sets all the information for items
         ' Empty
         items(0).ID = 0
@@ -139,7 +143,7 @@ Public Class frmLaunchScr
         items(14).agility = 0
         items(14).strength = 0
         items(14).intelligence = 0
-        'items(14).image = hpPotion
+        items(14).image = hpPotion
         ' Health Potion+
         items(15).ID = 15
         items(15).name = "Health Potion+"
@@ -149,7 +153,7 @@ Public Class frmLaunchScr
         items(15).intelligence = 0
         items(15).armor = 0
         items(15).armor = 0
-        'items(15).image = hpPotionP
+        items(15).image = hpPotionP
         ' Mana Potion
         items(16).ID = 16
         items(16).name = "Mana Potion"
@@ -158,7 +162,7 @@ Public Class frmLaunchScr
         items(16).strength = 0
         items(16).intelligence = 0
         items(16).armor = 0
-        'items(16).image = mpPotion
+        items(16).image = mpPotion
         ' Mana Potion+
         items(17).ID = 17
         items(17).name = "Mana Potion+"
@@ -167,7 +171,7 @@ Public Class frmLaunchScr
         items(17).strength = 0
         items(17).intelligence = 0
         items(17).armor = 0
-        'items(17).image = mpPotionP
+        items(17).image = mpPotionP
         ' Debug Item
         items(20).ID = 20
         items(20).name = "Debug"
@@ -189,6 +193,38 @@ Public Class frmLaunchScr
         Else
             ' Gives the user an error stating there are no save files
             MsgBox("No save files found, please create a new character.")
+        End If
+    End Sub
+
+    Private Sub btnTutorial_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnTutorial.Click
+        If btnTutorial.Text = "Tutorial" Then
+            ' Turns off all of the current screen and switches it to the tutorial information
+            picLogo.Visible = False
+            picBackground.Visible = False
+            lblDemoNotice.Visible = False
+            btnLoad.Visible = False
+            btnLoad.Enabled = False
+            btnNew.Visible = False
+            btnNew.Enabled = False
+            lblDemoNote.Visible = True
+            lblTutorial.Visible = True
+            lblTutorialTitle.Visible = True
+            btnTutorial.Parent = Me
+            btnTutorial.Text = "Back"
+        ElseIf btnTutorial.Text = "Back" Then
+            ' Turns off all of the current screen and switches it to the normal launch information
+            picLogo.Visible = True
+            picBackground.Visible = True
+            lblDemoNotice.Visible = True
+            btnLoad.Visible = True
+            btnLoad.Enabled = True
+            btnNew.Visible = True
+            btnNew.Enabled = True
+            lblDemoNote.Visible = False
+            lblTutorial.Visible = False
+            lblTutorialTitle.Visible = False
+            btnTutorial.Parent = picBackground
+            btnTutorial.Text = "Tutorial"
         End If
     End Sub
 End Class

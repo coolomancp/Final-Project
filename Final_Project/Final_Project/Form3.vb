@@ -95,13 +95,14 @@ Public Class frmMainScr
         ' Sets lvl up label for transparency
         lblLevelUp.Parent = pcbMainScr
         lblLevelUp.Visible = False
-        ' Sets background music **No sound..?
-        wmpMusic.URL = resPath + "bgmusicGreen.wav"
-        wmpMusic.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
-        ' Sets ambient sounds and sets ambient sound volume low
-        wmpAmbient.URL = resPath + "waterfallAmbient.wav"
-        wmpAmbient.settings.volume = 10
-        wmpAmbient.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
+        '' Sets background music **Sound broke last minute, unsure as to why.
+        'wmpMusic.URL = resPath + "bgmusicGreen.wav"
+        'wmpMusic.settings.playCount = 5000000 ' Gives the illusion the sound loops forever
+        '' Sets ambient sounds and sets ambient sound volume low
+        'wmpAmbient.URL = resPath + "waterfallAmbient.wav"
+        'wmpAmbient.settings.volume = 10
+        ' Background sound
+        My.Computer.Audio.Play(My.Resources.bgmusicGreen, AudioPlayMode.BackgroundLoop)
     End Sub
     Private Sub timeanim_Tick(ByVal sender As Object, ByVal e As EventArgs) Handles tmrAnim.Tick
         ' Animates the player's character by turning one frame on as the previous frame is turned off

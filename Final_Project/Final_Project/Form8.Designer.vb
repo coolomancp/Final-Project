@@ -25,14 +25,18 @@ Partial Class frmBattle
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmBattle))
         Me.pnlBattleMenu = New System.Windows.Forms.Panel()
+        Me.cboItems = New System.Windows.Forms.ComboBox()
         Me.btnMelee = New System.Windows.Forms.Button()
-        Me.btnAbilities = New System.Windows.Forms.Button()
+        Me.btnPwr = New System.Windows.Forms.Button()
+        Me.btnAttack = New System.Windows.Forms.Button()
+        Me.btnItems = New System.Windows.Forms.Button()
         Me.proBarManaVal = New System.Windows.Forms.ProgressBar()
         Me.proBarHealthVal = New System.Windows.Forms.ProgressBar()
         Me.lblManaVal = New System.Windows.Forms.Label()
         Me.lblMana = New System.Windows.Forms.Label()
         Me.lblHPVal = New System.Windows.Forms.Label()
         Me.lblCIHP = New System.Windows.Forms.Label()
+        Me.btnFlee = New System.Windows.Forms.Button()
         Me.attackAnim = New System.Windows.Forms.Timer(Me.components)
         Me.playerHit = New System.Windows.Forms.Timer(Me.components)
         Me.proBarEnemyHP = New System.Windows.Forms.ProgressBar()
@@ -45,10 +49,6 @@ Partial Class frmBattle
         Me.pcbBattleEnemy = New System.Windows.Forms.PictureBox()
         Me.pcbBattlePlayer = New System.Windows.Forms.PictureBox()
         Me.pcbBattleBG = New System.Windows.Forms.PictureBox()
-        Me.btnAttack = New System.Windows.Forms.Button()
-        Me.btnItems = New System.Windows.Forms.Button()
-        Me.btnFlee = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.pnlBattleMenu.SuspendLayout()
         CType(Me.pcbBattleEnemy, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pcbBattlePlayer, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,10 +57,11 @@ Partial Class frmBattle
         '
         'pnlBattleMenu
         '
-        Me.pnlBattleMenu.BackColor = System.Drawing.SystemColors.ButtonShadow
-        Me.pnlBattleMenu.Controls.Add(Me.ComboBox1)
+        Me.pnlBattleMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(125, Byte), Integer), CType(CType(104, Byte), Integer), CType(CType(83, Byte), Integer))
+        Me.pnlBattleMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.pnlBattleMenu.Controls.Add(Me.cboItems)
         Me.pnlBattleMenu.Controls.Add(Me.btnMelee)
-        Me.pnlBattleMenu.Controls.Add(Me.btnAbilities)
+        Me.pnlBattleMenu.Controls.Add(Me.btnPwr)
         Me.pnlBattleMenu.Controls.Add(Me.btnAttack)
         Me.pnlBattleMenu.Controls.Add(Me.btnItems)
         Me.pnlBattleMenu.Controls.Add(Me.proBarManaVal)
@@ -75,6 +76,16 @@ Partial Class frmBattle
         Me.pnlBattleMenu.Size = New System.Drawing.Size(699, 159)
         Me.pnlBattleMenu.TabIndex = 1
         '
+        'cboItems
+        '
+        Me.cboItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboItems.FormattingEnabled = True
+        Me.cboItems.ImeMode = System.Windows.Forms.ImeMode.Off
+        Me.cboItems.Location = New System.Drawing.Point(597, 110)
+        Me.cboItems.Name = "cboItems"
+        Me.cboItems.Size = New System.Drawing.Size(99, 21)
+        Me.cboItems.TabIndex = 54
+        '
         'btnMelee
         '
         Me.btnMelee.BackColor = System.Drawing.Color.Firebrick
@@ -86,16 +97,39 @@ Partial Class frmBattle
         Me.btnMelee.UseVisualStyleBackColor = False
         Me.btnMelee.Visible = False
         '
-        'btnAbilities
+        'btnPwr
         '
-        Me.btnAbilities.BackColor = System.Drawing.Color.SteelBlue
-        Me.btnAbilities.Location = New System.Drawing.Point(471, 34)
-        Me.btnAbilities.Name = "btnAbilities"
-        Me.btnAbilities.Size = New System.Drawing.Size(91, 29)
-        Me.btnAbilities.TabIndex = 52
-        Me.btnAbilities.Text = "Power (50 MP)"
-        Me.btnAbilities.UseVisualStyleBackColor = False
-        Me.btnAbilities.Visible = False
+        Me.btnPwr.BackColor = System.Drawing.Color.SteelBlue
+        Me.btnPwr.Location = New System.Drawing.Point(471, 34)
+        Me.btnPwr.Name = "btnPwr"
+        Me.btnPwr.Size = New System.Drawing.Size(91, 29)
+        Me.btnPwr.TabIndex = 52
+        Me.btnPwr.Text = "Power (50 MP)"
+        Me.btnPwr.UseVisualStyleBackColor = False
+        Me.btnPwr.Visible = False
+        '
+        'btnAttack
+        '
+        Me.btnAttack.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.btnAttack.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnChaIn
+        Me.btnAttack.Image = Global.WindowsApplication1.My.Resources.Resources.btnChaIn
+        Me.btnAttack.Location = New System.Drawing.Point(595, 34)
+        Me.btnAttack.Name = "btnAttack"
+        Me.btnAttack.Size = New System.Drawing.Size(101, 35)
+        Me.btnAttack.TabIndex = 51
+        Me.btnAttack.Text = "Attack"
+        Me.btnAttack.UseVisualStyleBackColor = False
+        '
+        'btnItems
+        '
+        Me.btnItems.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnInv
+        Me.btnItems.Image = Global.WindowsApplication1.My.Resources.Resources.btnInv
+        Me.btnItems.Location = New System.Drawing.Point(595, 75)
+        Me.btnItems.Name = "btnItems"
+        Me.btnItems.Size = New System.Drawing.Size(101, 35)
+        Me.btnItems.TabIndex = 50
+        Me.btnItems.Text = "Use Item"
+        Me.btnItems.UseVisualStyleBackColor = True
         '
         'proBarManaVal
         '
@@ -162,6 +196,17 @@ Partial Class frmBattle
         Me.lblCIHP.Size = New System.Drawing.Size(69, 24)
         Me.lblCIHP.TabIndex = 44
         Me.lblCIHP.Text = "Health:"
+        '
+        'btnFlee
+        '
+        Me.btnFlee.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnDefault
+        Me.btnFlee.Image = Global.WindowsApplication1.My.Resources.Resources.btnDefault
+        Me.btnFlee.Location = New System.Drawing.Point(595, 133)
+        Me.btnFlee.Name = "btnFlee"
+        Me.btnFlee.Size = New System.Drawing.Size(101, 23)
+        Me.btnFlee.TabIndex = 0
+        Me.btnFlee.Text = "Flee"
+        Me.btnFlee.UseVisualStyleBackColor = True
         '
         'attackAnim
         '
@@ -259,54 +304,11 @@ Partial Class frmBattle
         Me.pcbBattleBG.TabIndex = 2
         Me.pcbBattleBG.TabStop = False
         '
-        'btnAttack
-        '
-        Me.btnAttack.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.btnAttack.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnChaIn
-        Me.btnAttack.Image = Global.WindowsApplication1.My.Resources.Resources.btnChaIn
-        Me.btnAttack.Location = New System.Drawing.Point(595, 34)
-        Me.btnAttack.Name = "btnAttack"
-        Me.btnAttack.Size = New System.Drawing.Size(101, 35)
-        Me.btnAttack.TabIndex = 51
-        Me.btnAttack.Text = "Attack"
-        Me.btnAttack.UseVisualStyleBackColor = False
-        '
-        'btnItems
-        '
-        Me.btnItems.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnInv
-        Me.btnItems.Image = Global.WindowsApplication1.My.Resources.Resources.btnInv
-        Me.btnItems.Location = New System.Drawing.Point(595, 75)
-        Me.btnItems.Name = "btnItems"
-        Me.btnItems.Size = New System.Drawing.Size(101, 35)
-        Me.btnItems.TabIndex = 50
-        Me.btnItems.Text = "Items"
-        Me.btnItems.UseVisualStyleBackColor = True
-        '
-        'btnFlee
-        '
-        Me.btnFlee.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.btnDefault
-        Me.btnFlee.Image = Global.WindowsApplication1.My.Resources.Resources.btnDefault
-        Me.btnFlee.Location = New System.Drawing.Point(595, 133)
-        Me.btnFlee.Name = "btnFlee"
-        Me.btnFlee.Size = New System.Drawing.Size(101, 23)
-        Me.btnFlee.TabIndex = 0
-        Me.btnFlee.Text = "Flee"
-        Me.btnFlee.UseVisualStyleBackColor = True
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.Enabled = False
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(597, 110)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(99, 21)
-        Me.ComboBox1.TabIndex = 54
-        Me.ComboBox1.Visible = False
-        '
         'frmBattle
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.rockyMenuBG
         Me.ClientSize = New System.Drawing.Size(724, 545)
         Me.ControlBox = False
         Me.Controls.Add(Me.lblExpAmount)
@@ -350,7 +352,7 @@ Partial Class frmBattle
     Friend WithEvents btnAttack As System.Windows.Forms.Button
     Friend WithEvents btnItems As System.Windows.Forms.Button
     Friend WithEvents btnMelee As System.Windows.Forms.Button
-    Friend WithEvents btnAbilities As System.Windows.Forms.Button
+    Friend WithEvents btnPwr As System.Windows.Forms.Button
     Friend WithEvents proBarEnemyHP As System.Windows.Forms.ProgressBar
     Friend WithEvents playerAttAnim As System.Windows.Forms.Timer
     Friend WithEvents deathAnim As System.Windows.Forms.Timer
@@ -358,5 +360,5 @@ Partial Class frmBattle
     Friend WithEvents lblEnemyDefeat As System.Windows.Forms.Label
     Friend WithEvents lblExpAmount As System.Windows.Forms.Label
     Friend WithEvents tmrTimeToHide As System.Windows.Forms.Timer
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cboItems As ComboBox
 End Class
